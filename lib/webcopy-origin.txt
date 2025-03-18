@@ -1,0 +1,307 @@
+Uri: https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\ajax\libs\jquery\3.6.4\jquery.min.js
+Content Type: text/javascript
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\npm\bootstrap-icons@1.4.1\font\bootstrap-icons.css
+Content Type: text/css
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/fonts/bootstrap-icons.woff2?231ce25e89ab5804f9a6c427b8d325c9
+File Name: C:\Downloaded Web Sites\themewagon.github.io\npm\bootstrap-icons@1.4.1\font\fonts\bootstrap-icons.woff2
+Content Type: font/woff2
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/fonts/bootstrap-icons.woff?231ce25e89ab5804f9a6c427b8d325c9
+File Name: C:\Downloaded Web Sites\themewagon.github.io\npm\bootstrap-icons@1.4.1\font\fonts\bootstrap-icons.woff
+Content Type: font/woff
+
+Uri: https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\npm\bootstrap@5.0.0\dist\js\bootstrap.bundle.min.js
+Content Type: application/javascript
+
+Uri: https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap
+File Name: C:\Downloaded Web Sites\themewagon.github.io\css2-1
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0nNSg.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\s\plusjakartasans\v8\LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0nNSg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_m07NSg.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\s\plusjakartasans\v8\LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_m07NSg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_TknNSg.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\s\plusjakartasans\v8\LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_TknNSg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\s\rubik\v28\iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1UA.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\s\rubik\v28\iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1UA.ttf
+Content Type: font/ttf
+
+Uri: https://themewagon.github.io/Mailler/404.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\404.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/about.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\about.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/blog.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\blog.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/contact.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\contact.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/css/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\css\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://themewagon.github.io/Mailler/css/style.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\css\style.css
+Content Type: text/css
+
+Uri: https://themewagon.github.io/Mailler/feature.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\feature.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/img/about-1.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\about-1.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/blog-1.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\blog-1.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/blog-2.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\blog-2.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/blog-3.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\blog-3.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/blog-4.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\blog-4.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/features-1.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\features-1.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/hero-img-1.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\hero-img-1.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/sty-1.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\sty-1.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/img/testimonial-img-1.jpg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\testimonial-img-1.jpg
+Content Type: image/jpeg
+
+Uri: https://themewagon.github.io/Mailler/img/testimonial-img-2.jpg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\testimonial-img-2.jpg
+Content Type: image/jpeg
+
+Uri: https://themewagon.github.io/Mailler/img/testimonial-img-3.jpg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\img\testimonial-img-3.jpg
+Content Type: image/jpeg
+
+Uri: https://themewagon.github.io/Mailler/index.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\index.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/js/main.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\js\main.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/animate/animate.min.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\animate\animate.min.css
+Content Type: text/css
+
+Uri: https://themewagon.github.io/Mailler/lib/counterup/counterup.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\counterup\counterup.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/easing/easing.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\easing\easing.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/css/lightbox.min.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\css\lightbox.min.css
+Content Type: text/css
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/images/close.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\images\close.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/images/loading.gif
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\images\loading.gif
+Content Type: image/gif
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/images/next.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\images\next.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/images/prev.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\images\prev.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/lib/lightbox/js/lightbox.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\lightbox\js\lightbox.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/owlcarousel/assets/owl.carousel.min.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\owlcarousel\assets\owl.carousel.min.css
+Content Type: text/css
+
+Uri: https://themewagon.github.io/Mailler/lib/owlcarousel/assets/owl.video.play.png
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\owlcarousel\assets\owl.video.play.png
+Content Type: image/png
+
+Uri: https://themewagon.github.io/Mailler/lib/owlcarousel/owl.carousel.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\owlcarousel\owl.carousel.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/waypoints/waypoints.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\waypoints\waypoints.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/lib/wow/wow.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\lib\wow\wow.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Mailler/pricing.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\pricing.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/service.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\service.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Mailler/testimonial.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Mailler\testimonial.html
+Content Type: text/html
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/css/all.css
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\css\all.css
+Content Type: text/css
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400.svg
+Content Type: image/svg+xml
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400.ttf
+Content Type: font/ttf
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400.woff
+Content Type: font/woff
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-brands-400.woff2
+Content Type: font/woff2
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400.svg
+Content Type: image/svg+xml
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400.ttf
+Content Type: font/ttf
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400.woff
+Content Type: font/woff
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-regular-400.woff2
+Content Type: font/woff2
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900.svg
+Content Type: image/svg+xml
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900.ttf
+Content Type: font/ttf
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900.woff
+Content Type: font/woff
+
+Uri: https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\themewagon.github.io\releases\v5.15.4\webfonts\fa-solid-900.woff2
+Content Type: font/woff2
+
+ites\themewagon.github.io\Joyseno\index.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Joyseno/js/bootstrap.bundle.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\bootstrap.bundle.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/custom.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\custom.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/jquery-3.0.0.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\jquery-3.0.0.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/jquery.mCustomScrollbar.concat.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\jquery.mCustomScrollbar.concat.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/jquery.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/plugin.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/js/popper.min.js
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\js\popper.min.js
+Content Type: application/javascript
+
+Uri: https://themewagon.github.io/Joyseno/portfolio.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\portfolio.html
+Content Type: text/html
+
+Uri: https://themewagon.github.io/Joyseno/service.html
+File Name: C:\Downloaded Web Sites\themewagon.github.io\Joyseno\service.html
+Content Type: text/html
+
