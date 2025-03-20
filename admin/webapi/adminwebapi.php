@@ -105,4 +105,10 @@ require_once('../include/conn.php');
 		echo json_encode($dataset);
     }
 
+
+    function get_detail_klinik()
+    {
+    	
+    }
+
 ?>

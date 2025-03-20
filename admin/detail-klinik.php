@@ -141,23 +141,31 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded h-100 p-4">
-                    <h5 class="mb-4">List Klinik</h5>
+                    <h5 class="mb-4">Detail Klinik</h5>
 			
-					<div class="table-responsive">
-                        <table id="list-klinik-table" style="width: 100% !important;overflow: scroll;" class="text-center">
-                            <thead>
-								<tr class="text-dark">
-									<th class="text-center">Nama Klinik</th>
-									<th class="text-center">Nomor Telepon</th>
-									<th class="text-center">Email</th>
-									<th class="text-center">Alamat Klinik</th>
-									<th class="text-center">Status</th>
-                                    <th class="text-center">Action</th>
-								</tr>
-							</thead>
-                        </table>
-						<div class="paging"></div>
-                    </div>
+					<form>
+                        <div class="mb-3">
+                            <label for="instance" class="form-label">Nama Klinik</label>
+                            <input type="text" class="form-control" id="instance">
+                            <!--div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="uuid" class="form-label">UUID Klinik</label>
+                            <input type="text" class="form-control" id="uuid">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Alamat</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- Recent Sales End -->
