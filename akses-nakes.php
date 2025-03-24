@@ -112,7 +112,7 @@ session_start();
 									</div>
 									<div class="col-12">
 										<div class="form-floating">
-											<input type="text" class="form-control" name="password" placeholder="Subject">
+											<input type="Password" class="form-control" name="password" placeholder="Subject">
 											<label for="subject">Password</label>
 										</div>
 									</div>

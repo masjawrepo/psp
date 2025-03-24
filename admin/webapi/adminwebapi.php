@@ -108,7 +108,26 @@ require_once('../include/conn.php');
 
     function get_detail_klinik()
     {
-    	
+    	global $con;
+    	$uuid = '"'.$_REQUEST['uuid'].'"';
+    	$uuid = str_replace("\r\n","",$uuid);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->query('SELECT * FROM `admin` where uuid = '.$uuid.';');            
+		while($row=mysqli_fetch_object($query))
+		{
+			$data =$row;
+		}
+		//$response=array(
+		//               'status' => 1,
+		//               'message' =>'Success',
+		//               'data' => $data
+		//            );
+		//$query->close();
+		$query->close();
+		header('Content-Type: application/json');
+		echo json_encode($data);
     }
 
 ?>
