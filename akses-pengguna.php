@@ -114,7 +114,7 @@ if (isset($_SESSION['loggedin'])) {
 									</div>
 								</div>
 							</form>
-							<p class="mb-4 mt-4">Apabila belum memiliki akun <a class="text-primary fw-bold" href="daftar.php">Daftar</a>.</p>
+							<p class="mb-4 mt-4">Apabila belum memiliki akun <a class="text-primary fw-bold" href="cek-bidan.php">Daftar</a>.</p>
 						</div>
 					</div>
 				</div>

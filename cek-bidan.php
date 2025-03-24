@@ -106,80 +106,18 @@
         <!-- Contact Start -->
         <div class="container-fluid contact py-5">
             <div class="container py-5">
-					
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary mb-4">Sign Up</h4>
-                    <h1 class="display-5 mb-4">Form Pendaftaran Akun</h1>
-                    <p class="mb-0">Agar dapat menggunakan aplikasi ini.</p>
-                </div>
-								
-                <div class="row g-5 align-items-center text-center justify-content-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
-                            <div class="row g-3">
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="uuid-bidan" placeholder="" disabled>
-                                        <input type="text" class="form-control d-none" name="uuid-bidan">
-                                        <label for="uuid-bidan">UUID Bidan</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" name="fullname" placeholder="Nama Anda">
-                                        <label for="name">Nama Anda (Sesuai KTP)</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" name="nik" placeholder="NIK">
-                                        <label for="name">NIK (Nomor KTP)</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Alamat" name="address" style="height: 160px"></textarea>
-                                        <label for="message">Alamat Tinggal (Sesuai KTP)</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" name="pob" placeholder="pOB">
-                                        <label for="name">Tempat Lahir</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="date" class="form-control" name="dob" placeholder="DOB">
-                                        <label for="name">Tanggal Lahir</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="phone" class="form-control" name="phone" placeholder="Phone">
-                                        <label for="phone">No HP (Whatsapp)</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" name="email" placeholder="Email" autocomplete="off" >
-                                        <label for="email">Email Anda</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off" >
-                                        <label for="email">Password Akun Anda</label>
-										<p class="font-italic text-primary " style="text-align: left;">*Password ini digunakan untuk masuk ke akun anda</p>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary w-100 py-3">Daftar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+				
+                <div id="scanner" class="row g-5 align-items-center text-center justify-content-center">
+					<div class="container">
+						<h4 class="text-primary mb-4">Silahkan Scan</h4>
+						<h1 class="display-5 mb-4">QR Code Bidan Anda!</h1>
+						<div class="section">
+							<div id="my-qr-reader">
+							</div>
+						</div>
+					</div>
+				</div>
+			
             </div>
         </div>
         <!-- Contact End -->
@@ -224,7 +162,50 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	
+	<script
+        src="js/html5-qrcode.min.js">
+    </script>
+	
+	<script>
 		
+		function domReady(fn) {
+			if (
+				document.readyState === "complete" ||
+				document.readyState === "interactive"
+			) {
+				setTimeout(fn, 1000);
+			} else {
+				document.addEventListener("DOMContentLoaded", fn);
+			}
+		}
+
+		domReady(function () {
+						
+			// If found you qr code
+			function onScanSuccess(decodeText, decodeResult) {
+				alert("You Qr is : " + decodeText, decodeResult);
+				/*
+				var a = decodeText, decodeResult;
+				document.getElementById("uuid-bidan").value = a;
+				$("input[name='uuid-bidan']").val(a);
+				if (a != null){
+					document.getElementById("scanner").style.display = 'none';
+					document.getElementById("form-title").style.display = '';
+					document.getElementById("form-body").style.display = '';
+				}
+				*/
+			}
+
+			let htmlscanner = new Html5QrcodeScanner(
+				"my-qr-reader",
+				{ fps: 10, qrbos: 250 }
+			);
+			htmlscanner.render(onScanSuccess);
+		});
+	
+	</script>
+	
     </body>
 
 </html>
