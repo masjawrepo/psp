@@ -108,9 +108,9 @@
             <div class="container py-5">
 					
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary mb-4">Sign Up</h4>
                     <h1 class="display-5 mb-4">Form Pendaftaran Akun</h1>
-                    <p class="mb-0">Agar dapat menggunakan aplikasi ini.</p>
+                    <p class="mb-0" style="font-weight:500;">Afiliasi Bidan : </p>
+                    <h4 class="text-primary mb-4" id="instance-name"></h4>
                 </div>
 								
                 <div class="row g-5 align-items-center text-center justify-content-center">
@@ -224,6 +224,27 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const uuid = urlParams.get('uuid')
+        var instance = document.getElementById('instance-name');
+
+        document.getElementById("uuid-bidan").value = uuid;
+
+        $.ajax({
+                type: 'GET',
+                dataType:"json",
+                url: 'app/webapi/registerwebapi.php?function=cek_bidan&uuid=' + uuid,
+                success: function (data, status, xhr) {
+                    instance.innerHTML = "";
+                    instance.innerHTML += data.instance;
+                }
+            });
+
+    </script>
 		
     </body>
 
