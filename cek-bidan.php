@@ -184,7 +184,8 @@
 						
 			// If found you qr code
 			function onScanSuccess(decodeText, decodeResult) {
-				alert("You Qr is : " + decodeText, decodeResult);
+				var uuidsearch = decodeText, decodeResult;
+				//alert("You Qr is : " + decodeText, decodeResult);
 				/*
 				var a = decodeText, decodeResult;
 				document.getElementById("uuid-bidan").value = a;
@@ -195,6 +196,28 @@
 					document.getElementById("form-body").style.display = '';
 				}
 				*/
+
+
+				$.ajax({
+					type: 'GET',
+					dataType:"json",
+					url: 'app/webapi/registerwebapi.php?function=cek_bidan&uuid=' + uuidsearch,
+					success: function (data, status, xhr) {
+						if (data.uuid == uuidsearch){
+							window.location.replace("daftar.php?uuid=" + uuidsearch);
+						} else {
+							alert("Informasi Bidan Tidak Valid, SIlahkan Scan Kembali !");
+							window.location.href = "cek-bidan.php";
+						}
+				  },
+				    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+						alert("Informasi Bidan Tidak Valid, SIlahkan Scan Kembali !");
+						window.location.href = "cek-bidan.php";
+				    }
+				});
+
+
+
 			}
 
 			let htmlscanner = new Html5QrcodeScanner(
