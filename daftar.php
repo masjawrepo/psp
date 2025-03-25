@@ -119,9 +119,9 @@
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="uuid-bidan" placeholder="" disabled>
-                                        <input type="text" class="form-control d-none" name="uuid-bidan">
-                                        <label for="uuid-bidan">UUID Bidan</label>
+                                        <input type="text" class="form-control" id="uuid_bidan" placeholder="" disabled>
+                                        <input type="text" class="form-control d-none" name="uuid_bidan">
+                                        <label for="uuid_bidan">UUID Bidan</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
@@ -144,14 +144,14 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="fullname" placeholder="Nama Anda">
+                                        <input type="text" class="form-control" name="nama_pasangan" placeholder="Nama Anda">
                                         <label for="name">Nama Suami / Istri (Sesuai KTP)</label>
                                     </div>
                                 </div>
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Status Pendidikan</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="pendidikan"
                                             aria-label="Floating label select example">
                                             <option value="1">Tidak Tamat SD/MI</option>
                                             <option value="2">Tamat SD/MI</option>
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="pendidikan_pasangan"
                                             aria-label="Floating label select example">
                                             <option value="1">Tidak Tamat SD/MI</option>
                                             <option value="2">Tamat SD/MI</option>
@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Alamat" name="address" style="height: 160px"></textarea>
+                                        <textarea class="form-control" placeholder="Alamat" name="alamat" style="height: 160px"></textarea>
                                         <label for="message">Alamat Tinggal (Sesuai KTP)</label>
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Status Pekerjaan</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="pekerjaan"
                                             aria-label="Floating label select example">
                                             <option value="1">Petani</option>
                                             <option value="2">Nelayan</option>
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="pekerjaan_pasangan"
                                             aria-label="Floating label select example">
                                             <option value="1">Petani</option>
                                             <option value="2">Nelayan</option>
@@ -221,7 +221,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="asuransi"
                                             aria-label="Floating label select example">
                                             <option value="1">BPJS Kesehatan</option>
                                             <option value="2">Lainnya</option>
@@ -233,14 +233,14 @@
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Jumlah Anak yang Masih Hidup</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak-laki" placeholder="number">
+                                        <input type="number" class="form-control" name="anak_pria_hidup" placeholder="number">
                                         <label for="number">Laki-Laki</label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak-perempuan" placeholder="number">
+                                        <input type="number" class="form-control" name="anak_wanita_hidup" placeholder="number">
                                         <label for="number">Perempuan</label>
                                     </div>
                                 </div>
@@ -248,21 +248,21 @@
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Umur Anak Terakhir</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak-laki" placeholder="number">
+                                        <input type="number" class="form-control" name="tahun_anak_terakhir" placeholder="number">
                                         <label for="number">Tahun</label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak-perempuan" placeholder="number">
+                                        <input type="number" class="form-control" name="bulan_anak_terakhir" placeholder="number">
                                         <label for="number">Bulan</label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="status_kb"
                                             aria-label="Floating label select example">
                                             <option value="1">Baru Pertama Kali</option>
                                             <option value="2">Pernah Pakai Alat KB (Berhenti Sesudah Bersalin/Keguguran)</option>
@@ -275,7 +275,7 @@
 
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="floatingSelect" name="kb_terakhir"
                                             aria-label="Floating label select example">
                                             <option value="1">Suntikan 1 Bulanan</option>
                                             <option value="2">Suntikan 3 Bulanan</option>
@@ -371,7 +371,8 @@
         const uuid = urlParams.get('uuid')
         var instance = document.getElementById('instance-name');
 
-        document.getElementById("uuid-bidan").value = uuid;
+        document.getElementById("uuid_bidan").value = uuid;
+        $("input[name='uuid_bidan']").val(uuid);
 
         $.ajax({
                 type: 'GET',
