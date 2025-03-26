@@ -240,7 +240,8 @@
        	},
         { data: 'uuid' ,
             render: function (data, type, row, meta) {
-                data = '<a href="detail-klinik.php?uuid=' + data + '">Detail</a>';
+                data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-warning"><a style="color:black !important;" href="detail-klinik.php?uuid=' + data + '"><i class="fa fa-regular fa-eye" me-1"></i> Detail</a></span></div>';
+				
                 return data;
             }
         }

@@ -243,7 +243,8 @@
       ],
       "columnDefs": [
 		    { "width": "20%", "targets": 0 },
-		    { "targets": [ 1, 2, 3, 4, 5, 6], "orderable": false}
+		    { "targets": [2, 3, 4, 5, 6], "orderable": false},
+			{ "targets": [3], render: DataTable.render.datetime('DD/MM/YYYY')}
 		  ]
     });
 		});
