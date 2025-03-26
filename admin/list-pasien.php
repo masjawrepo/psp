@@ -21,7 +21,7 @@
 
 <head>
     <meta charset="utf-8">
-	<title>PillSync+</title>
+	<title>PillSync+ | List Pasien</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -45,8 +45,12 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+	<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	
+	<link href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"></link>
+
 </head>
 
 <body>
@@ -79,9 +83,9 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index-psp.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="list-klinik.php" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>Klinik Terdaftar</a>
-                    <a href="list-pasien.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Pasien Terdaftar</a>
+                    <a href="index-psp.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="list-klinik.php" class="nav-item nav-link "><i class="fa fa-file-alt me-2"></i>Klinik Terdaftar</a>
+                    <a href="list-pasien.php" class="nav-item nav-link active"><i class="fa fa-user-circle me-2"></i>Pasien Terdaftar</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -141,52 +145,24 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded h-100 p-4">
-                    <h5 class="mb-4">Daftar Klinik Baru</h5>
+                    <h5 class="mb-4">List Klinik</h5>
 			
-					<div class="row align-items-center text-center justify-content-center">
-						<div class="row text-center alert alert-success alert-dismissible fade show" role="alert" style="z-index: 92;max-width: 91%;opacity: 0.95;display:none;" id="success">
-						  <i class="bi bi-check me-1" style="font-size:3em;"></i>
-						  <h4 class="alert-heading" style="font-size:95%;">Klinik Berhasil Terdaftar.</h4>
-						  <a type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
-						</div>
-					</div>
-				
-			
-                    <form autocomplete="off" action="webapi/registerwebapi.php?function=add_instance" method="post" >
-                        <div class="row mb-3">
-                            <label for="instance" class="col-sm-2 col-form-label">Nama Klinik</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="instance">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="phone" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                            <div class="col-sm-10 mb-3">
-                                <input type="text" class="form-control" name="phone">
-								<div class="form-text">Diutamakan No Whatsapp.
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="email" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="email">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="address" class="col-sm-2 col-form-label">Alamat Klinik</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" placeholder="Alamat" name="address" style="height: 160px"></textarea>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="password" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" name="password">
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Tambah</button>
-                    </form>
+					<div class="table-responsive">
+                        <table id="list-pasien-table" style="width: 100% !important;overflow: scroll;" class="text-center">
+                            <thead>
+								<tr class="text-dark">
+									<th class="text-center">Klinik Afiliasi</th>
+									<th class="text-center">Nama Pasien</th>
+									<th class="text-center">NIK</th>
+									<th class="text-center">Tanggal Lahir</th>
+									<th class="text-center">Nomor Telepon</th>
+									<th class="text-center">Email</th>
+                                    <th class="text-center">Status</th>
+								</tr>
+							</thead>
+                        </table>
+						<div class="paging"></div>
+                    </div>
                 </div>
             </div>
             <!-- Recent Sales End -->
@@ -222,16 +198,55 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	
+	<script src="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 	<script>
 	$( document ).ready(function() {
-    if (window.location.hash == "#success") {
-        $("#success").show();
-      }
-
+    $('#list-pasien-table').dataTable({
+		dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+      "processing": true,
+      scrollX: true,
+      "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien",
+      "columns": [
+       	{ data: 'instance' },
+       	{ data: 'fullname' },
+       	{ data: 'nik' },
+       	{ data: 'dob' },
+       	{ data: 'phone' },
+       	{ data: 'email' },
+       	{ data: 'status',
+	        render: function (data, type, row, meta) {
+	            if (type === "display") {
+	            	if (data == "Active"){
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
+	            	} else {
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
+	            	}
+	            }
+	            return data;
+	        }
+       	}
+      ],
+      "columnDefs": [
+		    { "width": "20%", "targets": 0 },
+		    { "targets": [ 1, 2, 3, 4, 5, 6], "orderable": false}
+		  ]
     });
+		});
 	</script>
 </body>
 
