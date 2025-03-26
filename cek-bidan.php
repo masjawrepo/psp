@@ -123,7 +123,7 @@
         <!-- Contact End -->
         
         <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
+        <div class="container-fluid copyright py-4" style="height:700px">
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6  text-center text-md-center text-white">
