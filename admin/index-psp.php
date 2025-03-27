@@ -63,7 +63,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index-psp.php" class="navbar-brand mx-4 mb-3">
                     <img src="../img/pillsync+.png" style="max-width:6em" alt="Logo">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -81,6 +81,7 @@
                 <div class="navbar-nav w-100">
                     <a href="index-psp.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="list-klinik.php" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>Klinik Terdaftar</a>
+                    <a href="list-pasien.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Pasien Terdaftar</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -163,30 +164,30 @@
                             <div class="col-sm-10 mb-3">
                                 <input type="text" class="form-control" name="phone">
 								<div class="form-text">Diutamakan No Whatsapp.
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="email" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="email">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="address" class="col-sm-2 col-form-label">Alamat Klinik</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" placeholder="Alamat" name="address" style="height: 160px"></textarea>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="password" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" name="password">
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Tambah</button>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="email" class="col-sm-2 col-form-label">Email</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="email">
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="address" class="col-sm-2 col-form-label">Alamat Klinik</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" placeholder="Alamat" name="address" style="height: 160px"></textarea>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="password" class="col-sm-2 col-form-label">Password</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" name="password">
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Tambah</button>
+						</div>
                     </form>
-                </div>
+				</div>
             </div>
             <!-- Recent Sales End -->
 

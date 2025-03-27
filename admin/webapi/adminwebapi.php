@@ -80,7 +80,6 @@ require_once('../include/conn.php');
 		}
    }
    
-   
    function get_list_datatable_klinik()
     {
        global $con;      
@@ -105,7 +104,6 @@ require_once('../include/conn.php');
 		echo json_encode($dataset);
     }
 
-
     function get_detail_klinik()
     {
     	global $con;
@@ -129,5 +127,35 @@ require_once('../include/conn.php');
 		header('Content-Type: application/json');
 		echo json_encode($data);
     }
+   
+   function get_list_datatable_pasien()
+    {
+		global $con;      
+		// fetch records
+		//$query = $con->query('SELECT a.uuid ,a.fullname, b.branchname, c.rolename, CASE WHEN a.isactive > 0 THEN "Active" ELSE "Deactive" END AS                  status FROM user as a JOIN branch as b ON b.id=a.branch_id JOIN role as c ON c.id=a.role_id;');
+
+		$query = $con->	query('SELECT b.instance , a.fullname, a.nik, a.dob, a.phone, a.email, 
+								CASE WHEN a.status > 0 THEN "Active" ELSE "Deactive" 
+								END AS status
+								FROM user as a
+								JOIN admin as b 
+								ON b.uuid = a.uuid_bidan');
+
+		while($row = mysqli_fetch_object($query)) {
+
+
+		    $array[] = $row;
+		}
+     	$query->close();
+
+		$dataset = array(
+		    "echo" => 1,
+		    "totalrecords" => count($array),
+		    "totaldisplayrecords" => count($array),
+		    "data" => $array
+		);
+		echo json_encode($dataset);
+    }
+
 
 ?>

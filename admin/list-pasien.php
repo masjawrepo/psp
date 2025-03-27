@@ -21,7 +21,7 @@
 
 <head>
     <meta charset="utf-8">
-	<title>PillSync+ | List Klinik</title>
+	<title>PillSync+ | List Pasien</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -84,8 +84,8 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index-psp.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="list-klinik.php" class="nav-item nav-link active"><i class="fa fa-file-alt me-2"></i>Klinik Terdaftar</a>
-                    <a href="list-pasien.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Pasien Terdaftar</a>
+                    <a href="list-klinik.php" class="nav-item nav-link "><i class="fa fa-file-alt me-2"></i>Klinik Terdaftar</a>
+                    <a href="list-pasien.php" class="nav-item nav-link active"><i class="fa fa-user-circle me-2"></i>Pasien Terdaftar</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -148,15 +148,16 @@
                     <h5 class="mb-4">List Klinik</h5>
 			
 					<div class="table-responsive">
-                        <table id="list-klinik-table" style="width: 100% !important;overflow: scroll;" class="text-center">
+                        <table id="list-pasien-table" style="width: 100% !important;overflow: scroll;" class="text-center">
                             <thead>
 								<tr class="text-dark">
-									<th class="text-center">Nama Klinik</th>
+									<th class="text-center">Klinik Afiliasi</th>
+									<th class="text-center">Nama Pasien</th>
+									<th class="text-center">NIK</th>
+									<th class="text-center">Tanggal Lahir</th>
 									<th class="text-center">Nomor Telepon</th>
 									<th class="text-center">Email</th>
-									<th class="text-center">Alamat Klinik</th>
-									<th class="text-center">Status</th>
-                                    <th class="text-center">Action</th>
+                                    <th class="text-center">Status</th>
 								</tr>
 							</thead>
                         </table>
@@ -206,49 +207,44 @@
 	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
 
-
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 	<script>
 	$( document ).ready(function() {
-    $('#list-klinik-table').dataTable({
+    $('#list-pasien-table').dataTable({
 		dom: 'Bfrtip',
         buttons: [
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
         ],
-		"processing": true,
-		"scrollX": true,
-		"ajax": "webapi/adminwebapi.php?function=get_list_datatable_klinik",
-		"columns": [
-			{ data: 'instance' },
-			{ data: 'phone' },
-			{ data: 'email' },
-			{ data: 'address' },
-			{ data: 'status',
-				render: function (data, type, row, meta) {
-					if (type === "display") {
-						if (data == "Active"){
-							data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
-						} else {
-							data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
-						}
-					}
+      "processing": true,
+      scrollX: true,
+      "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien",
+      "columns": [
+       	{ data: 'instance' },
+       	{ data: 'fullname' },
+       	{ data: 'nik' },
+       	{ data: 'dob' },
+       	{ data: 'phone' },
+       	{ data: 'email' },
+       	{ data: 'status',
+	        render: function (data, type, row, meta) {
+	            if (type === "display") {
+	            	if (data == "Active"){
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
+	            	} else {
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
+	            	}
+	            }
 	            return data;
 	        }
-       	},
-        { data: 'uuid' ,
-            render: function (data, type, row, meta) {
-                data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-warning"><a style="color:black !important;" href="detail-klinik.php?uuid=' + data + '"><i class="fa fa-regular fa-eye" me-1"></i> Detail</a></span></div>';
-				
-                return data;
-            }
-        }
+       	}
       ],
       "columnDefs": [
 		    { "width": "20%", "targets": 0 },
-		    { "targets": [ 1, 2, 3, 4, 5], "orderable": false}
+		    { "targets": [2, 3, 4, 5, 6], "orderable": false},
+			{ "targets": [3], render: DataTable.render.datetime('DD/MM/YYYY')}
 		  ]
     });
 		});
