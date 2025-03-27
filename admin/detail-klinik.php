@@ -157,6 +157,9 @@
 							<li class="nav-item">
 							  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
 							</li>
+							<li class="nav-item">
+							  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#list_pasien">List pasien</button>
+							</li>
 							<!--
 							<li class="nav-item">
 							  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
@@ -208,6 +211,35 @@
 							
 						</div>
 						
+
+						<div class="tab-pane fade show profile-overview" id="list_pasien">
+							<!--
+							<h5 class="card-title">About</h5>
+							<p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+							-->
+                <div class="bg-light rounded h-100 p-4">
+							<h5 class="mb-4" id="title_list"></h5>
+			
+							<div class="table-responsive">
+		                        <table id="list_pasien_table" style="width: 100% !important;overflow: scroll;" class="text-center">
+		                            <thead>
+										<tr class="text-dark">
+											<th class="text-center">Nama Pasien</th>
+											<th class="text-center">Nomor Telepon</th>
+											<th class="text-center">Email</th>
+											<th class="text-center">Status</th>
+										</tr>
+									</thead>
+		                        </table>
+								<div class="paging"></div>
+		                    </div>
+
+                </div>
+							
+							
+						</div>
+
+
 						<!--
 
 						<div class="tab-pane fade profile-edit pt-3" id="profile-edit">
@@ -427,6 +459,7 @@
 			var phone =  document.getElementById('phone');
 			var email =  document.getElementById('email');
 			var address =  document.getElementById('address');
+			var title_list =  document.getElementById('title_list');
 			
 			$.ajax({
 				type: 'GET',
@@ -441,6 +474,9 @@
 					email.innerHTML += data.email;
 					address.innerHTML = "";
 					address.innerHTML += data.address;
+					title_list.innerHTML = "";
+					title_list.innerHTML += "List Pasien Bidan ";
+					title_list.innerHTML += data.instance;
 							
 					const makeQR = (uuidsearch, filename) => {
 						var qrcode = new QRCode("qrcode", {
