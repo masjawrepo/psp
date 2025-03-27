@@ -148,14 +148,66 @@ require_once('../include/conn.php');
 		}
      	$query->close();
 
-		$dataset = array(
-		    "echo" => 1,
-		    "totalrecords" => count($array),
-		    "totaldisplayrecords" => count($array),
-		    "data" => $array
-		);
-		echo json_encode($dataset);
+		if(!isset($array)){
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => 0,
+			    "totaldisplayrecords" => 0,
+			    "data" => []
+			);
+			echo json_encode($dataset);
+		} else {
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => count($array),
+			    "totaldisplayrecords" => count($array),
+			    "data" => $array
+			);
+			echo json_encode($dataset);	
+		}
     }
 
+    function get_list_datatable_pasien_bidan_affiliate()
+    {
+    	global $con;
+    	$uuid = '"'.$_REQUEST['uuid'].'"';
+    	$uuid = str_replace("\r\n","",$uuid);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->	query('SELECT b.instance , a.fullname, a.nik, a.dob, a.phone, a.email, 
+								CASE WHEN a.status > 0 THEN "Active" ELSE "Deactive" 
+								END AS status
+								FROM user as a
+								JOIN admin as b 
+								ON b.uuid = a.uuid_bidan
+								where a.uuid_bidan = '.$uuid.';');
+
+		while($row = mysqli_fetch_object($query)) {
+
+
+		    $array[] = $row;
+		}
+     	$query->close();
+
+		if(!isset($array)){
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => 0,
+			    "totaldisplayrecords" => 0,
+			    "data" => []
+			);
+			echo json_encode($dataset);
+		} else {
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => count($array),
+			    "totaldisplayrecords" => count($array),
+			    "data" => $array
+			);
+			echo json_encode($dataset);	
+		}
+    }
+   
 
 ?>
