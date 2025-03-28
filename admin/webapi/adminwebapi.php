@@ -25,7 +25,7 @@ require_once('../include/conn.php');
 		}
 
 		// We need to check if the account with that username exists.
-		if ($stmt = $con->prepare('SELECT id, instance, email, password, role_admin_id, status FROM admin WHERE email=? and status = 1')) {
+		if ($stmt = $con->prepare('SELECT id, uuid, instance, email, password, role_admin_id, status FROM admin WHERE email=? and status = 1')) {
 			// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 			$stmt->bind_param('s', $_POST['username']);
 			$stmt->execute();
@@ -37,7 +37,7 @@ require_once('../include/conn.php');
 				// Application already exists
 				header('Location: ../../akses-nakes.php#falsecred');
 			} else {
-				$stmt->bind_result($id, $instance, $email, $password, $role_admin_id, $status);
+				$stmt->bind_result($id, $uuid, $instance, $email, $password, $role_admin_id, $status);
 				$stmt->fetch();
 				if (password_verify($_POST['password'], $password)) {
 					
@@ -46,6 +46,7 @@ require_once('../include/conn.php');
 					session_regenerate_id();
 					$_SESSION['loggedin-psp'] = FALSE;
 					$_SESSION['loggedin-nakes'] = FALSE;
+					$_SESSION["uuid"] = $uuid;
 					$_SESSION["instance"] = $instance;
 					$_SESSION["email"] = $email;
 					
@@ -95,13 +96,23 @@ require_once('../include/conn.php');
 		}
      	$query->close();
 
-		$dataset = array(
-		    "echo" => 1,
-		    "totalrecords" => count($array),
-		    "totaldisplayrecords" => count($array),
-		    "data" => $array
-		);
-		echo json_encode($dataset);
+		if(!isset($array)){
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => 0,
+			    "totaldisplayrecords" => 0,
+			    "data" => []
+			);
+			echo json_encode($dataset);
+		} else {
+			$dataset = array(
+			    "echo" => 1,
+			    "totalrecords" => count($array),
+			    "totaldisplayrecords" => count($array),
+			    "data" => $array
+			);
+			echo json_encode($dataset);	
+		}
     }
 
     function get_detail_klinik()

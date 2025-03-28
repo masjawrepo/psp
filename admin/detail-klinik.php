@@ -49,11 +49,18 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 	
+	<link href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"></link>
+
 	<style>
 		#qrcode {
 		  width: 320px;
 		  height: 320px;
 		  margin-top: 15px;
+		}
+		
+		.dataTables_scroll
+		{
+		    overflow:auto;
 		}
 	</style>
 	
@@ -175,7 +182,7 @@
 						</ul>
 					  <div class="tab-content pt-2">
 
-						<div class="tab-pane fade show active profile-overview" id="profile-overview">
+						<div class="tab-pane fade show active profile-overview pt-4 px-4" id="profile-overview">
 							<!--
 							<h5 class="card-title">About</h5>
 							<p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
@@ -218,24 +225,29 @@
 							<h5 class="card-title">About</h5>
 							<p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
 							-->
-                <div class="bg-light rounded h-100 p-4">
-							<h5 class="mb-4" id="title_list"></h5>
-			
-							<div class="table-responsive">
-		                        <table id="list_pasien_table" style="width: 100% !important;overflow: scroll;" class="text-center">
-		                            <thead>
-										<tr class="text-dark">
-											<th class="text-center">Nama Pasien</th>
-											<th class="text-center">Nomor Telepon</th>
-											<th class="text-center">Email</th>
-											<th class="text-center">Status</th>
-										</tr>
-									</thead>
-		                        </table>
-								<div class="paging"></div>
-		                    </div>
 
-                </div>
+			                <div class="container-fluid pt-4 px-4">
+				                <div class="rounded h-100 p-4">
+								<h5 class="mb-4" id="title_list"></h5>
+							
+									<div class="table-responsive">
+				                        <table id="list-pasien-table" style="width: 100% !important;overflow: scroll;" class="text-center">
+				                            <thead>
+												<tr class="text-dark">
+													<th class="text-center">Klinik Afiliasi</th>
+													<th class="text-center">Nama Pasien</th>
+													<th class="text-center">NIK</th>
+													<th class="text-center">Tanggal Lahir</th>
+													<th class="text-center">Nomor Telepon</th>
+													<th class="text-center">Email</th>
+				                                    <th class="text-center">Status</th>
+												</tr>
+											</thead>
+				                        </table>
+										<div class="paging"></div>
+				                    </div>
+				                </div>
+				            </div>
 							
 							
 						</div>
@@ -438,6 +450,14 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+	<script src="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
@@ -445,6 +465,7 @@
 
 	
 	<script>
+
 	$( document ).ready(function() {
 			
 		const queryString = window.location.search;
@@ -453,6 +474,8 @@
 		//console.log(product);
 		//alert(uuid);
 		getDetailKlinik(uuid);
+
+
 		
 		function getDetailKlinik(uuidsearch){
 			
@@ -505,6 +528,46 @@
 			});
 		
 		}
+
+		$('#list-pasien-table').dataTable({
+			dom: 'Bfrtip',
+	        buttons: [
+	            'excelHtml5',
+	            'csvHtml5',
+	            'pdfHtml5'
+	        ],
+	      "processing": true,
+	      "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien_bidan_affiliate&uuid=" + uuid,
+	      "columns": [
+	       	{ data: 'instance' },
+	       	{ data: 'fullname' },
+	       	{ data: 'nik' },
+	       	{ data: 'dob' },
+	       	{ data: 'phone' },
+	       	{ data: 'email' },
+	       	{ data: 'status',
+		        render: function (data, type, row, meta) {
+		            if (type === "display") {
+		            	if (data == "Active"){
+		            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
+		            	} else {
+		            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
+		            	}
+		            }
+		            return data;
+		        }
+	       	}
+	      ],
+	      "columnDefs": [
+			    { "width": "20%", "targets": 0 },
+			    { "targets": [2, 3, 4, 5, 6], "orderable": false},
+				{ "targets": [3], render: DataTable.render.datetime('DD/MM/YYYY')}
+			  ]
+	    });
+	    jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
+
+
+
 	});
 	</script>
 </body>

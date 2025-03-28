@@ -9,12 +9,10 @@
 	}	
 	if (isset($_SESSION['loggedin-nakes']) || isset($_SESSION['loggedin-psp'])) {
 		if ($_SESSION['loggedin-nakes'] == False) {
-			header('Location: index-psp.php');
+            header('Location: index-psp.php');
 			exit;
 		}
 	}	
-	
-	
 	global $site; 
 ?>
 
@@ -23,7 +21,7 @@
 
 <head>
     <meta charset="utf-8">
-	<title>PillSync+</title>
+	<title>PillSync+ | List Pasien</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,8 +45,12 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+	<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	
+	<link href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"></link>
+
 </head>
 
 <body>
@@ -65,7 +67,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index-psp.php" class="navbar-brand mx-4 mb-3">
                     <img src="../img/pillsync+.png" style="max-width:6em" alt="Logo">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -81,8 +83,8 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index-psp.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="list-pasien-nakes.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Daftar Pasien</a>
+                    <a href="index-psp.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="list-pasien-nakes.php" class="nav-item nav-link active"><i class="fa fa-user-circle me-2"></i>Daftar Pasien</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -141,60 +143,23 @@
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Pengajuan Baru</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                <div class="bg-light rounded h-100 p-4">
+                    <h5 class="mb-4">List Klinik</h5>
+			
+					<div class="table-responsive">
+                        <table id="list-pasien-table" style="width: 100% !important;overflow: scroll;" class="text-center">
                             <thead>
 								<tr class="text-dark">
-									<th scope="col">Tanggal</th>
-									<th scope="col">NIK</th>
-									<th scope="col">Nama</th>
-									<th scope="col">Alamat</th>
-									<th scope="col">Action</th>
+									<th class="text-center">Nama Pasien</th>
+									<th class="text-center">NIK</th>
+									<th class="text-center">Tanggal Lahir</th>
+									<th class="text-center">Nomor Telepon</th>
+									<th class="text-center">Email</th>
+                                    <th class="text-center">Status</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-							</tbody>
                         </table>
+						<div class="paging"></div>
                     </div>
                 </div>
             </div>
@@ -231,9 +196,55 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	
+	<script src="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+	<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	<script>
+	$( document ).ready(function() {
+    $('#list-pasien-table').dataTable({
+		dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+      "processing": true,
+      scrollX: true,
+      "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien_bidan_affiliate&uuid="+<?php echo json_encode($_SESSION['uuid']);?> ,
+      "columns": [
+       	{ data: 'fullname' },
+       	{ data: 'nik' },
+       	{ data: 'dob' },
+       	{ data: 'phone' },
+       	{ data: 'email' },
+       	{ data: 'status',
+	        render: function (data, type, row, meta) {
+	            if (type === "display") {
+	            	if (data == "Active"){
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
+	            	} else {
+	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
+	            	}
+	            }
+	            return data;
+	        }
+       	}
+      ],
+      "columnDefs": [
+		    { "targets": [0, 1, 2, 3, 4, 5], "orderable": false},
+			{ "targets": [2], render: DataTable.render.datetime('DD/MM/YYYY')}
+		  ]
+    });
+		});
+	</script>
 </body>
 
 </html>
