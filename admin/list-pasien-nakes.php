@@ -208,42 +208,46 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 	<script>
-	$( document ).ready(function() {
-    $('#list-pasien-table').dataTable({
-		dom: 'Bfrtip',
-        buttons: [
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
-      "processing": true,
-      "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien_bidan_affiliate&uuid="+<?php echo json_encode($_SESSION['uuid']);?> ,
-      "columns": [
-       	{ data: 'fullname' },
-       	{ data: 'nik' },
-       	{ data: 'dob' },
-       	{ data: 'phone' },
-       	{ data: 'email' },
-       	{ data: 'status',
-	        render: function (data, type, row, meta) {
-	            if (type === "display") {
-	            	if (data == "Active"){
-	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
-	            	} else {
-	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
-	            	}
-	            }
-	            return data;
-	        }
-       	}
-      ],
-      "columnDefs": [
-		    { "targets": [0, 1, 2, 3, 4, 5], "orderable": false},
-			{ "targets": [2], render: DataTable.render.datetime('DD/MM/YYYY')}
-		  ]
-    });
-        jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
-		});
+
+    	$( document ).ready(function() {
+
+            $('#list-pasien-table').dataTable({
+        		dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
+                "processing": true,
+                "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien_bidan_affiliate&uuid="+<?php echo json_encode($_SESSION['uuid']);?> ,
+                "columns": [
+               	    { data: 'fullname' },
+               	    { data: 'nik' },
+               	    { data: 'dob' },
+               	    { data: 'phone' },
+               	    { data: 'email' },
+               	    { data: 'status',
+            	        render: function (data, type, row, meta) {
+            	            if (type === "display") {
+            	            	if (data == "Active"){
+            	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success" style="width: 7.2em;"><i class="bi bi-check-circle me-1"></i> Active</span></div>';
+            	            	} else {
+            	            		data = '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Deactive</span></div>';
+            	            	}
+            	            }
+            	            return data;
+            	        }
+               	    }
+                ],
+                "columnDefs": [
+        		    { "targets": [0, 1, 2, 3, 4, 5], "orderable": false},
+        			{ "targets": [2], render: DataTable.render.datetime('DD/MM/YYYY')}
+        		]
+            });
+            jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
+    	
+        });
+
 	</script>
 </body>
 
