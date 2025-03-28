@@ -219,7 +219,6 @@
             'pdfHtml5'
         ],
       "processing": true,
-      scrollX: true,
       "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien",
       "columns": [
        	{ data: 'instance' },
@@ -247,6 +246,7 @@
 			{ "targets": [3], render: DataTable.render.datetime('DD/MM/YYYY')}
 		  ]
     });
+        jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
 		});
 	</script>
 </body>

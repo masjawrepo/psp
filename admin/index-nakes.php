@@ -82,7 +82,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index-psp.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="list-pasien-nakes.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Daftar Pasien</a>
+                    <a href="list-pasien-nakes.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>List Pasien</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -141,60 +141,33 @@
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Pengajuan Baru</h6>
-                        <a href="">Show All</a>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="rounded d-flex align-items-center p-4" style="height: 100%;">
+                            <i class="fa fa-chart-bar fa-4x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Pasien Ter-Sistem</p>
+                                <a href="list-pasien-nakes.php"><h6 class="mb-0" id="jumlah_pasien"></h6></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-								<tr class="text-dark">
-									<th scope="col">Tanggal</th>
-									<th scope="col">NIK</th>
-									<th scope="col">Nama</th>
-									<th scope="col">Alamat</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-								<tr>
-									<td>01 Jan 2045</td>
-									<td>2393907898760009</td>
-									<td>Jhon Doe</td>
-									<td>Jl. Apapun itu no.02, RT 001/002</td>
-									<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-								</tr>
-							</tbody>
-                        </table>
+
+                    <div class="col-sm-6 col-xl-3" onclick="window.location='http://google.com';">
+                        <div class="bg-info rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
+                            <i class="fa fa-id-card fa-3x text-white"></i>
+                            <div class="ms-3">
+                            <h6 class="mb-0" style="color:white;">Form Acceptor</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3" onclick="window.location='http://google.com';">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
+                            <i class="fa fa-book fa-3x text-white"></i>
+                            <div class="ms-3">
+                            <h6 class="mb-0" style="color:white;">Form Pemeriksaan Pasien</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -234,6 +207,30 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+    <script>
+
+    $( document ).ready(function() {
+            
+
+        var jumlah_pasien =  document.getElementById('jumlah_pasien');
+
+        $.ajax({
+                type: 'GET',
+                dataType:"json",
+                url: 'webapi/adminwebapi.php?function=get_count_pasien_affiliate&uuid='+<?php echo json_encode($_SESSION['uuid']);?> ,
+                success: function (data, status, xhr) {
+                    jumlah_pasien.innerHTML = "";
+                    jumlah_pasien.innerHTML += data.jumlah_pasien;
+                    jumlah_pasien.innerHTML += " Pasien";
+              }
+            });
+
+    });
+    </script>
+
+
 </body>
 
 </html>

@@ -219,7 +219,6 @@
             'pdfHtml5'
         ],
 		"processing": true,
-		"scrollX": true,
 		"ajax": "webapi/adminwebapi.php?function=get_list_datatable_klinik",
 		"columns": [
 			{ data: 'instance' },
@@ -251,6 +250,7 @@
 		    { "targets": [ 1, 2, 3, 4, 5], "orderable": false}
 		  ]
     });
+        jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
 		});
 	</script>
 </body>

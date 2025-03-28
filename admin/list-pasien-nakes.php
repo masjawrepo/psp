@@ -84,7 +84,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index-psp.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="list-pasien-nakes.php" class="nav-item nav-link active"><i class="fa fa-user-circle me-2"></i>Daftar Pasien</a>
+                    <a href="list-pasien-nakes.php" class="nav-item nav-link active"><i class="fa fa-user-circle me-2"></i>List Pasien</a>
 					<!-- 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -144,7 +144,7 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded h-100 p-4">
-                    <h5 class="mb-4">List Klinik</h5>
+                    <h5 class="mb-4">List Pasien</h5>
 			
 					<div class="table-responsive">
                         <table id="list-pasien-table" style="width: 100% !important;overflow: scroll;" class="text-center">
@@ -217,7 +217,6 @@
             'pdfHtml5'
         ],
       "processing": true,
-      scrollX: true,
       "ajax": "webapi/adminwebapi.php?function=get_list_datatable_pasien_bidan_affiliate&uuid="+<?php echo json_encode($_SESSION['uuid']);?> ,
       "columns": [
        	{ data: 'fullname' },
@@ -243,6 +242,7 @@
 			{ "targets": [2], render: DataTable.render.datetime('DD/MM/YYYY')}
 		  ]
     });
+        jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
 		});
 	</script>
 </body>
