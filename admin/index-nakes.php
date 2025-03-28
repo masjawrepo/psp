@@ -131,7 +131,7 @@
 					-->
                             <span class="d-none d-lg-inline-flex"><?=$_SESSION['instance']?></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                        <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
                             <a href="include/logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
