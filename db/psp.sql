@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2025 at 09:15 PM
+-- Generation Time: Apr 06, 2025 at 08:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `psp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `acceptor`
+--
+
+CREATE TABLE `acceptor` (
+  `id` int(11) NOT NULL,
+  `uuid_user` varchar(36) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by` varchar(36) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` varchar(36) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -50,7 +66,8 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `uuid`, `instance`, `address`, `phone`, `email`, `password`, `role_admin_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, '1df38189-b06b-11ef-a54f-7c7635b356c2', 'PillSync+ Authority', '', '', 'admin@pillsyncplus.com', '$2y$10$A66/mfmd4ISWxTMw6kSA8u0Ntv3Kf2LMjDrlarK0ApwzKR0ivWcS.', 1, '2024-12-02 12:05:39', 'system', '0000-00-00 00:00:00', '', 1),
 (2, '5ffa09eb-94ea-4f9c-9a4b-da130a4b9779', 'Bidan Sejahtera', 'Jalan Suka Kaya', '0987654321', 'sejahtera@sejahtera.com', '$2y$10$6O40t8hhHydUV2V.zBys7uzLUF.teaBYL5mpxI9E/uybjk1PujTtC', 2, NULL, NULL, NULL, NULL, 1),
-(3, '1c593037-116b-46e3-83a4-f98fbc5f75f1', 'Bidan Apapun', 'jl. apapun', '090909090909099', 'apapun@apapun.com', '$2y$10$tuVqvC7Q7Egs2An3hemY7Oysov7PyV/o6N6yqj1RigZCAeMOZ6YSy', 2, NULL, NULL, NULL, NULL, 1);
+(3, '1c593037-116b-46e3-83a4-f98fbc5f75f1', 'Bidan Apapun', 'jl. apapun', '090909090909099', 'apapun@apapun.com', '$2y$10$tuVqvC7Q7Egs2An3hemY7Oysov7PyV/o6N6yqj1RigZCAeMOZ6YSy', 2, NULL, NULL, NULL, NULL, 1),
+(4, 'ff28a6f8-4369-4aec-9a63-06ecbc9d087c', 'Bidan Test', 'jl. Test', '09808007777', 'Test@test.com', '$2y$10$MtX/lUCxlCO6..Bii.hlQOdCGVwgQZv7xDuHedd68QLWXRAXUZw1u', 2, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -130,7 +147,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `uuid`, `uuid_bidan`, `fullname`, `nik`, `dob`, `phone`, `email`, `password`, `role_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, '5a672bfc-e37e-4ca0-b7c6-44042697af3b', '', 'MJ', 1234665, '2024-11-29 00:00:00', '0987654321', 'masjaw@agag.aj', '$2y$10$9rjq.24HJU.kZ1CWp6t34O4eQItSjaoLFBCPX.buHdmVPvst2/LVq', NULL, NULL, NULL, NULL, NULL, 1),
 (2, '7246b4a6-b2d6-4f3b-8ec4-9f1887888f09', '', 'MJ2', 12345, '2024-11-30 00:00:00', '12345', 'qwert@qwert.com', '$2y$10$XY9k6BA8TAt.C3D1oH3WPuRCsUB9oX7lYX8HTnB6zhUEq28cx7l1a', NULL, NULL, NULL, NULL, NULL, 1),
-(4, '8b5a3ad9-a7c4-4346-93cc-e1e70bdc44c7', '1c593037-116b-46e3-83a4-f98fbc5f75f1', 'Raafi Dwi Susanto', 900909, '2025-03-31 00:00:00', '123123123123213', 'masjaw@masjaw.com', '$2y$10$tDZJzy6pao2eyBhYMiy0fOWBsM2Xm.z0o0z8TPp2BwP5mH8/.85.y', NULL, NULL, NULL, NULL, NULL, 1);
+(4, '8b5a3ad9-a7c4-4346-93cc-e1e70bdc44c7', 'ff28a6f8-4369-4aec-9a63-06ecbc9d087c', 'Raafi Dwi Susanto', 900909, '2025-03-31 00:00:00', '123123123123213', 'masjaw@masjaw.com', '$2y$10$tDZJzy6pao2eyBhYMiy0fOWBsM2Xm.z0o0z8TPp2BwP5mH8/.85.y', NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -173,6 +190,12 @@ INSERT INTO `user_detail` (`id`, `uuid_user`, `nama_pasangan`, `pendidikan`, `pe
 --
 
 --
+-- Indexes for table `acceptor`
+--
+ALTER TABLE `acceptor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
@@ -207,10 +230,16 @@ ALTER TABLE `user_detail`
 --
 
 --
+-- AUTO_INCREMENT for table `acceptor`
+--
+ALTER TABLE `acceptor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `menu_admin`

@@ -142,31 +142,26 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="rounded d-flex align-items-center p-4" style="height: 100%;">
-                            <i class="fa fa-chart-bar fa-4x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Pasien Ter-Sistem</p>
-                                <a href="list-pasien-nakes.php"><h6 class="mb-0" id="jumlah_pasien"></h6></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-xl-3" onclick="window.location='acceptor.php';">
-                        <div class="bg-info rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
-                            <i class="fa fa-id-card fa-3x text-white"></i>
-                            <div class="ms-3">
-                            <h6 class="mb-0" style="color:white;">Form Acceptor</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-xl-3" onclick="window.location='pemeriksaan.php';">
-                        <div class="bg-primary rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
-                            <i class="fa fa-book fa-3x text-white"></i>
-                            <div class="ms-3">
-                            <h6 class="mb-0" style="color:white;">Form Pemeriksaan Pasien</h6>
-                            </div>
+                    <div class="row g-2 align-items-center text-center justify-content-center">
+                        <div class="col-lg-10 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
+                            <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
+                                <div class="col-sm-12 col-xl-12 mt-2">
+                                    <div class="d-flex align-items-center p-2" >
+                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Cek Pasien</h4>
+                                    </div>
+                                </div>
+                                <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
+                                    <div class="col-lg-9 col-xl-9">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="dob" placeholder="DOB">
+                                            <label for="name">NIK Pasien</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xl-3">
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -213,19 +208,16 @@
 
     $( document ).ready(function() {
             
-
-        var jumlah_pasien =  document.getElementById('jumlah_pasien');
-
-        $.ajax({
-                type: 'GET',
-                dataType:"json",
-                url: 'webapi/adminwebapi.php?function=get_count_pasien_affiliate&uuid='+<?php echo json_encode($_SESSION['uuid']);?> ,
-                success: function (data, status, xhr) {
-                    jumlah_pasien.innerHTML = "";
-                    jumlah_pasien.innerHTML += data.jumlah_pasien;
-                    jumlah_pasien.innerHTML += " Pasien";
-              }
-            });
+        $('#SelectKontrasepsi').change(function(){
+            if( $(this).val()=="1" || $(this).val()=="2"){
+                $(".iud_implan").show();
+                $(".noniud_implan").hide();
+            } else {
+                $(".iud_implan").hide();
+                $(".noniud_implan").show();
+            }
+        });
+        $('#SelectKontrasepsi').trigger("change");
 
     });
     </script>
