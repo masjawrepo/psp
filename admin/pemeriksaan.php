@@ -139,35 +139,81 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Recent Sales Start -->
+
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="row g-2 align-items-center text-center justify-content-center">
-                        <div class="col-lg-10 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
-                            <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
-                                <div class="col-sm-12 col-xl-12 mt-2">
-                                    <div class="d-flex align-items-center p-2" >
-                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Cek Pasien</h4>
-                                    </div>
-                                </div>
-                                <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
-                                    <div class="col-lg-9 col-xl-9">
-                                        <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="dob" placeholder="DOB">
-                                            <label for="name">NIK Pasien</label>
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="row g-2 align-items-center text-center justify-content-center">
+                            <div class="col-lg-12 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
+                                
+                                    <div class="col-sm-12 col-xl-12">
+                                        <div class="d-flex align-items-center p-2" >
+                                            <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Cek Pasien</h4>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3 col-xl-3">
-                                        <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
+                                    <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
+                                        <div class="col-lg-9 col-xl-9">
+                                            <div class="form-floating mb-0">
+                                                <input type="number" class="form-control" id="nik" placeholder="nik">
+                                                <label for="nik">NIK Pasien</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xl-3">
+                                            <button onclick="cekPasien();" class="btn btn-primary w-100 py-3">Submit</button>
+                                        </div>
                                     </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row g-2 align-items-center justify-content-center">
+                            <div class="col-lg-12 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
+                                <div style="margin-left: .5rem !important;padding-left: .5em !important;">
+                                    <div class="col-sm-12 col-xl-12">
+                                        <div class="d-flex align-items-center" >
+                                            <h4 class="mb-1 mt-1">Informasi Pasien</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">NIK Pasien</div>
+                                        <div class="col-lg-9 col-md-8" id="nik_check">-</div>
+                                    </div>
+                                                                    
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Nama Pasien</div>
+                                        <div class="col-lg-9 col-md-8" id="name_check">-</div>
+                                    </div>
+                                        
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Email Pasien</div>
+                                        <div class="col-lg-9 col-md-8" id="email_check">-</div>
+                                    </div>
+                                        
+                                        
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">No. Telp Pasien</div>
+                                        <div class="col-lg-9 col-md-8" id="no_check">-</div>
+                                    </div>
+                                        
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Alamat</div>
+                                        <div class="col-lg-9 col-md-8" id="address_check">-</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Status Acceptor</div>
+                                        <div class="col-lg-9 col-md-8" id="acceptor_check">
+                                            <div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Terdata</span></div>
+                                            <div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Sudah Terdata</span></div>
+                                        </div>
+                                    </div>
+                                        
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Recent Sales End -->
-
 
 
             <!-- Footer Start -->
@@ -206,20 +252,46 @@
 
     <script>
 
-    $( document ).ready(function() {
+    $(document).ready( function() {
             
-        $('#SelectKontrasepsi').change(function(){
-            if( $(this).val()=="1" || $(this).val()=="2"){
-                $(".iud_implan").show();
-                $(".noniud_implan").hide();
-            } else {
-                $(".iud_implan").hide();
-                $(".noniud_implan").show();
-            }
-        });
-        $('#SelectKontrasepsi').trigger("change");
-
     });
+
+    function cekPasien(){
+        var nik = document.getElementById('nik').value;
+        //alert(nik);
+        
+        var nik_check = document.getElementById('nik_check');
+        var name_check =  document.getElementById('name_check');
+        var email_check =  document.getElementById('email_check');
+        var no_check = document.getElementById('no_check');
+        var address_check =  document.getElementById('address_check');
+        var acceptor_check =  document.getElementById('acceptor_check');
+
+        $.ajax({
+            type: 'GET',
+            dataType:"json",
+            url: 'webapi/adminwebapi.php?function=cek_pasien=' + nik,
+            success: function (data, status, xhr) {
+                nik_check.innerHTML = "";
+                nik_check.innerHTML += data.nik_check;
+                name_check.innerHTML = "";
+                name_check.innerHTML += data.name_check;
+                email_check.innerHTML = "";
+                email_check.innerHTML += data.email_check;
+                no_check.innerHTML = "";
+                no_check.innerHTML += data.no_check;
+                address_check.innerHTML = "";
+                address_check.innerHTML += data.address_check;
+                acceptor_check.innerHTML = "";
+                acceptor_check.innerHTML += data.acceptor_check;
+                //alert(data.phone_number);
+                //console.log(data);
+                //datamember = data;
+                //$(".btn_use_member").show();
+          }
+        });
+    }
+
     </script>
 
 

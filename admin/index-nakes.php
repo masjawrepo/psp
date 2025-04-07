@@ -49,6 +49,14 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        #qrcode {
+          width: 320px;
+          height: 320px;
+          margin-top: 30px;
+          margin-left: -25px;
+        }
+    </style>
 </head>
 
 <body>
@@ -141,36 +149,70 @@
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
+
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="rounded d-flex align-items-center p-4" style="height: 100%;">
-                            <i class="fa fa-chart-bar fa-4x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Pasien Ter-Sistem</p>
-                                <a href="list-pasien-nakes.php"><h6 class="mb-0" id="jumlah_pasien"></h6></a>
+                    <div class="col-sm-12 col-xl-5">
+                        <div class="bg-light rounded p-4">
+                        <div class="row g-4">
+                        <h5 class="card-title">Pelayanan</h5>
+                        <br>
+                            
+                        <div class="col-sm-12 col-xl-12">
+                            <div class="rounded d-flex align-items-center" style="height: 100%;">
+                                <i class="fa fa-chart-bar fa-4x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">Total Pasien Ter-Sistem</p>
+                                    <a href="list-pasien-nakes.php"><h6 class="mb-0" id="jumlah_pasien"></h6></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-6 col-xl-3" onclick="window.location='acceptor.php';">
-                        <div class="bg-info rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
-                            <i class="fa fa-id-card fa-3x text-white"></i>
-                            <div class="ms-3">
-                            <h6 class="mb-0" style="color:white;">Form Acceptor</h6>
+                        <div class="col-sm-12 col-xl-12" onclick="window.location='pemeriksaan.php';">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
+                                <i class="fa fa-book fa-3x text-white"></i>
+                                <div class="ms-3">
+                                <h6 class="mb-0" style="color:white;">Form Pemeriksaan Pasien</h6>
+                                </div>
                             </div>
                         </div>
+                        </div>
+                        </div>
                     </div>
+                    <div class="col-sm-12 col-xl-7">
+                        <div class="bg-light rounded p-4 ">
+                        <h5 class="card-title">Klinik Details</h5>
+                        <br>
 
-                    <div class="col-sm-6 col-xl-3" onclick="window.location='pemeriksaan.php';">
-                        <div class="bg-primary rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
-                            <i class="fa fa-book fa-3x text-white"></i>
-                            <div class="ms-3">
-                            <h6 class="mb-0" style="color:white;">Form Pemeriksaan Pasien</h6>
-                            </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Nama Klinik</div>
+                            <div class="col-lg-9 col-md-8" id="instance"></div>
+                        </div>
+                                                        
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Phone</div>
+                            <div class="col-lg-9 col-md-8" id="phone"></div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Email</div>
+                            <div class="col-lg-9 col-md-8" id="email"></div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Alamat</div>
+                            <div class="col-lg-9 col-md-8" id="address"></div>
+                        </div>
+                        <div class="row text-center d-flex justify-content-center">
+                            <br>
+                            <div id="qrcode"></div>
+                            <br>
+                            <a type="button" class="btn btn-outline-primary m-4" id='qrdl' style="max-width : 60%;" hidden><i class="fa fa-download me-2"></i>Download</a>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Recent Sales End -->
 
 
@@ -207,6 +249,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
 
 
     <script>
@@ -215,6 +258,8 @@
             
 
         var jumlah_pasien =  document.getElementById('jumlah_pasien');
+        const uuid = <?php echo json_encode($_SESSION['uuid']);?>;
+        getDetailKlinik(uuid);
 
         $.ajax({
                 type: 'GET',
@@ -224,8 +269,59 @@
                     jumlah_pasien.innerHTML = "";
                     jumlah_pasien.innerHTML += data.jumlah_pasien;
                     jumlah_pasien.innerHTML += " Pasien";
+                }
+        });
+        
+        function getDetailKlinik(uuidsearch){
+            
+            var instance = document.getElementById('instance');
+            var phone =  document.getElementById('phone');
+            var email =  document.getElementById('email');
+            var address =  document.getElementById('address');
+            var title_list =  document.getElementById('title_list');
+            
+            $.ajax({
+                type: 'GET',
+                dataType:"json",
+                url: 'webapi/adminwebapi.php?function=get_detail_klinik&uuid=' + uuidsearch,
+                success: function (data, status, xhr) {
+                    instance.innerHTML = "";
+                    instance.innerHTML += data.instance;
+                    phone.innerHTML = "";
+                    phone.innerHTML += data.phone;
+                    email.innerHTML = "";
+                    email.innerHTML += data.email;
+                    address.innerHTML = "";
+                    address.innerHTML += data.address;
+                            
+                    const makeQR = (uuidsearch, filename) => {
+                        var qrcode = new QRCode("qrcode", {
+                            text: uuid,
+                            width: 320,
+                            height: 320,
+                            colorDark: "#000000",
+                            colorLight: "#ffffff",
+                            correctLevel: QRCode.CorrectLevel.H
+                        });
+                        qrcode.makeCode(uuid);
+                
+                        setTimeout(() => {
+                            let qelem = document.querySelector('#qrcode img')
+                            let dlink = document.querySelector('#qrdl')
+                            let qr = qelem.getAttribute('src');
+                            dlink.setAttribute('href', qr);
+                            dlink.setAttribute('download', filename);
+                            dlink.removeAttribute('hidden');
+                        }, 500);
+                    }
+
+                    makeQR(uuid, data.instance);
               }
             });
+        
+        }
+
+
 
     });
     </script>
