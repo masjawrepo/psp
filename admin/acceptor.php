@@ -49,6 +49,22 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .t-text
+        {   
+            font-weight: 700;
+            margin-bottom: 0rem !important;
+            font-size: medium;
+        }
+        .d-text
+        {
+            font-size: large;
+            line-height: 1.2;
+            color: #666666 !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -142,47 +158,54 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="row g-2 align-items-center text-center justify-content-center">
-                        <div class="col-lg-10 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
-                            <form autocomplete="off" action="webapi/acceptorwebapi.php?function=cek_user" method="post" >
-                                <div class="col-sm-12 col-xl-12 mt-2">
-                                    <div class="d-flex align-items-center p-2" >
-                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Cek Pasien</h4>
-                                    </div>
+
+
+
+
+                    <div class="row g-2 align-items-center justify-content-center">
+                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
+                            <div class="rounded bg-light col-sm-12 col-xl-12 mt-2 mb-5">
+                                <div class="d-flex align-items-center p-2" >
+                                    <h4 class="mb-0 mt-1" style="margin-left: .5rem !important;">Data Pasien</h4>
                                 </div>
-                                <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
-                                    <div class="col-lg-9 col-xl-9">
-                                        <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="nik" placeholder="nik">
-                                            <label for="name">NIK Pasien</label>
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-xl-6">
+                                        <div class="p-4">
+                                            <div class="">
+                                                <p class="t-text">Nama Lengkap :</p>
+                                                <p class="d-text mb-3">Raafi Dwi Susanto</p>
+                                            </div>
+                                            <div class="">
+                                                <p class="t-text">Email :</h6>
+                                                <p class="d-text mb-3">sss</p>
+                                            </div>
+                                            <div class="">
+                                                <p class="t-text">No. WhatsApp :</h6>
+                                                <p class="d-text mb-3">sss</p>
+                                            </div>
+                                            <div class="">
+                                                <p class="t-text">Tanggal Lahir :</h6>
+                                                <p class="d-text mb-3">sss</p>
+                                            </div>
+                                            <div class="">
+                                                <p class="t-text">Alamat :</h6>
+                                                <p class="d-text mb-3">sss</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3 col-xl-3">
-                                        <button type="submit" class="btn btn-primary w-100 py-3">Cek</button>
+                                    <div class="col-sm-12 col-xl-6">
+                                        <div class="p-4">
+                                            <div class="">
+                                                <h6 class="mb-0">asasas</h6>
+                                                <p>sss</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
 
-
-
-
-                    <div class="row g-2 align-items-center text-center justify-content-center">
-                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="col-sm-12 col-xl-12 mt-2 mb-1">
-                                <div class="rounded bg-light d-flex align-items-center p-2" >
-                                    <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Pasien</h4>
-                                </div>
                             </div>
-                            <div class="row g-3 pt-4 px-4">
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="nik" placeholder="NIK">
-                                            <label for="name">Pasien</label>
-                                    </div>
-                                </div>
-                            </div>
+
+
                             <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
                                 <div class="col-sm-12 col-xl-12 mt-2 mb-1">
                                     <div class="rounded bg-light d-flex align-items-center p-2" >

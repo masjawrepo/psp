@@ -253,7 +253,7 @@ require_once('../include/conn.php');
 		//$member = $_POST['phone_number'];
 		//$member = 22;
 		
-		$query = $con->query('SELECT a.uuid_bidan, a.nik, a.fullname, a.email, a.phone, b.alamat
+		$query = $con->query('SELECT a.uuid_bidan, a.uuid, a.nik, a.fullname, a.email, a.phone, b.alamat
 								FROM `user` as a
 								JOIN `user_detail` as b 
 								ON a.uuid = b.uuid_user

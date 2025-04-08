@@ -221,7 +221,7 @@
                                             <div class="col-lg-9 col-md-8" id="acceptor_check">
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-9 col-md-8" id="buttons">
                                         </div>
 
@@ -325,14 +325,14 @@
                             acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Terdata</span></div>';
 
                             buttons.innerHTML = "";
-                            buttons.innerHTML += '<a type="button" class="btn btn-primary mt-3" href="acceptor.php"><i class="fa fa-book me-2"></i>Input Acceptor</a>';
+                            buttons.innerHTML += '<a type="button" class="btn btn-primary mt-3" href="acceptor.php?uuid=' + data.uuid + '"><i class="fa fa-book me-2"></i>Input Acceptor</a>';
 
                         } else if(data.data_acceptor == "Acceptor Available"){
                             acceptor_check.innerHTML = "";
                             acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Sudah Terdata</span></div>';
 
                             buttons.innerHTML = "";
-                            buttons.innerHTML += '<a type="button" class="btn btn-outline-primary mt-3" href="acceptor.php"><i class="fa fa-book me-2"></i>Periksa Pasien</a>';
+                            buttons.innerHTML += '<a type="button" class="btn btn-outline-primary mt-3" href="acceptor.php?uuid=' + data.uuid + '"><i class="fa fa-book me-2"></i>Periksa Pasien</a>';
 
                         }
                         //acceptor_check.innerHTML = "";
