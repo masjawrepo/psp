@@ -174,38 +174,57 @@
                                             <h4 class="mb-1 mt-1">Informasi Pasien</h4>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">NIK Pasien</div>
-                                        <div class="col-lg-9 col-md-8" id="nik_check">-</div>
-                                    </div>
-                                                                    
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">Nama Pasien</div>
-                                        <div class="col-lg-9 col-md-8" id="name_check">-</div>
-                                    </div>
-                                        
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">Email Pasien</div>
-                                        <div class="col-lg-9 col-md-8" id="email_check">-</div>
-                                    </div>
-                                        
-                                        
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">No. Telp Pasien</div>
-                                        <div class="col-lg-9 col-md-8" id="no_check">-</div>
-                                    </div>
-                                        
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">Alamat</div>
-                                        <div class="col-lg-9 col-md-8" id="address_check">-</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">Status Acceptor</div>
-                                        <div class="col-lg-9 col-md-8" id="acceptor_check">
-                                            <div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Terdata</span></div>
-                                            <div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Sudah Terdata</span></div>
+                                    <div class="col-sm-12 col-xl-12 1" style="margin-left: .5rem !important;padding-left: .5em !important;">
+                                        <div class="d-flex align-items-center" >
+                                            <p class="mb-1 mt-1">Silahkan Masukan NIK untuk Cek Pasien Terlebih Dahulu !</p>
                                         </div>
+                                    </div>
+                                    <div class="col-sm-12 col-xl-12 2" style="margin-left: .5rem !important;padding-left: .5em !important;">
+                                        <div class="d-flex align-items-center" >
+                                            <p class="mb-1 mt-1">Pasien Terdaftar Namun Tidak Terafiliasi Dengan Bidan Ini !</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-xl-12 3" style="margin-left: .5rem !important;padding-left: .5em !important;">
+                                        <div class="d-flex align-items-center" >
+                                            <p class="mb-1 mt-1">Pasien Tidak Terdaftar !</p>
+                                        </div>
+                                    </div>
+                                    <div class="4" style="margin-left: .5rem !important;padding-left: .5em !important;">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">NIK Pasien</div>
+                                            <div class="col-lg-9 col-md-8" id="nik_check">-</div>
+                                        </div>
+                                                                        
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">Nama Pasien</div>
+                                            <div class="col-lg-9 col-md-8" id="name_check">-</div>
+                                        </div>
+                                            
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">Email Pasien</div>
+                                            <div class="col-lg-9 col-md-8" id="email_check">-</div>
+                                        </div>
+                                            
+                                            
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">No. Telp Pasien</div>
+                                            <div class="col-lg-9 col-md-8" id="no_check">-</div>
+                                        </div>
+                                            
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">Alamat</div>
+                                            <div class="col-lg-9 col-md-8" id="address_check">-</div>
+                                        </div>
+
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-3 col-md-4 label ">Status Acceptor</div>
+                                            <div class="col-lg-9 col-md-8" id="acceptor_check">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-9 col-md-8" id="buttons">
+                                        </div>
+
                                     </div>
                                         
                                 </div>
@@ -253,7 +272,9 @@
     <script>
 
     $(document).ready( function() {
-            
+        $(".2").hide();
+        $(".3").hide();
+        $(".4").hide();
     });
 
     function cekPasien(){
@@ -266,24 +287,58 @@
         var no_check = document.getElementById('no_check');
         var address_check =  document.getElementById('address_check');
         var acceptor_check =  document.getElementById('acceptor_check');
+        var buttons =  document.getElementById('buttons');
 
         $.ajax({
             type: 'GET',
             dataType:"json",
-            url: 'webapi/adminwebapi.php?function=cek_pasien=' + nik,
+            url: 'webapi/adminwebapi.php?function=cek_pasien&nik=' + nik,
             success: function (data, status, xhr) {
-                nik_check.innerHTML = "";
-                nik_check.innerHTML += data.nik_check;
-                name_check.innerHTML = "";
-                name_check.innerHTML += data.name_check;
-                email_check.innerHTML = "";
-                email_check.innerHTML += data.email_check;
-                no_check.innerHTML = "";
-                no_check.innerHTML += data.no_check;
-                address_check.innerHTML = "";
-                address_check.innerHTML += data.address_check;
-                acceptor_check.innerHTML = "";
-                acceptor_check.innerHTML += data.acceptor_check;
+                if (data.data_available == "No Data"){
+                    $(".1").hide();
+                    $(".2").hide();
+                    $(".3").show();
+                    $(".4").hide();
+                } else if (data.data_available == "Data Available"){
+                    if (data.uuid_bidan != <?php echo json_encode($_SESSION['uuid']);?>){
+                        $(".1").hide();
+                        $(".2").show();
+                        $(".3").hide();
+                        $(".4").hide();
+                    } else if (data.uuid_bidan == <?php echo json_encode($_SESSION['uuid']);?>){
+                        $(".1").hide();
+                        $(".2").hide();
+                        $(".3").hide();
+                        $(".4").show();
+                        nik_check.innerHTML = "";
+                        nik_check.innerHTML += data.nik;
+                        name_check.innerHTML = "";
+                        name_check.innerHTML += data.fullname;
+                        email_check.innerHTML = "";
+                        email_check.innerHTML += data.email;
+                        no_check.innerHTML = "";
+                        no_check.innerHTML += data.phone;
+                        address_check.innerHTML = "";
+                        address_check.innerHTML += data.alamat;
+                        if (data.data_acceptor == "Acceptor NA"){
+                            acceptor_check.innerHTML = "";
+                            acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Terdata</span></div>';
+
+                            buttons.innerHTML = "";
+                            buttons.innerHTML += '<a type="button" class="btn btn-primary mt-3" href="acceptor.php"><i class="fa fa-book me-2"></i>Input Acceptor</a>';
+
+                        } else if(data.data_acceptor == "Acceptor Available"){
+                            acceptor_check.innerHTML = "";
+                            acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Sudah Terdata</span></div>';
+
+                            buttons.innerHTML = "";
+                            buttons.innerHTML += '<a type="button" class="btn btn-outline-primary mt-3" href="acceptor.php"><i class="fa fa-book me-2"></i>Periksa Pasien</a>';
+
+                        }
+                        //acceptor_check.innerHTML = "";
+                    }
+                }
+                //acceptor_check.innerHTML += data.acceptor_check;
                 //alert(data.phone_number);
                 //console.log(data);
                 //datamember = data;

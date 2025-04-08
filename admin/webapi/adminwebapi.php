@@ -245,5 +245,57 @@ require_once('../include/conn.php');
     }
 
    
+    function cek_pasien()
+    {
+    	global $con;
+    	$nik = '"'.$_REQUEST['nik'].'"';
+    	$nik = str_replace("\r\n","",$nik);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->query('SELECT a.uuid_bidan, a.nik, a.fullname, a.email, a.phone, b.alamat
+								FROM `user` as a
+								JOIN `user_detail` as b 
+								ON a.uuid = b.uuid_user
+								where a.nik = '.$nik.';');         
+		while($row=mysqli_fetch_assoc($query))
+		{
+			$data = $row;
+		}
+		$query->close();
+
+		if(!isset($data)){
+			$result = array("data_available" => "No Data");
+		}
+		else {
+
+			$new_row = array("data_available" => "Data Available");
+			$resultavailable = array_merge($data, $new_row);
+
+			$queryacceptor = $con->query('SELECT *
+									FROM `user` as a
+									JOIN `acceptor` as b 
+									ON a.uuid = b.uuid_user
+									where a.nik = '.$nik.';');         
+			while($rowacceptor=mysqli_fetch_assoc($queryacceptor))
+			{
+				$dataacceptor = $rowacceptor;
+			}
+			$queryacceptor->close();
+
+			if(!isset($dataacceptor)){
+				$resultacceptor = array("data_acceptor" => "Acceptor NA");
+				$result = array_merge($resultavailable, $resultacceptor);
+			} else {
+				$resultacceptor = array("data_acceptor" => "Acceptor Available");
+				$result = array_merge($resultavailable, $resultacceptor);
+			}
+
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($result);
+
+    }
 
 ?>
