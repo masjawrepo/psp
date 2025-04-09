@@ -153,6 +153,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="pendidikan"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Tidak Tamat SD/MI</option>
                                             <option value="2">Tamat SD/MI</option>
                                             <option value="3">Tamat SLTP/MTSN</option>
@@ -167,6 +168,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="pendidikan_pasangan"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Tidak Tamat SD/MI</option>
                                             <option value="2">Tamat SD/MI</option>
                                             <option value="3">Tamat SLTP/MTSN</option>
@@ -189,6 +191,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="pekerjaan"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Petani</option>
                                             <option value="2">Nelayan</option>
                                             <option value="3">Pedagang</option>
@@ -206,6 +209,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="pekerjaan_pasangan"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Petani</option>
                                             <option value="2">Nelayan</option>
                                             <option value="3">Pedagang</option>
@@ -223,6 +227,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="asuransi"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">BPJS Kesehatan</option>
                                             <option value="2">Lainnya</option>
                                             <option value="3">Tidak</option>
@@ -233,14 +238,14 @@
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Jumlah Anak yang Masih Hidup</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak_pria_hidup" placeholder="number">
+                                        <input type="number" class="form-control" name="anak_pria_hidup" placeholder="number" value="0">
                                         <label for="number">Laki-Laki</label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak_wanita_hidup" placeholder="number">
+                                        <input type="number" class="form-control" name="anak_wanita_hidup" placeholder="number" value="0">
                                         <label for="number">Perempuan</label>
                                     </div>
                                 </div>
@@ -248,14 +253,14 @@
                                 <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Umur Anak Terakhir</p>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="tahun_anak_terakhir" placeholder="number">
+                                        <input type="number" class="form-control" name="tahun_anak_terakhir" placeholder="number" value="0">
                                         <label for="number">Tahun</label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="bulan_anak_terakhir" placeholder="number">
+                                        <input type="number" class="form-control" name="bulan_anak_terakhir" placeholder="number" value="0">
                                         <label for="number">Bulan</label>
                                     </div>
                                 </div>
@@ -264,10 +269,11 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="status_kb"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Baru Pertama Kali</option>
                                             <option value="2">Pernah Pakai Alat KB (Berhenti Sesudah Bersalin/Keguguran)</option>
                                             <option value="3">Pernah Pakai Alat KB</option>
-                                            <option value="3">Sedang KB</option>
+                                            <option value="4">Sedang KB</option>
                                         </select>
                                         <label for="floatingSelect">Status Peserta KB</label>
                                     </div>
@@ -277,6 +283,7 @@
                                     <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="kb_terakhir"
                                             aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
                                             <option value="1">Suntikan 1 Bulanan</option>
                                             <option value="2">Suntikan 3 Bulanan</option>
                                             <option value="3">Pil</option>

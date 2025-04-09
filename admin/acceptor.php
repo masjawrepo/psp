@@ -158,56 +158,104 @@
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-
-
-
-
                     <div class="row g-2 align-items-center justify-content-center">
-                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="rounded bg-light col-sm-12 col-xl-12 mt-2 mb-5">
-                                <div class="d-flex align-items-center p-2" >
+
+                        <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
+                            <div class="border rounded p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+                                <div class="d-flex align-items-center text-center justify-content-center p-2" >
                                     <h4 class="mb-0 mt-1" style="margin-left: .5rem !important;">Data Pasien</h4>
                                 </div>
                                 <div class="row g-4">
-                                    <div class="col-sm-12 col-xl-6">
+                                    <div class="col-sm-12 col-xl-4">
                                         <div class="p-4">
-                                            <div class="">
+                                            <div class="name">
                                                 <p class="t-text">Nama Lengkap :</p>
-                                                <p class="d-text mb-3">Raafi Dwi Susanto</p>
+                                                <p class="d-text mb-3" id="name"></p>
                                             </div>
-                                            <div class="">
-                                                <p class="t-text">Email :</h6>
-                                                <p class="d-text mb-3">sss</p>
+                                            <div class="nik">
+                                                <p class="t-text">Nomor Induk Kependudukan :</p>
+                                                <p class="d-text mb-3" id="nik"></p>
                                             </div>
-                                            <div class="">
-                                                <p class="t-text">No. WhatsApp :</h6>
-                                                <p class="d-text mb-3">sss</p>
+                                            <div class="email">
+                                                <p class="t-text">Email :</p>
+                                                <p class="d-text mb-3" id="email"></p>
                                             </div>
-                                            <div class="">
-                                                <p class="t-text">Tanggal Lahir :</h6>
-                                                <p class="d-text mb-3">sss</p>
+                                            <div class="phone">
+                                                <p class="t-text">No. WhatsApp :</p>
+                                                <p class="d-text mb-3" id="phone"></p>
                                             </div>
-                                            <div class="">
-                                                <p class="t-text">Alamat :</h6>
-                                                <p class="d-text mb-3">sss</p>
+                                            <div class="dob">
+                                                <p class="t-text">Tanggal Lahir :</p>
+                                                <p class="d-text mb-3" id="dob"></p>
+                                            </div>
+                                            <div class="alamat">
+                                                <p class="t-text">Alamat :</p>
+                                                <p class="d-text mb-3" id="alamat"></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-xl-6">
+
+
+                                    <div class="col-sm-12 col-xl-4">
                                         <div class="p-4">
-                                            <div class="">
-                                                <h6 class="mb-0">asasas</h6>
-                                                <p>sss</p>
+                                            <div class="pasangan">
+                                                <p class="t-text">Nama Suami / Istri (Pasangan) :</p>
+                                                <p class="d-text mb-3" id="pasangan"></p>
                                             </div>
+                                            <div class="pendidikan">
+                                                <p class="t-text">Status Pendidikan :</p>
+                                                <p class="d-text mb-3" id="pendidikan"></p>
+                                            </div>
+                                            <div class="pendidikan_pasangan">
+                                                <p class="t-text">Status Pendidikan Pasangan :</p>
+                                                <p class="d-text mb-3" id="pendidikan_pasangan"></p>
+                                            </div>
+                                            <div class="pekerjaan">
+                                                <p class="t-text">Pekerjaan :</p>
+                                                <p class="d-text mb-3" id="pekerjaan"></p>
+                                            </div>
+                                            <div class="pekerjaan_pasangan">
+                                                <p class="t-text">Pekerjaan Pasangan :</p>
+                                                <p class="d-text mb-3" id="pekerjaan_pasangan"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-xl-4">
+                                        <div class="p-4">
+                                            <div class="asuransi">
+                                                <p class="t-text">Asuransi :</p>
+                                                <p class="d-text mb-3" id="asuransi"></p>
+                                            </div>
+                                            <div class="mb-3 ">
+                                                <p class="t-text">Jumlah Anak yang Masih Hidup :</p>
+                                                <p class="d-text mb-0 anak_pria_hidup" id="anak_pria_hidup"></p>
+                                                <p class="d-text mb-0 anak_wanita_hidup" id="anak_wanita_hidup"></p>
+                                            </div>
+                                            <div class="anak_terakhir">
+                                                <p class="t-text">Umur Anak Terakhir :</p>
+                                                <p class="d-text mb-3" id="anak_terakhir"></p>
+                                            </div>
+                                            <div class="status_kb">
+                                                <p class="t-text">Status Peserta KB :</p>
+                                                <p class="d-text mb-3" id="status_kb"></p>
+                                            </div>
+                                            <div class="kb_terakhir">
+                                                <p class="t-text">Alat / Obat / Cara KB Terakhir :</p>
+                                                <p class="d-text mb-3" id="kb_terakhir"></p>
+                                            </div>
+
+
+
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                        </div>
 
-
-                            <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
-                                <div class="col-sm-12 col-xl-12 mt-2 mb-1">
+                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
+                            <form autocomplete="off" action="" method="post" >
+                                <div class="col-sm-12 col-xl-12 mt-1 mb-1">
                                     <div class="rounded bg-light d-flex align-items-center p-2" >
                                         <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Anamnese</h4>
                                     </div>
@@ -410,6 +458,7 @@
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -454,7 +503,16 @@
     <script>
 
     $( document ).ready(function() {
-            
+
+        moment.locale('id');  
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const uuid = urlParams.get('uuid')
+        //console.log(product);
+        //alert(uuid);
+        getPasien(uuid);
+          
+
         $('#SelectKontrasepsi').change(function(){
             if( $(this).val()=="1" || $(this).val()=="2"){
                 $(".iud_implan").show();
@@ -465,6 +523,154 @@
             }
         });
         $('#SelectKontrasepsi').trigger("change");
+
+
+        function getPasien(uuidsearch){
+
+            const array_pendidikan = new Array("Tidak Tamat SD/MI", "Tamat SD/MI", "Tamat SLTP/MTSN", "Tamat SMA/MA", "Tamat Perguruan Tinggi", "Tidak Sekolah");
+            const array_pekerjaan = new Array("Petani", "Nelayan", "Pedagang", "PNS/TNI/POLRI", "Pegawai Swasta", "Wiraswasta", "Pensiunan", "Pekerja Lepas", "Tidak Bekerja");
+            const array_asuransi = new Array("BPJS Kesehatan", "Lainnya", "Tidak");
+            const array_status_kb = new Array("Baru Pertama Kali", "Pernah Pakai Alat KB (Berhenti Sesudah Bersalin/Keguguran)", "Pernah Pakai Alat KB", "Sedang KB");
+            const array_kb_terakhir = new Array("Suntikan 1 Bulanan", "Suntikan 3 Bulanan", "Pil", "Kondom", "Implan 1 Batang", "Implan 2 Batang", "IUD", "IUD Lain-Lain", "Tubektomi", "Vasektomi", "Belum Pernah");
+            
+
+            
+            
+            
+            $(".name").hide();
+            var name = document.getElementById('name');
+            $(".nik").hide();
+            var nik = document.getElementById('nik');
+            $(".email").hide();
+            var email = document.getElementById('email');
+            $(".phone").hide();
+            var phone = document.getElementById('phone');
+            $(".dob").hide();
+            var dob = document.getElementById('dob');
+            $(".alamat").hide();
+            var alamat = document.getElementById('alamat');
+            $(".pasangan").hide();
+            var pasangan = document.getElementById('pasangan');
+            $(".pendidikan").hide();
+            var pendidikan = document.getElementById('pendidikan');
+            $(".pendidikan_pasangan").hide();
+            var pendidikan_pasangan = document.getElementById('pendidikan_pasangan');
+            $(".pekerjaan").hide();
+            var pekerjaan = document.getElementById('pekerjaan');
+            $(".pekerjaan_pasangan").hide();
+            var pekerjaan_pasangan = document.getElementById('pekerjaan_pasangan');
+
+            $(".anak_pria_hidup").hide();
+            var anak_pria_hidup = document.getElementById('anak_pria_hidup');
+            $(".anak_wanita_hidup").hide();
+            var anak_wanita_hidup = document.getElementById('anak_wanita_hidup');
+            $(".anak_terakhir").hide();
+            var anak_terakhir = document.getElementById('anak_terakhir');
+            $(".status_kb").hide();
+            var status_kb = document.getElementById('status_kb');
+            $(".kb_terakhir").hide();
+            var kb_terakhir = document.getElementById('kb_terakhir');
+  
+  
+
+
+
+            $.ajax({
+                type: 'GET',
+                dataType:"json",
+                url: 'webapi/adminwebapi.php?function=get_detail_pasien&uuid=' + uuidsearch,
+                success: function (data, status, xhr) {
+                    if(data.hasOwnProperty("fullname")){
+                        $(".name").show();
+                        name.innerHTML = "";
+                        name.innerHTML += data.fullname;
+                    }
+                    if(data.hasOwnProperty("nik")){
+                        $(".nik").show();
+                        nik.innerHTML = "";
+                        nik.innerHTML += data.nik;
+                    }
+                    if(data.hasOwnProperty("email")){
+                        $(".email").show();
+                        email.innerHTML = "";
+                        email.innerHTML += data.email;
+                    }
+                    if(data.hasOwnProperty("phone")){
+                        $(".phone").show();
+                        phone.innerHTML = "";
+                        phone.innerHTML += data.phone;
+                    }
+                    if(data.hasOwnProperty("dob")){
+                        $(".dob").show();
+                        dob.innerHTML = "";
+                        dob.innerHTML += moment(data.dob).format("DD MMMM YYYY");
+                    }
+                    if(data.hasOwnProperty("alamat")){
+                        $(".alamat").show();
+                        alamat.innerHTML = "";
+                        alamat.innerHTML += data.alamat;
+                    }
+                    if(data.hasOwnProperty("nama_pasangan")){
+                        $(".pasangan").show();
+                        pasangan.innerHTML = "";
+                        pasangan.innerHTML += data.nama_pasangan;
+                    }
+                    if(data.hasOwnProperty("pendidikan")){
+                        $(".pendidikan").show();
+                        pendidikan.innerHTML = "";
+                        pendidikan.innerHTML += array_pendidikan[data.pendidikan - 1 ];
+                    }
+                    if(data.hasOwnProperty("pendidikan_pasangan")){
+                        $(".pendidikan_pasangan").show();
+                        pendidikan_pasangan.innerHTML = "";
+                        pendidikan_pasangan.innerHTML += array_pendidikan[data.pendidikan_pasangan - 1];
+                    }
+                    if(data.hasOwnProperty("pekerjaan")){
+                        $(".pekerjaan").show();
+                        pekerjaan.innerHTML = "";
+                        pekerjaan.innerHTML += array_pekerjaan[data.pekerjaan - 1 ];
+                    }
+                    if(data.hasOwnProperty("pekerjaan_pasangan")){
+                        $(".pekerjaan_pasangan").show();
+                        pekerjaan_pasangan.innerHTML = "";
+                        pekerjaan_pasangan.innerHTML += array_pekerjaan[data.pekerjaan_pasangan - 1];
+                    }
+                    if(data.hasOwnProperty("asuransi")){
+                        $(".asuransi").show();
+                        asuransi.innerHTML = "";
+                        asuransi.innerHTML += array_asuransi[data.asuransi - 1];
+                    }
+                    if(data.hasOwnProperty("anak_pria_hidup")){
+                        $(".anak_pria_hidup").show();
+                        anak_pria_hidup.innerHTML = "";
+                        anak_pria_hidup.innerHTML += data.anak_pria_hidup + " Anak Laki-Laki";
+                    }
+                    if(data.hasOwnProperty("anak_wanita_hidup")){
+                        $(".anak_wanita_hidup").show();
+                        anak_wanita_hidup.innerHTML = "";
+                        anak_wanita_hidup.innerHTML += data.anak_wanita_hidup + " Anak Perempuan";
+                    }
+                    if(data.hasOwnProperty("tahun_anak_terakhir")){
+                        $(".anak_terakhir").show();
+                        anak_terakhir.innerHTML = "";
+                        anak_terakhir.innerHTML += data.tahun_anak_terakhir + " Tahun " + data.bulan_anak_terakhir + " Bulan";
+                    }
+                    if(data.hasOwnProperty("status_kb")){
+                        $(".status_kb").show();
+                        status_kb.innerHTML = "";
+                        status_kb.innerHTML += array_status_kb[data.status_kb - 1];
+                    }
+                    if(data.hasOwnProperty("kb_terakhir")){
+                        $(".kb_terakhir").show();
+                        kb_terakhir.innerHTML = "";
+                        kb_terakhir.innerHTML += array_kb_terakhir[data.kb_terakhir - 1];
+                    }
+
+
+                }
+            });
+        
+        }
 
     });
     </script>

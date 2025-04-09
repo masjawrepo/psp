@@ -82,8 +82,8 @@ require_once('../include/conn.php');
    }
    
    function get_list_datatable_klinik()
-    {
-       global $con;      
+   {
+      global $con;      
 	   // fetch records
 		//$query = $con->query('SELECT a.uuid ,a.fullname, b.branchname, c.rolename, CASE WHEN a.isactive > 0 THEN "Active" ELSE "Deactive" END AS                  status FROM user as a JOIN branch as b ON b.id=a.branch_id JOIN role as c ON c.id=a.role_id;');
 
@@ -113,10 +113,10 @@ require_once('../include/conn.php');
 			);
 			echo json_encode($dataset);	
 		}
-    }
+   }
 
-    function get_detail_klinik()
-    {
+   function get_detail_klinik()
+   {
     	global $con;
     	$uuid = '"'.$_REQUEST['uuid'].'"';
     	$uuid = str_replace("\r\n","",$uuid);
@@ -137,10 +137,10 @@ require_once('../include/conn.php');
 		$query->close();
 		header('Content-Type: application/json');
 		echo json_encode($data);
-    }
+   }
    
    function get_list_datatable_pasien()
-    {
+   {
 		global $con;      
 		// fetch records
 		//$query = $con->query('SELECT a.uuid ,a.fullname, b.branchname, c.rolename, CASE WHEN a.isactive > 0 THEN "Active" ELSE "Deactive" END AS                  status FROM user as a JOIN branch as b ON b.id=a.branch_id JOIN role as c ON c.id=a.role_id;');
@@ -176,10 +176,10 @@ require_once('../include/conn.php');
 			);
 			echo json_encode($dataset);	
 		}
-    }
+   }
 
-    function get_list_datatable_pasien_bidan_affiliate()
-    {
+   function get_list_datatable_pasien_bidan_affiliate()
+   {
     	global $con;
     	$uuid = '"'.$_REQUEST['uuid'].'"';
     	$uuid = str_replace("\r\n","",$uuid);
@@ -221,7 +221,7 @@ require_once('../include/conn.php');
    }
 
    function get_count_pasien_affiliate()
-    {
+   {
     	global $con;
     	$uuid = '"'.$_REQUEST['uuid'].'"';
     	$uuid = str_replace("\r\n","",$uuid);
@@ -242,11 +242,11 @@ require_once('../include/conn.php');
 		$query->close();
 		header('Content-Type: application/json');
 		echo json_encode($data);
-    }
+   }
 
    
-    function cek_pasien()
-    {
+   function cek_pasien()
+   {
     	global $con;
     	$nik = '"'.$_REQUEST['nik'].'"';
     	$nik = str_replace("\r\n","",$nik);
@@ -295,7 +295,35 @@ require_once('../include/conn.php');
 
 		header('Content-Type: application/json');
 		echo json_encode($result);
+   }
 
-    }
+
+   function get_detail_pasien()
+   {
+    	global $con;
+    	$uuid = '"'.$_REQUEST['uuid'].'"';
+    	$uuid = str_replace("\r\n","",$uuid);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->query('SELECT *
+									FROM `user` as a
+									JOIN `user_detail` as b 
+									ON a.uuid = b.uuid_user
+									where a.uuid = '.$uuid.';');            
+		while($row=mysqli_fetch_object($query))
+		{
+			$data =$row;
+		}
+		//$response=array(
+		//               'status' => 1,
+		//               'message' =>'Success',
+		//               'data' => $data
+		//            );
+		//$query->close();
+		$query->close();
+		header('Content-Type: application/json');
+		echo json_encode($data);
+   }
 
 ?>
