@@ -26,6 +26,13 @@ if (!isset($_SESSION['loggedin'])) {
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
+    <style>
+        .text-red
+        {   
+			color: #fe2775 !important;
+        }
+
+    </style>
 </head>
 <body>
 	
@@ -188,16 +195,11 @@ if (!isset($_SESSION['loggedin'])) {
 		</div>
 
 		<!-- intro app -->
-		<div class="intro-app">
-			<div class="container">
-				<div class="intro-content">
-					<div class="mask"></div>
-					<img src="images/intro.jpg" alt="image-demo">
-					<div class="caption">
-						<h4 class="text-white mb-1">Lorem Ipsum</h4>
-						<p class="text-white">Lorem Ipsum</p>
-					</div>
-				</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><div class="img"><img src="images/horizontal2.jpg" alt="image-demo"></div></div>
+				<div class="swiper-slide"><div class="img"><img src="images/horizontal1.jpg" alt="image-demo"></div></div>
+				<div class="swiper-slide"><div class="img"><img src="images/horizontal3.jpg" alt="image-demo"></div></div>
 			</div>
 		</div>
 		<!-- end intro app -->
@@ -212,6 +214,7 @@ if (!isset($_SESSION['loggedin'])) {
 			
 			<!-- tabs -->
 			<div class="tab-two">
+
 				<ul class="nav nav-fill nav-separate" id="myTab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="true">My Contraception</a>
@@ -228,19 +231,7 @@ if (!isset($_SESSION['loggedin'])) {
 				<div class="tab-content">
 					<div class="tab-pane fade show active" id="features" role="tabpanel" aria-labelledby="features-tab">
 
-						<div class="container">
-							<div class="card bg-lightblue border-0">
-								<div class="card-body">
-									<h5 class="card-title">Description</h5>
-									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- separator -->
-						<div class="separator-medium"></div>
-						<!-- end separator -->
-
+						<!--
 						<div class="list-view list-colored">
 							<ul>
 								<li class="list-item">
@@ -263,14 +254,38 @@ if (!isset($_SESSION['loggedin'])) {
 								</li>
 							</ul>
 						</div>
+						-->
+						<div class="container">
+							<div class="row">
+
+								<div class="col-sm-12 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">My Medical Record</h5>
+											<h6 class="card-subtitle text-red">History</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click</h5>
+											<h6 class="card-location text-red">To See Detail</h6>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
 					</div>
+
 					<div class="tab-pane" id="apps" role="tabpanel" aria-labelledby="apps-tab">
 						
 						<div class="container">
 							<div class="card bg-lightblue border-0">
 								<div class="card-body">
 									<h5 class="card-title">Description</h5>
-									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+									<p class="card-text">Di halaman ini kamu bisa pelajari lebih lanjut mengenai jenis-jenis kontrasepsi yang bisa kamu gunakan!.</p>
 								</div>
 							</div>
 						</div>
@@ -279,6 +294,192 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="separator-medium"></div>
 						<!-- end separator -->
 
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">Calendar</h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Lactational Amenorrhea</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">Kondom</h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Pil</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">Injection</h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Patch</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">Ring Hormonal</h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Female Condom</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">IUD Contraception</h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Implan Contraception</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card card-highlight">
+										<div class="card-body">
+											<h5 class="card-title card-title-large">Vacektomy/h5>
+											<h6 class="card-subtitle">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small">Click Here</h5>
+											<h6 class="card-location">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body">
+											<h5 class="card-title card-title-large text-red">Tubektomy</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--
 						<div class="list-view list-colored">
 							<ul>
 								<li class="list-item">
@@ -391,6 +592,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</li>
 							</ul>
 						</div>
+						-->
 					</div>
 					
 				</div>
