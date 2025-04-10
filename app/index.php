@@ -31,6 +31,10 @@ if (!isset($_SESSION['loggedin'])) {
         {   
 			color: #fe2775 !important;
         }
+        .high-same{
+        	height: 55px;
+    		align-content: center;
+        }
 
     </style>
 </head>
@@ -42,7 +46,7 @@ if (!isset($_SESSION['loggedin'])) {
 			<a href="#menu" class="link menu-link"><i class="icon ion-ios-menu"></i></a>
 		</div>
 		<div class="right">
-			<a href="#" class="link"><img src="images/square6.jpg" alt=""></a>
+			<a href="#" class="link"><img src="../img/favicon.png" alt=""></a>
 		</div>
 	</div>
 	<!-- end navbar -->
@@ -197,9 +201,11 @@ if (!isset($_SESSION['loggedin'])) {
 		<!-- intro app -->
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"><div class="img"><img src="images/horizontal2.jpg" alt="image-demo"></div></div>
+				<div class="swiper-slide"><div class="img"><img src="images/banner/Banner-Chat.png" alt="image-demo"></div></div>
+				<!--
 				<div class="swiper-slide"><div class="img"><img src="images/horizontal1.jpg" alt="image-demo"></div></div>
 				<div class="swiper-slide"><div class="img"><img src="images/horizontal3.jpg" alt="image-demo"></div></div>
+				-->
 			</div>
 		</div>
 		<!-- end intro app -->
@@ -215,12 +221,12 @@ if (!isset($_SESSION['loggedin'])) {
 			<!-- tabs -->
 			<div class="tab-two">
 
-				<ul class="nav nav-fill nav-separate" id="myTab" role="tablist">
+				<ul class="nav nav-fill nav-separate d-flex align-items-center text-center justify-content-center" style="height: 55px;" id="myTab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="true">My Contraception</a>
+						<a class="nav-link active high-same" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="true">My Contraception</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="apps-tab" data-toggle="tab" href="#apps" role="tab" aria-controls="apps" aria-selected="false">Contraception</a>
+						<a class="nav-link high-same" id="apps-tab" data-toggle="tab" href="#apps" role="tab" aria-controls="apps" aria-selected="false">Contraception</a>
 					</li>
 				</ul>
 
@@ -281,13 +287,9 @@ if (!isset($_SESSION['loggedin'])) {
 
 					<div class="tab-pane" id="apps" role="tabpanel" aria-labelledby="apps-tab">
 						
-						<div class="container">
-							<div class="card bg-lightblue border-0">
-								<div class="card-body">
+						<div class="container text-center">
 									<h5 class="card-title">Description</h5>
 									<p class="card-text">Di halaman ini kamu bisa pelajari lebih lanjut mengenai jenis-jenis kontrasepsi yang bisa kamu gunakan!.</p>
-								</div>
-							</div>
 						</div>
 
 						<!-- separator -->
@@ -298,7 +300,7 @@ if (!isset($_SESSION['loggedin'])) {
 							<div class="row">
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='contraception-calendar.php';">
 											<h5 class="card-title card-title-large">Calendar</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -449,7 +451,7 @@ if (!isset($_SESSION['loggedin'])) {
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
 										<div class="card-body">
-											<h5 class="card-title card-title-large">Vacektomy/h5>
+											<h5 class="card-title card-title-large">Vacektomy</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
 											<!-- separator -->
@@ -615,7 +617,7 @@ if (!isset($_SESSION['loggedin'])) {
 		<div class="container">
 			<ul class="toolbar-bottom toolbar-wrap">
 				<li class="toolbar-item">
-					<a href="index.html" class="toolbar-link toolbar-link-active">
+					<a href="index.php" class="toolbar-link toolbar-link-active">
 						<i class="icon ion-ios-home"></i>
 					</a>
 				</li>
