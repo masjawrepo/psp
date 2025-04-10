@@ -82,7 +82,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index-nakes.php" class="navbar-brand mx-4 mb-3">
                     <img src="../img/pillsync+.png" style="max-width:6em" alt="Logo">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index-psp.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index-nakes.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="list-pasien-nakes.php" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>List Pasien</a>
 					<!-- 
                     <div class="nav-item dropdown">
@@ -133,7 +133,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" style="min-height: 4.2em;">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="index-nakes.php" class="navbar-brand d-flex d-lg-none me-4">
                     <img src="../img/favicon.png" style="max-width:2.5em">
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
