@@ -63,6 +63,7 @@
             line-height: 1.2;
             color: #666666 !important;
         }
+
     </style>
 
 </head>
@@ -161,95 +162,113 @@
                     <div class="row g-2 align-items-center justify-content-center">
 
                         <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="border rounded p-4 col-sm-12 col-xl-12 mt-2 mb-5">
-                                <div class="d-flex align-items-center text-center justify-content-center p-2" >
-                                    <h4 class="mb-0 mt-1" style="margin-left: .5rem !important;">Data Pasien</h4>
+                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+
+
+
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="flase" aria-controls="flush-collapseOne">
+                                                <div class="p-2" >
+                                                    <h4 class="m-0">Data Pasien</h4>
+                                                    <p class="mt-1 mb-0">Klik untuk melihat</p>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="row g-4 d-flex align-items-center justify-content-center pb-4">
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Umum</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 name">
+                                                                <p class="t-text">Nama Lengkap :</p>
+                                                                <p class="d-text mb-0" id="name"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 phone">
+                                                                <p class="t-text">No. WhatsApp :</p>
+                                                                <p class="d-text mb-0" id="phone"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 email">
+                                                                <p class="t-text">Email :</p>
+                                                                <p class="d-text mb-0" id="email"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 nik">
+                                                                <p class="t-text">Nomor Induk Kependudukan :</p>
+                                                                <p class="d-text mb-0" id="nik"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 dob">
+                                                                <p class="t-text">Tanggal Lahir :</p>
+                                                                <p class="d-text mb-0" id="dob"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pendidikan">
+                                                                <p class="t-text">Status Pendidikan :</p>
+                                                                <p class="d-text mb-0" id="pendidikan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pekerjaan">
+                                                                <p class="t-text">Pekerjaan :</p>
+                                                                <p class="d-text mb-0" id="pekerjaan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 alamat">
+                                                                <p class="t-text">Alamat :</p>
+                                                                <p class="d-text mb-0" id="alamat"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Suami / Istri (Pasangan)</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pasangan">
+                                                                <p class="t-text">Nama Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pasangan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pendidikan_pasangan">
+                                                                <p class="t-text">Status Pendidikan Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pendidikan_pasangan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pekerjaan_pasangan">
+                                                                <p class="t-text">Pekerjaan Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pekerjaan_pasangan"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Lainnya</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 asuransi">
+                                                                <p class="t-text">Asuransi :</p>
+                                                                <p class="d-text mb-0" id="asuransi"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 kb_terakhir">
+                                                                <p class="t-text">Alat / Obat / Cara KB Terakhir :</p>
+                                                                <p class="d-text mb-0" id="kb_terakhir"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 status_kb">
+                                                                <p class="t-text">Jumlah Anak Masih Hidup :</p>
+                                                                <p class="d-text mb-0 anak_pria_hidup" id="anak_pria_hidup"></p>
+                                                                <p class="d-text mb-0 anak_wanita_hidup" id="anak_wanita_hidup"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 anak_terakhir">
+                                                                <p class="t-text">Umur Anak Terakhir :</p>
+                                                                <p class="d-text mb-0" id="anak_terakhir"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-xl-4">
-                                        <div class="p-4">
-                                            <div class="name">
-                                                <p class="t-text">Nama Lengkap :</p>
-                                                <p class="d-text mb-3" id="name"></p>
-                                            </div>
-                                            <div class="nik">
-                                                <p class="t-text">Nomor Induk Kependudukan :</p>
-                                                <p class="d-text mb-3" id="nik"></p>
-                                            </div>
-                                            <div class="email">
-                                                <p class="t-text">Email :</p>
-                                                <p class="d-text mb-3" id="email"></p>
-                                            </div>
-                                            <div class="phone">
-                                                <p class="t-text">No. WhatsApp :</p>
-                                                <p class="d-text mb-3" id="phone"></p>
-                                            </div>
-                                            <div class="dob">
-                                                <p class="t-text">Tanggal Lahir :</p>
-                                                <p class="d-text mb-3" id="dob"></p>
-                                            </div>
-                                            <div class="alamat">
-                                                <p class="t-text">Alamat :</p>
-                                                <p class="d-text mb-3" id="alamat"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-sm-12 col-xl-4">
-                                        <div class="p-4">
-                                            <div class="pasangan">
-                                                <p class="t-text">Nama Suami / Istri (Pasangan) :</p>
-                                                <p class="d-text mb-3" id="pasangan"></p>
-                                            </div>
-                                            <div class="pendidikan">
-                                                <p class="t-text">Status Pendidikan :</p>
-                                                <p class="d-text mb-3" id="pendidikan"></p>
-                                            </div>
-                                            <div class="pendidikan_pasangan">
-                                                <p class="t-text">Status Pendidikan Pasangan :</p>
-                                                <p class="d-text mb-3" id="pendidikan_pasangan"></p>
-                                            </div>
-                                            <div class="pekerjaan">
-                                                <p class="t-text">Pekerjaan :</p>
-                                                <p class="d-text mb-3" id="pekerjaan"></p>
-                                            </div>
-                                            <div class="pekerjaan_pasangan">
-                                                <p class="t-text">Pekerjaan Pasangan :</p>
-                                                <p class="d-text mb-3" id="pekerjaan_pasangan"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12 col-xl-4">
-                                        <div class="p-4">
-                                            <div class="asuransi">
-                                                <p class="t-text">Asuransi :</p>
-                                                <p class="d-text mb-3" id="asuransi"></p>
-                                            </div>
-                                            <div class="mb-3 ">
-                                                <p class="t-text">Jumlah Anak yang Masih Hidup :</p>
-                                                <p class="d-text mb-0 anak_pria_hidup" id="anak_pria_hidup"></p>
-                                                <p class="d-text mb-0 anak_wanita_hidup" id="anak_wanita_hidup"></p>
-                                            </div>
-                                            <div class="anak_terakhir">
-                                                <p class="t-text">Umur Anak Terakhir :</p>
-                                                <p class="d-text mb-3" id="anak_terakhir"></p>
-                                            </div>
-                                            <div class="status_kb">
-                                                <p class="t-text">Status Peserta KB :</p>
-                                                <p class="d-text mb-3" id="status_kb"></p>
-                                            </div>
-                                            <div class="kb_terakhir">
-                                                <p class="t-text">Alat / Obat / Cara KB Terakhir :</p>
-                                                <p class="d-text mb-3" id="kb_terakhir"></p>
-                                            </div>
 
 
 
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
