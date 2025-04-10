@@ -76,7 +76,7 @@
                     <div class="row justify-content-center col-lg-6 wow fadeInLeft " data-wow-delay="0.1s">
                         <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">Akses Aplikasi Versi Web Sekarang !</h1>
                         <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Aplikasi PillSync+ untuk kebutuhan informasi kotrasepsi kamu.</p>
-                        <a href="akses-pengguna.html" class="btn btn-primary mb-4 rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="1s">Akses untuk Pengguna</a>
+                        <a href="akses-pengguna.php" class="btn btn-primary mb-4 rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="1s">Akses untuk Pengguna</a>
                     </div>
                     <div class="row justify-content-center col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
                         <img src="img/qr.png" class="img-fluid w-40 h-40 mt-1 mb-1" style="max-width: 80% !Important;" alt="">

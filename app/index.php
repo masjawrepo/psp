@@ -300,7 +300,7 @@ if (!isset($_SESSION['loggedin'])) {
 							<div class="row">
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body"  onclick="window.location='contraception-calendar.php';">
+										<div class="card-body"  onclick="window.location='calendar-contraception.php';">
 											<h5 class="card-title card-title-large">Calendar</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -315,7 +315,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='lactational-amenorrhea-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Lactational Amenorrhea</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
@@ -330,7 +330,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='kondom-contraception.php';">
 											<h5 class="card-title card-title-large">Kondom</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -345,7 +345,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='pil-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Pil</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
@@ -360,7 +360,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='injection-contraception.php';">
 											<h5 class="card-title card-title-large">Injection</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -375,7 +375,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='patch-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Patch</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
@@ -390,7 +390,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='ring-hormonal-contraception.php';">
 											<h5 class="card-title card-title-large">Ring Hormonal</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -405,7 +405,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='female-condom-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Female Condom</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
@@ -420,7 +420,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='iud-contraception.php';">
 											<h5 class="card-title card-title-large">IUD Contraception</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -435,7 +435,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='implan-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Implan Contraception</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
@@ -450,7 +450,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card card-highlight">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='vacektomy-contraception.php';">
 											<h5 class="card-title card-title-large">Vacektomy</h5>
 											<h6 class="card-subtitle">Contraception</h6>
 
@@ -465,7 +465,7 @@ if (!isset($_SESSION['loggedin'])) {
 								</div>
 								<div class="col-sm-4 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body"  onclick="window.location='tubektomy-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Tubektomy</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
