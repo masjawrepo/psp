@@ -24,7 +24,7 @@
 			<a href="#menu" class="link menu-link"><i class="icon ion-ios-menu"></i></a>
 		</div>
 		<div class="right">
-			<a href="#" class="link"><img src="../img/favicon.png" alt=""></a>
+			<a href="index.php" class="link"><img src="../img/favicon.png" alt=""></a>
 		</div>
 	</div>
 	<!-- end navbar -->
@@ -108,9 +108,7 @@
 			</ul>
 		</div>
 
-
-		<div class="separator-large"></div>
-		-->
+-->
 		<div class="separator-large"></div>
 
 		
@@ -179,12 +177,12 @@
 		<div class="maintenance">
 			<div class="container">
 				<img src="images/maintenance.png" alt="">
-				<h5 class="mb-2">Website Under Maintenance</h5>
-				<p class="text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis delectus ut sequi?</p>
+				<h5 class="mb-2">Fitur Sedang Dalam Pengembangan</h5>
+				<p class="text-small">Nantikan fitur terbaru dari kami !</p>
 				<div class="button-default ">
 					<div class="row justify-content-center">
 						<div class="col-6">
-							<a href="index.html" class="button">Home</a>
+							<a href="index.php" class="button">Home</a>
 						</div>
 					</div>
 				</div>
@@ -211,12 +209,12 @@
 					</a>
 				</li>
 				<li class="toolbar-item">
-					<a href="notification.html" class="toolbar-link">
+					<a href="notification.php" class="toolbar-link toolbar-link-active">
 						<i class="icon ion-ios-alarm"></i>
 					</a>
 				</li>
 				<li class="toolbar-item">
-					<a href="med-rec.html" class="toolbar-link toolbar-link-active">
+					<a href="med-rec.php" class="toolbar-link">
 						<i class="icon ion-ios-folder-open"></i>
 					</a>
 				</li>

@@ -201,7 +201,12 @@ if (!isset($_SESSION['loggedin'])) {
 		<!-- intro app -->
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"><div class="img"><img src="images/banner/Banner-Chat.png" alt="image-demo"></div></div>
+				<div class="swiper-slide">
+					<div class="img"
+					 onclick="window.location='https://wa.me/<?=$_SESSION['bidan_wa']?>?text=Hi%2C%20<?=$_SESSION['bidan_affiliate']?>%2C%0A%0ASaya%20<?=$_SESSION['fullname']?>%0AIngin%20berkonsultasi%20mengenai%20kontrasepsi%2C%0A%0ATerima%20Kasih';">
+						<img src="images/banner/Banner-Chat.png" alt="image-demo">
+					</div>
+				</div>
 				<!--
 				<div class="swiper-slide"><div class="img"><img src="images/horizontal1.jpg" alt="image-demo"></div></div>
 				<div class="swiper-slide"><div class="img"><img src="images/horizontal3.jpg" alt="image-demo"></div></div>
@@ -209,7 +214,6 @@ if (!isset($_SESSION['loggedin'])) {
 			</div>
 		</div>
 		<!-- end intro app -->
-
 
 		<!-- pages wrapper -->
 		<div class="pages-wrapper">
@@ -298,22 +302,22 @@ if (!isset($_SESSION['loggedin'])) {
 
 						<div class="container">
 							<div class="row">
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='calendar-contraception.php';">
-											<h5 class="card-title card-title-large">Calendar</h5>
-											<h6 class="card-subtitle">Contraception</h6>
+											<h5 class="card-title card-title-large text-red">Calendar</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
 											<div class="separator-large"></div>
 											<!-- end separator -->
 
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='lactational-amenorrhea-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Lactational Amenorrhea</h5>
@@ -328,22 +332,22 @@ if (!isset($_SESSION['loggedin'])) {
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='kondom-contraception.php';">
-											<h5 class="card-title card-title-large">Kondom</h5>
-											<h6 class="card-subtitle">Contraception</h6>
+											<h5 class="card-title card-title-large text-red">Kondom</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
 											<div class="separator-large"></div>
 											<!-- end separator -->
 
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='pil-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Pil</h5>
@@ -358,22 +362,22 @@ if (!isset($_SESSION['loggedin'])) {
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='injection-contraception.php';">
-											<h5 class="card-title card-title-large">Injection</h5>
-											<h6 class="card-subtitle">Contraception</h6>
+											<h5 class="card-title card-title-large text-red">Injection</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
 											<div class="separator-large"></div>
 											<!-- end separator -->
 
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='patch-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Patch</h5>
@@ -388,22 +392,22 @@ if (!isset($_SESSION['loggedin'])) {
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='ring-hormonal-contraception.php';">
-											<h5 class="card-title card-title-large">Ring Hormonal</h5>
-											<h6 class="card-subtitle">Contraception</h6>
+											<h5 class="card-title card-title-large text-red">Ring Hormonal</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
 											<div class="separator-large"></div>
 											<!-- end separator -->
 
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='female-condom-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Female Condom</h5>
@@ -418,25 +422,10 @@ if (!isset($_SESSION['loggedin'])) {
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
-										<div class="card-body"  onclick="window.location='iud-contraception.php';">
-											<h5 class="card-title card-title-large">IUD Contraception</h5>
-											<h6 class="card-subtitle">Contraception</h6>
-
-											<!-- separator -->
-											<div class="separator-large"></div>
-											<!-- end separator -->
-
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body"  onclick="window.location='implan-contraception.php';">
-											<h5 class="card-title card-title-large text-red">Implan Contraception</h5>
+										<div class="card-body"  onclick="window.location='iud-contraception.php';">
+											<h5 class="card-title card-title-large text-red">IUD</h5>
 											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
@@ -448,22 +437,37 @@ if (!isset($_SESSION['loggedin'])) {
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
-									<div class="card card-highlight">
-										<div class="card-body"  onclick="window.location='vacektomy-contraception.php';">
-											<h5 class="card-title card-title-large">Vacektomy</h5>
-											<h6 class="card-subtitle">Contraception</h6>
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body"  onclick="window.location='implan-contraception.php';">
+											<h5 class="card-title card-title-large text-red">Implan</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
 
 											<!-- separator -->
 											<div class="separator-large"></div>
 											<!-- end separator -->
 
-											<h5 class="card-title card-title-small">Click Here</h5>
-											<h6 class="card-location">To Learn More</h6>
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 p-2">
+								<div class="col-sm-3 p-2">
+									<div class="card bg-light card-outline">
+										<div class="card-body"  onclick="window.location='vacektomy-contraception.php';">
+											<h5 class="card-title card-title-large text-red">Vacektomy</h5>
+											<h6 class="card-subtitle text-red">Contraception</h6>
+
+											<!-- separator -->
+											<div class="separator-large"></div>
+											<!-- end separator -->
+
+											<h5 class="card-title card-title-small text-red">Click Here</h5>
+											<h6 class="card-location text-red">To Learn More</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3 p-2">
 									<div class="card bg-light card-outline">
 										<div class="card-body"  onclick="window.location='tubektomy-contraception.php';">
 											<h5 class="card-title card-title-large text-red">Tubektomy</h5>
@@ -622,12 +626,12 @@ if (!isset($_SESSION['loggedin'])) {
 					</a>
 				</li>
 				<li class="toolbar-item">
-					<a href="notification.html" class="toolbar-link">
+					<a href="notification.php" class="toolbar-link">
 						<i class="icon ion-ios-alarm"></i>
 					</a>
 				</li>
 				<li class="toolbar-item">
-					<a href="med-rec.html" class="toolbar-link">
+					<a href="med-rec.php" class="toolbar-link">
 						<i class="icon ion-ios-folder-open"></i>
 					</a>
 				</li>

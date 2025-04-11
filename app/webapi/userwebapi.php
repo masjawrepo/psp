@@ -25,7 +25,7 @@ require_once('../include/conn.php');
 		}
 
 		// We need to check if the account with that username exists.
-		if ($stmt = $con->prepare('SELECT id, fullname, nik, phone, email, password FROM user WHERE phone=? or email=? or nik=?')) {
+		if ($stmt = $con->prepare('SELECT id, uuid_bidan, fullname, nik, phone, email, password FROM user WHERE phone=? or email=? or nik=?')) {
 			// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 			$stmt->bind_param('sss', $_POST['username'], $_POST['username'], $_POST['username']);
 			$stmt->execute();
@@ -37,16 +37,42 @@ require_once('../include/conn.php');
 				// Application already exists
 				header('Location: ../../akses-pengguna.php#falsecred');
 			} else {
-				$stmt->bind_result($id, $fullname, $nik, $phone, $email, $password);
+				$stmt->bind_result($id, $uuid_bidan, $fullname, $nik, $phone, $email, $password);
 				$stmt->fetch();
 				if (password_verify($_POST['password'], $password)) {
 					// buat Session
-					
+
+/*
+					$query = $con->query('SELECT * FROM `admin` where uuid = '.$uuid_bidan.';');            
+					while($row=mysqli_fetch_object($query))
+					{
+						$data =$row;
+					}
+*/
+
+			    	$uuidcek = '"'.$uuid_bidan.'"';
+			    	$uuidcek = str_replace("\r\n","",$uuidcek);
+
+			    	$query = $con->query('SELECT * FROM `admin` where uuid = '.$uuidcek.';');            
+					while($row=mysqli_fetch_array($query))
+					{
+						$data =$row;
+					}
+					/*
+					$findbidan = $con->prepare("SELECT instance FROM admin WHERE uuid = $uuidcek");
+					$findbidan->execute();
+					$findbidan->store_result();
+					$findbidan->bind_result($instance);
+					$findbidan->fetch();
+					*/
+
 					session_start();// Verification success! User has logged-in!
 					// Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
 					session_regenerate_id();
 					$_SESSION['loggedin'] = TRUE;
 					$_SESSION["fullname"] = $fullname;
+					$_SESSION["bidan_wa"] = $data['phone'];
+					$_SESSION["bidan_affiliate"] = $data['instance'];
 					// login sukses, alihkan ke halaman timeline
 					
 					header('Location: ../index.php');
