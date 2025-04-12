@@ -54,8 +54,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="#home" class="nav-item nav-link ">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="index.php" class="nav-item nav-link ">Home</a>
+                        <a href="index.php#about" class="nav-item nav-link">About</a>
                         <a href="blog.php" class="nav-item nav-link">Blog</a>
                     </div>
                     <a href="akses-nakes.php" style="min-width: 11.5em;" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4 mt-1 mb-1">Akses Nakes</a>
@@ -185,16 +185,17 @@
                     <div class="col-md-6  text-center text-md-center text-white">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="btn-square btn btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn-square btn btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn-square btn btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn-square btn btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
+                        -->
                     </div>
                     <div class="col-md-6 text-center text-md-center mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>PillSync+</a>, All right reserved.</span>
+                        <span class="text-white"><a href="index.php"><i class="fas fa-copyright text-light me-2"></i>PillSync+</a>, All right reserved.</span>
                     </div>
                 </div>
             </div>
