@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -75,6 +75,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div>
 					-->
 				</div>
+				<p class="card-text">Kondom adalah alat kontrasepsi yang dipakai pada alat kelamin pria atau wanita untuk mencegah kehamilan dan penularan penyakit kelamin. Terbuat dari bahan lateks (karet), polyurethane, polyisoprene dan nitrile.</p>
 			</div>
 
 		<!-- separator -->
@@ -108,7 +109,12 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keuntungan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Murah dan dapat dibeli bebas.</li>
+                                    <li>2.	Tidak perlu pemeriksaan kesehatan khusus.</li>
+                                    <li>3.	Proteksi ganda (selain mencegah kehamilan tetapi juga mencegah IMS termasuk HIV-AIDS).</li>
+                                    <li>4.	Membantu mencegah terjadinya kanker serviks (mengurangi iritasi bahan karsinogenik eksogen pada serviks).</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -118,7 +124,12 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keterbatasan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Cara penggunaan sangat mempengaruhi keberhasilan kontrasepsi.</li>
+                                    <li>2.	Agak mengganggu hubungan seksual (mengurangi sentuhan langsung).</li>
+                                    <li>3.	Bisa menyebabkan kesulitan untuk mempertahankan ereksi.</li>
+                                    <li>4.	Malu membelinya di tempat umum.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -128,7 +139,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Efektivitas</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">Kondom pria efektif mencegah kehamilan hingga 98% jika digunakan dengan benar Kondom wanita efektif mencegah kehamilan hingga 95% jika digunakan dengan benar.</p>
 							</div>
 						</div>
 					</div>
@@ -138,7 +149,10 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Cara Kerja</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Menghalangi terjadinya pertemuan sperma dan sel telur dengan cara mengemas sperma di ujung selubung karet yang dipasang pada penis sehingga sperma tersebut tidak tercurah ke dalam saluran reproduksi Perempuan.</li>
+                                    <li>2.	Khusus untuk kondom yang terbuat dari lateks dan vinil dapat mencegah penularan mikroorganisme (IMS termasuk HBV dan HIV/AIDS) dari satu pasangan kepada pasangan yang lain</li>
+                                </ul>
 							</div>
 						</div>
 					</div>

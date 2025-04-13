@@ -49,6 +49,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .t-text
+        {   
+            font-weight: 700;
+            margin-bottom: 0rem !important;
+            font-size: medium;
+        }
+        .d-text
+        {
+            font-size: large;
+            line-height: 1.2;
+            color: #666666 !important;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -139,100 +156,333 @@
             </nav>
             <!-- Navbar End -->
 
-
+            <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="row g-2 align-items-center text-center justify-content-center">
-                            <div class="col-lg-12 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
-                                
-                                    <div class="col-sm-12 col-xl-12">
-                                        <div class="d-flex align-items-center p-2" >
-                                            <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Cek Pasien</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
-                                        <div class="col-lg-9 col-xl-9">
-                                            <div class="form-floating mb-0">
-                                                <input type="number" class="form-control" id="nik" placeholder="nik">
-                                                <label for="nik">NIK Pasien</label>
+                <div class="row g-4">
+                    <div class="row g-2 align-items-center justify-content-center">
+
+                        <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
+                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+
+
+
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="flase" aria-controls="flush-collapseOne">
+                                                <div class="p-2" >
+                                                    <h4 class="m-0">Data Pasien</h4>
+                                                    <p class="mt-1 mb-0">Klik untuk melihat</p>
+                                                </div>
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="row g-4 d-flex align-items-center justify-content-center pb-4">
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Umum</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 name">
+                                                                <p class="t-text">Nama Lengkap :</p>
+                                                                <p class="d-text mb-0" id="name"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 phone">
+                                                                <p class="t-text">No. WhatsApp :</p>
+                                                                <p class="d-text mb-0" id="phone"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 email">
+                                                                <p class="t-text">Email :</p>
+                                                                <p class="d-text mb-0" id="email"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 nik">
+                                                                <p class="t-text">Nomor Induk Kependudukan :</p>
+                                                                <p class="d-text mb-0" id="nik"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 dob">
+                                                                <p class="t-text">Tanggal Lahir :</p>
+                                                                <p class="d-text mb-0" id="dob"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pendidikan">
+                                                                <p class="t-text">Status Pendidikan :</p>
+                                                                <p class="d-text mb-0" id="pendidikan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pekerjaan">
+                                                                <p class="t-text">Pekerjaan :</p>
+                                                                <p class="d-text mb-0" id="pekerjaan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 alamat">
+                                                                <p class="t-text">Alamat :</p>
+                                                                <p class="d-text mb-0" id="alamat"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Suami / Istri (Pasangan)</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pasangan">
+                                                                <p class="t-text">Nama Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pasangan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pendidikan_pasangan">
+                                                                <p class="t-text">Status Pendidikan Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pendidikan_pasangan"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 pekerjaan_pasangan">
+                                                                <p class="t-text">Pekerjaan Pasangan :</p>
+                                                                <p class="d-text mb-0" id="pekerjaan_pasangan"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-11 col-xl-11 border rounded bg-white p-4">
+                                                        <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Informasi Lainnya</h5>
+                                                        <div class="row g-4">
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 asuransi">
+                                                                <p class="t-text">Asuransi :</p>
+                                                                <p class="d-text mb-0" id="asuransi"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 kb_terakhir">
+                                                                <p class="t-text">Alat / Obat / Cara KB Terakhir :</p>
+                                                                <p class="d-text mb-0" id="kb_terakhir"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 status_kb">
+                                                                <p class="t-text">Jumlah Anak Masih Hidup :</p>
+                                                                <p class="d-text mb-0 anak_pria_hidup" id="anak_pria_hidup"></p>
+                                                                <p class="d-text mb-0 anak_wanita_hidup" id="anak_wanita_hidup"></p>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 p-3 pb-0 mt-0 anak_terakhir">
+                                                                <p class="t-text">Umur Anak Terakhir :</p>
+                                                                <p class="d-text mb-0" id="anak_terakhir"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-xl-3">
-                                            <button onclick="cekPasien();" class="btn btn-primary w-100 py-3">Submit</button>
-                                        </div>
                                     </div>
-                                
-                            </div>
-                        </div>
-
-                        <div class="row g-2 align-items-center justify-content-center">
-                            <div class="col-lg-12 wow fadeInLeft rounded bg-light " data-wow-delay="0.1s">
-                                <div style="margin-left: .5rem !important;padding-left: .5em !important;">
-                                    <div class="col-sm-12 col-xl-12">
-                                        <div class="d-flex align-items-center" >
-                                            <h4 class="mb-1 mt-1">Informasi Pasien</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-xl-12 1" style="margin-left: .5rem !important;padding-left: .5em !important;">
-                                        <div class="d-flex align-items-center" >
-                                            <p class="mb-1 mt-1">Silahkan Masukan NIK untuk Cek Pasien Terlebih Dahulu !</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-xl-12 2" style="margin-left: .5rem !important;padding-left: .5em !important;">
-                                        <div class="d-flex align-items-center" >
-                                            <p class="mb-1 mt-1">Pasien Terdaftar Namun Tidak Terafiliasi Dengan Bidan Ini !</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-xl-12 3" style="margin-left: .5rem !important;padding-left: .5em !important;">
-                                        <div class="d-flex align-items-center" >
-                                            <p class="mb-1 mt-1">Pasien Tidak Terdaftar !</p>
-                                        </div>
-                                    </div>
-                                    <div class="4" style="margin-left: .5rem !important;padding-left: .5em !important;">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label ">NIK Pasien</div>
-                                            <div class="col-lg-9 col-md-8" id="nik_check">-</div>
-                                        </div>
-                                                                        
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label ">Nama Pasien</div>
-                                            <div class="col-lg-9 col-md-8" id="name_check">-</div>
-                                        </div>
-                                            
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label ">Email Pasien</div>
-                                            <div class="col-lg-9 col-md-8" id="email_check">-</div>
-                                        </div>
-                                            
-                                            
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label ">No. Telp Pasien</div>
-                                            <div class="col-lg-9 col-md-8" id="no_check">-</div>
-                                        </div>
-                                            
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label ">Alamat</div>
-                                            <div class="col-lg-9 col-md-8" id="address_check">-</div>
-                                        </div>
-
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-3 col-md-4 label ">Status Acceptor</div>
-                                            <div class="col-lg-9 col-md-8" id="acceptor_check">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-9 col-md-8" id="buttons">
-                                        </div>
-
-                                    </div>
-                                        
                                 </div>
+
+
+
+                                
                             </div>
                         </div>
+
+                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
+                            <form autocomplete="off" action="" method="post" >
+                                <div class="col-sm-12 col-xl-12 mt-1 mb-1">
+                                    <div class="rounded bg-light d-flex align-items-center p-2" >
+                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Anamnese</h4>
+                                    </div>
+                                </div>
+                                <div class="row g-3 pt-4 px-4">
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="text" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">Partus (Persalinan)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
+                                            <label for="name">Tanggal Haid Terakhir</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="text" class="form-control" id="uuid_bidan" placeholder="">
+                                            <label for="message">Hamil / Diduga Hamil</label>
+                                        </div>
+                                    </div>
+                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Jumlah GPA</p>
+                                    <div class="col-lg-4 col-xl-4">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">Partus (Persalinan)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">Abortus (Keguguran)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">Gravida (Kehamilan)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Ya</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Menyusui</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <textarea class="form-control" placeholder="Alamat" name="alamat" style="height: 80px"></textarea>
+                                            <label for="message">Riwayat Penyakit Sebelumnya</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12 col-xl-12 mt-5 mb-1">
+                                    <div class="rounded bg-light d-flex align-items-center p-2" >
+                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Pemeriksaan</h4>
+                                    </div>
+                                </div>
+                                <div class="row g-3 pt-4 px-4">
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Baik</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Keadaan Umum</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">Berat Badan (Kg)</label>
+                                        </div>
+                                    </div>
+                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Tekanan Darah</p>
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">SBP (Systolic Blood Pressure)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="form-floating mb-0">
+                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <label for="name">DBP (Distolic Blood Pressure)</label>
+                                        </div>
+                                    </div>
+                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Sebelum Dilakukan Pemasangan IUD atau MOM Dilakukan Pemeriksaan Dalam :</p>
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Ya</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Tanda-Tanda Radang</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Ya</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Tumor / Keganasan Ginekologi :</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">.....</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Posisi Rahim</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12 col-xl-12 mt-5 mb-1">
+                                    <div class="rounded bg-light d-flex align-items-center p-2" >
+                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Tindakan</h4>
+                                    </div>
+                                </div>
+                                <div class="row g-3 pt-4 px-4">
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="SelectKontrasepsi" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Implan</option>
+                                                <option value="2">IUD</option>
+                                                <option value="3">......</option>
+                                            </select>
+                                            <label for="floatingSelect">Alat / Obat / Cara Kontrasepsi yang Dipilih:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
+                                            <label for="name">Tanggal Dilayani</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12 noniud_implan">
+                                        <div class="form-floating mb-0">
+                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
+                                            <label for="name">Tanggal Kunjungan Ulang</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12 iud_implan">
+                                        <div class="form-floating mb-0">
+                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
+                                            <label for="name">Tanggal Dicabut (Khusus Implan / IUD)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="text" class="form-control" id="uuid_bidan" placeholder="">
+                                            <label for="message">Tindakan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                                aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Sukses</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
+                                            <label for="floatingSelect">Hasil Pemeriksaan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-floating mb-0">
+                                            <input type="text" class="form-control" id="uuid_bidan" placeholder="">
+                                            <label for="message">Catatan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mt-5">
+                                    <div class="col-sm-6 col-xl-6">
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
+            <!-- Recent Sales End -->
+
 
 
             <!-- Footer Start -->
@@ -271,82 +521,177 @@
 
     <script>
 
-    $(document).ready( function() {
-        $(".2").hide();
-        $(".3").hide();
-        $(".4").hide();
-    });
+    $( document ).ready(function() {
 
-    function cekPasien(){
-        var nik = document.getElementById('nik').value;
-        //alert(nik);
-        
-        var nik_check = document.getElementById('nik_check');
-        var name_check =  document.getElementById('name_check');
-        var email_check =  document.getElementById('email_check');
-        var no_check = document.getElementById('no_check');
-        var address_check =  document.getElementById('address_check');
-        var acceptor_check =  document.getElementById('acceptor_check');
-        var buttons =  document.getElementById('buttons');
+        moment.locale('id');  
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const uuid = urlParams.get('uuid')
+        //console.log(product);
+        //alert(uuid);
+        getPasien(uuid);
+          
 
-        $.ajax({
-            type: 'GET',
-            dataType:"json",
-            url: 'webapi/adminwebapi.php?function=cek_pasien&nik=' + nik,
-            success: function (data, status, xhr) {
-                if (data.data_available == "No Data"){
-                    $(".1").hide();
-                    $(".2").hide();
-                    $(".3").show();
-                    $(".4").hide();
-                } else if (data.data_available == "Data Available"){
-                    if (data.uuid_bidan != <?php echo json_encode($_SESSION['uuid']);?>){
-                        $(".1").hide();
-                        $(".2").show();
-                        $(".3").hide();
-                        $(".4").hide();
-                    } else if (data.uuid_bidan == <?php echo json_encode($_SESSION['uuid']);?>){
-                        $(".1").hide();
-                        $(".2").hide();
-                        $(".3").hide();
-                        $(".4").show();
-                        nik_check.innerHTML = "";
-                        nik_check.innerHTML += data.nik;
-                        name_check.innerHTML = "";
-                        name_check.innerHTML += data.fullname;
-                        email_check.innerHTML = "";
-                        email_check.innerHTML += data.email;
-                        no_check.innerHTML = "";
-                        no_check.innerHTML += data.phone;
-                        address_check.innerHTML = "";
-                        address_check.innerHTML += data.alamat;
-                        if (data.data_acceptor == "Acceptor NA"){
-                            acceptor_check.innerHTML = "";
-                            acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Terdata</span></div>';
-
-                            buttons.innerHTML = "";
-                            buttons.innerHTML += '<a type="button" class="btn btn-primary mt-3" href="acceptor.php?uuid=' + data.uuid + '"><i class="fa fa-book me-2"></i>Input Acceptor</a>';
-
-                        } else if(data.data_acceptor == "Acceptor Available"){
-                            acceptor_check.innerHTML = "";
-                            acceptor_check.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Sudah Terdata</span></div>';
-
-                            buttons.innerHTML = "";
-                            buttons.innerHTML += '<a type="button" class="btn btn-outline-primary mt-3" href="acceptor.php?uuid=' + data.uuid + '"><i class="fa fa-book me-2"></i>Periksa Pasien</a>';
-
-                        }
-                        //acceptor_check.innerHTML = "";
-                    }
-                }
-                //acceptor_check.innerHTML += data.acceptor_check;
-                //alert(data.phone_number);
-                //console.log(data);
-                //datamember = data;
-                //$(".btn_use_member").show();
-          }
+        $('#SelectKontrasepsi').change(function(){
+            if( $(this).val()=="1" || $(this).val()=="2"){
+                $(".iud_implan").show();
+                $(".noniud_implan").hide();
+            } else {
+                $(".iud_implan").hide();
+                $(".noniud_implan").show();
+            }
         });
-    }
+        $('#SelectKontrasepsi').trigger("change");
 
+
+        function getPasien(uuidsearch){
+
+            const array_pendidikan = new Array("Tidak Tamat SD/MI", "Tamat SD/MI", "Tamat SLTP/MTSN", "Tamat SMA/MA", "Tamat Perguruan Tinggi", "Tidak Sekolah");
+            const array_pekerjaan = new Array("Petani", "Nelayan", "Pedagang", "PNS/TNI/POLRI", "Pegawai Swasta", "Wiraswasta", "Pensiunan", "Pekerja Lepas", "Tidak Bekerja");
+            const array_asuransi = new Array("BPJS Kesehatan", "Lainnya", "Tidak");
+            const array_status_kb = new Array("Baru Pertama Kali", "Pernah Pakai Alat KB (Berhenti Sesudah Bersalin/Keguguran)", "Pernah Pakai Alat KB", "Sedang KB");
+            const array_kb_terakhir = new Array("Suntikan 1 Bulanan", "Suntikan 3 Bulanan", "Pil", "Kondom", "Implan 1 Batang", "Implan 2 Batang", "IUD", "IUD Lain-Lain", "Tubektomi", "Vasektomi", "Belum Pernah");
+            
+
+            
+            
+            
+            $(".name").hide();
+            var name = document.getElementById('name');
+            $(".nik").hide();
+            var nik = document.getElementById('nik');
+            $(".email").hide();
+            var email = document.getElementById('email');
+            $(".phone").hide();
+            var phone = document.getElementById('phone');
+            $(".dob").hide();
+            var dob = document.getElementById('dob');
+            $(".alamat").hide();
+            var alamat = document.getElementById('alamat');
+            $(".pasangan").hide();
+            var pasangan = document.getElementById('pasangan');
+            $(".pendidikan").hide();
+            var pendidikan = document.getElementById('pendidikan');
+            $(".pendidikan_pasangan").hide();
+            var pendidikan_pasangan = document.getElementById('pendidikan_pasangan');
+            $(".pekerjaan").hide();
+            var pekerjaan = document.getElementById('pekerjaan');
+            $(".pekerjaan_pasangan").hide();
+            var pekerjaan_pasangan = document.getElementById('pekerjaan_pasangan');
+
+            $(".anak_pria_hidup").hide();
+            var anak_pria_hidup = document.getElementById('anak_pria_hidup');
+            $(".anak_wanita_hidup").hide();
+            var anak_wanita_hidup = document.getElementById('anak_wanita_hidup');
+            $(".anak_terakhir").hide();
+            var anak_terakhir = document.getElementById('anak_terakhir');
+            $(".status_kb").hide();
+            var status_kb = document.getElementById('status_kb');
+            $(".kb_terakhir").hide();
+            var kb_terakhir = document.getElementById('kb_terakhir');
+  
+  
+
+
+
+            $.ajax({
+                type: 'GET',
+                dataType:"json",
+                url: 'webapi/adminwebapi.php?function=get_detail_pasien&uuid=' + uuidsearch,
+                success: function (data, status, xhr) {
+                    if(data.hasOwnProperty("fullname")){
+                        $(".name").show();
+                        name.innerHTML = "";
+                        name.innerHTML += data.fullname;
+                    }
+                    if(data.hasOwnProperty("nik")){
+                        $(".nik").show();
+                        nik.innerHTML = "";
+                        nik.innerHTML += data.nik;
+                    }
+                    if(data.hasOwnProperty("email")){
+                        $(".email").show();
+                        email.innerHTML = "";
+                        email.innerHTML += data.email;
+                    }
+                    if(data.hasOwnProperty("phone")){
+                        $(".phone").show();
+                        phone.innerHTML = "";
+                        phone.innerHTML += data.phone;
+                    }
+                    if(data.hasOwnProperty("dob")){
+                        $(".dob").show();
+                        dob.innerHTML = "";
+                        dob.innerHTML += moment(data.dob).format("DD MMMM YYYY");
+                    }
+                    if(data.hasOwnProperty("alamat")){
+                        $(".alamat").show();
+                        alamat.innerHTML = "";
+                        alamat.innerHTML += data.alamat;
+                    }
+                    if(data.hasOwnProperty("nama_pasangan")){
+                        $(".pasangan").show();
+                        pasangan.innerHTML = "";
+                        pasangan.innerHTML += data.nama_pasangan;
+                    }
+                    if(data.hasOwnProperty("pendidikan")){
+                        $(".pendidikan").show();
+                        pendidikan.innerHTML = "";
+                        pendidikan.innerHTML += array_pendidikan[data.pendidikan - 1 ];
+                    }
+                    if(data.hasOwnProperty("pendidikan_pasangan")){
+                        $(".pendidikan_pasangan").show();
+                        pendidikan_pasangan.innerHTML = "";
+                        pendidikan_pasangan.innerHTML += array_pendidikan[data.pendidikan_pasangan - 1];
+                    }
+                    if(data.hasOwnProperty("pekerjaan")){
+                        $(".pekerjaan").show();
+                        pekerjaan.innerHTML = "";
+                        pekerjaan.innerHTML += array_pekerjaan[data.pekerjaan - 1 ];
+                    }
+                    if(data.hasOwnProperty("pekerjaan_pasangan")){
+                        $(".pekerjaan_pasangan").show();
+                        pekerjaan_pasangan.innerHTML = "";
+                        pekerjaan_pasangan.innerHTML += array_pekerjaan[data.pekerjaan_pasangan - 1];
+                    }
+                    if(data.hasOwnProperty("asuransi")){
+                        $(".asuransi").show();
+                        asuransi.innerHTML = "";
+                        asuransi.innerHTML += array_asuransi[data.asuransi - 1];
+                    }
+                    if(data.hasOwnProperty("anak_pria_hidup")){
+                        $(".anak_pria_hidup").show();
+                        anak_pria_hidup.innerHTML = "";
+                        anak_pria_hidup.innerHTML += data.anak_pria_hidup + " Anak Laki-Laki";
+                    }
+                    if(data.hasOwnProperty("anak_wanita_hidup")){
+                        $(".anak_wanita_hidup").show();
+                        anak_wanita_hidup.innerHTML = "";
+                        anak_wanita_hidup.innerHTML += data.anak_wanita_hidup + " Anak Perempuan";
+                    }
+                    if(data.hasOwnProperty("tahun_anak_terakhir")){
+                        $(".anak_terakhir").show();
+                        anak_terakhir.innerHTML = "";
+                        anak_terakhir.innerHTML += data.tahun_anak_terakhir + " Tahun " + data.bulan_anak_terakhir + " Bulan";
+                    }
+                    if(data.hasOwnProperty("status_kb")){
+                        $(".status_kb").show();
+                        status_kb.innerHTML = "";
+                        status_kb.innerHTML += array_status_kb[data.status_kb - 1];
+                    }
+                    if(data.hasOwnProperty("kb_terakhir")){
+                        $(".kb_terakhir").show();
+                        kb_terakhir.innerHTML = "";
+                        kb_terakhir.innerHTML += array_kb_terakhir[data.kb_terakhir - 1];
+                    }
+
+
+                }
+            });
+        
+        }
+
+    });
     </script>
 
 

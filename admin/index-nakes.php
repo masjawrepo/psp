@@ -167,7 +167,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12 col-xl-12" onclick="window.location='pemeriksaan.php';">
+                        <div class="col-sm-12 col-xl-12" onclick="window.location='check.php';">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center p-4" style="height: 100%;">
                                 <i class="fa fa-book fa-3x text-white"></i>
                                 <div class="ms-3">

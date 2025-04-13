@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -75,7 +75,10 @@ if (!isset($_SESSION['loggedin'])) {
 					</div>
 					-->
 				</div>
+                
+		<p class="card-text">KB kalender adalah tidak melakukan hubungan seksual pada masa subur wanita.</p>
 			</div>
+
 
 		<!-- separator -->
 		<div class="separator-large"></div>
@@ -108,7 +111,12 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keuntungan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Tanpa biaya</li>
+                                    <li>2.	Tidak ada risiko kesehatan yang berhubungan dengan kontrasepsi</li>
+                                    <li>3.	Tidak ada efek samping sistemik</li>
+                                    <li>4.	Meningkatkan keterlibatan suami dalam KB</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -118,7 +126,13 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keterbatasan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Keefektifan tergantung dari kemauan dan disiplin pasangan</li>
+                                    <li>2.	Perlu ada pelatihan (butuh pelatih, bukan tenaga medis)</li>
+                                    <li>3.	Perlu pencatatan setiap hari</li>
+                                    <li>4.	Perlu pantang selama masa subur</li>
+                                    <li>5.	Infeksi vagina membuat lender serviks sulit dinilai</li>
+                                <ul>
 							</div>
 						</div>
 					</div>
@@ -128,7 +142,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Efektivitas</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">kontrasepsi kalender berkisar antara 76–80%, sehingga termasuk tidak efektif untuk mencegah kehamilan.</p>
 							</div>
 						</div>
 					</div>
@@ -138,7 +152,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Cara Kerja</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">Menghindari hubungan seksual pada masa subur.</p>
 							</div>
 						</div>
 					</div>

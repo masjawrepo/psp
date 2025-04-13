@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -75,6 +75,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div>
 					-->
 				</div>
+				<p class="card-text">Metode keluarga berencana sementara yang mengandalkan pemberian ASI secara eksklusif, artinya hanya diberikan ASI tanpa tambahan makanan ataupun minuman apa pun lainnya.</p>
 			</div>
 
 		<!-- separator -->
@@ -108,7 +109,19 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keuntungan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Tidak memberi beban biaya untuk keluarga berencana atau untuk makanan bayi.</li>
+                                    <li>2.	Efektivitasnya tinggi.</li>
+                                    <li>3.	Segera efektif.</li>
+                                    <li>4.	Tidak mengganggu hubungan seksual.</li>
+                                    <li>5.	Tidak ada efek samping secara sistemik.</li>
+                                    <li>6.	Tidak perlu pengawasan medis.</li>
+                                    <li>7.	Tidak perlu obat atau alat.</li>
+                                    <li>8.	Bayi mendapat kekebalan pasif.</li>
+                                    <li>9.	Sumber asupan gizi yang terbaik dan sempurna untuk tumbuh kembang bayi yang optimal.</li>
+                                    <li>10.	Mengurangi perdarahan pasca persalinan.</li>
+                                    <li>11.	Meningkatkan hubungan psikologik ibu dan bayi.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -118,7 +131,11 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keterbatasan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Perlu persiapan sejak perawatan kehamilan agar segera menyusui dalam 30 menit pasca persalinan.</li>
+                                    <li>2.	Mungkin sulit dilaksanakan karena kondisi sosial.</li>
+                                    <li>3.	Efektif hanya sampai dengan 6 bulan.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -128,7 +145,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Efektivitas</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">Metode Amenore Laktasi (MAL) dapat efektif mencegah kehamilan dengan tingkat keberhasilan 98% dalam 6 bulan pertama setelah melahirkan.</p>
 							</div>
 						</div>
 					</div>
@@ -138,7 +155,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Cara Kerja</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">Mekanisme kerja utama dengan cara mencegah pelepasan telur dari ovarium (ovulasi). Sering menyusui secara sementara mencegah pelepasan hormon alami yang dapat menyebabkan ovulasi.</p>
 							</div>
 						</div>
 					</div>
