@@ -11,7 +11,15 @@ require_once('../include/conn.php');
 
     	global $con;
 		$uuid = guidv4();
+
+		$is_pasangan = 1;
+		$is_anak = 1;
 		
+		if (isset($_POST['is_pasangan'])) $is_pasangan = 0;
+		if (isset($_POST['is_anak'])) $is_anak = 0;
+
+
+		exit( $is_pasangan.' '.$is_anak);
 		/*
 		uuid_bidan
 		

@@ -118,39 +118,33 @@
                         <form autocomplete="off" action="app/webapi/registerwebapi.php?function=add_user" method="post" >
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <input type="text" class="form-control" id="uuid_bidan" placeholder="" disabled>
                                         <input type="text" class="form-control d-none" name="uuid_bidan">
                                         <label for="uuid_bidan">UUID Bidan</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <input type="text" class="form-control" name="fullname" placeholder="Nama Anda">
                                         <label for="name">Nama Anda (Sesuai KTP)</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <input type="text" class="form-control" name="nik" placeholder="NIK">
                                         <label for="name">NIK (Nomor KTP)</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <input type="date" class="form-control" name="dob" placeholder="DOB">
                                         <label for="name">Tanggal Lahir</label>
                                     </div>
                                 </div>
+
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="nama_pasangan" placeholder="Nama Anda">
-                                        <label for="name">Nama Suami / Istri (Sesuai KTP)</label>
-                                    </div>
-                                </div>
-                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Status Pendidikan</p>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
                                         <select class="form-select" id="floatingSelect" name="pendidikan"
                                             aria-label="Floating label select example">
                                             <option selected disabled>-Pilih-</option>
@@ -164,31 +158,9 @@
                                         <label for="floatingSelect">Pendidikan Anda</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect" name="pendidikan_pasangan"
-                                            aria-label="Floating label select example">
-                                            <option selected disabled>-Pilih-</option>
-                                            <option value="1">Tidak Tamat SD/MI</option>
-                                            <option value="2">Tamat SD/MI</option>
-                                            <option value="3">Tamat SLTP/MTSN</option>
-                                            <option value="4">Tamat SMA/MA</option>
-                                            <option value="5">Tamat Perguruan Tinggi</option>
-                                            <option value="6">Tidak Sekolah</option>
-                                        </select>
-                                        <label for="floatingSelect">Pendidikan Suami / Istri</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Alamat" name="alamat" style="height: 160px"></textarea>
-                                        <label for="message">Alamat Tinggal (Sesuai KTP)</label>
-                                    </div>
-                                </div>
 
-                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Status Pekerjaan</p>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
+                                <div class="col-lg-12 col-xl-12">
+                                    <div class="form-floating">
                                         <select class="form-select" id="floatingSelect" name="pekerjaan"
                                             aria-label="Floating label select example">
                                             <option selected disabled>-Pilih-</option>
@@ -205,26 +177,16 @@
                                         <label for="floatingSelect">Pekerjaan Anda</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <select class="form-select" id="floatingSelect" name="pekerjaan_pasangan"
-                                            aria-label="Floating label select example">
-                                            <option selected disabled>-Pilih-</option>
-                                            <option value="1">Petani</option>
-                                            <option value="2">Nelayan</option>
-                                            <option value="3">Pedagang</option>
-                                            <option value="4">PNS/TNI/POLRI</option>
-                                            <option value="5">Pegawai Swasta</option>
-                                            <option value="6">Wiraswasta</option>
-                                            <option value="7">Pensiunan</option>
-                                            <option value="8">Pekerja Lepas</option>
-                                            <option value="9">Tidak Bekerja</option>
-                                        </select>
-                                        <label for="floatingSelect">Pekerjaan Suami / Istri</label>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Alamat" name="alamat" style="height: 160px"></textarea>
+                                        <label for="message">Alamat Tinggal (Sesuai KTP)</label>
                                     </div>
                                 </div>
+
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <select class="form-select" id="floatingSelect" name="asuransi"
                                             aria-label="Floating label select example">
                                             <option selected disabled>-Pilih-</option>
@@ -235,38 +197,9 @@
                                         <label for="floatingSelect">Penggunaan Asuransi</label>
                                     </div>
                                 </div>
-                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Jumlah Anak yang Masih Hidup</p>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak_pria_hidup" placeholder="number" value="0">
-                                        <label for="number">Laki-Laki</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="anak_wanita_hidup" placeholder="number" value="0">
-                                        <label for="number">Perempuan</label>
-                                    </div>
-                                </div>
-
-                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Umur Anak Terakhir</p>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="tahun_anak_terakhir" placeholder="number" value="0">
-                                        <label for="number">Tahun</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="form-floating mb-2">
-                                        <input type="number" class="form-control" name="bulan_anak_terakhir" placeholder="number" value="0">
-                                        <label for="number">Bulan</label>
-                                    </div>
-                                </div>
 
                                 <div class="col-lg-12 col-xl-12">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <select class="form-select" id="floatingSelect" name="status_kb"
                                             aria-label="Floating label select example">
                                             <option selected disabled>-Pilih-</option>
@@ -300,14 +233,106 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-12 col-xl-6">
+
+
+                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Informasi Pasangan</p>
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0">Belum Punya Pasangan</p>
+                                    <input type="checkbox" id="is_pasangan" name="is_pasangan" onclick="pasangan()">
+                                </div>
+
+                                <div class="col-lg-12 col-xl-12 pasangan" style="margin-top: 10px;">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="nama_pasangan" placeholder="Nama Anda">
+                                        <label for="name">Nama Pasangan (Sesuai KTP)</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-xl-12 pasangan">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelect" name="pendidikan_pasangan"
+                                            aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
+                                            <option value="1">Tidak Tamat SD/MI</option>
+                                            <option value="2">Tamat SD/MI</option>
+                                            <option value="3">Tamat SLTP/MTSN</option>
+                                            <option value="4">Tamat SMA/MA</option>
+                                            <option value="5">Tamat Perguruan Tinggi</option>
+                                            <option value="6">Tidak Sekolah</option>
+                                        </select>
+                                        <label for="floatingSelect">Pendidikan Pasangan</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-xl-12 pasangan">
                                     <div class="form-floating mb-2">
+                                        <select class="form-select" id="floatingSelect" name="pekerjaan_pasangan"
+                                            aria-label="Floating label select example">
+                                            <option selected disabled>-Pilih-</option>
+                                            <option value="1">Petani</option>
+                                            <option value="2">Nelayan</option>
+                                            <option value="3">Pedagang</option>
+                                            <option value="4">PNS/TNI/POLRI</option>
+                                            <option value="5">Pegawai Swasta</option>
+                                            <option value="6">Wiraswasta</option>
+                                            <option value="7">Pensiunan</option>
+                                            <option value="8">Pekerja Lepas</option>
+                                            <option value="9">Tidak Bekerja</option>
+                                        </select>
+                                        <label for="floatingSelect">Pekerjaan Pasangan</label>
+                                    </div>
+                                </div>
+
+
+                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Informasi Anak</p>
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0">Belum Punya Anak</p>
+                                    <input type="checkbox" id="is_anak" name="is_anak" onclick="anak()">
+                                </div>
+
+                                <div class="col-lg-6 col-xl-6 anak">
+                                    <div class="form-floating mb-2">
+                                        <input type="number" class="form-control" name="anak_pria_hidup" placeholder="number" value="0">
+                                        <label for="number">Laki-Laki</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-xl-6 anak">
+                                    <div class="form-floating mb-2">
+                                        <input type="number" class="form-control" name="anak_wanita_hidup" placeholder="number" value="0">
+                                        <label for="number">Perempuan</label>
+                                    </div>
+                                </div>
+                                <p class="font-italic text-primary m-0 anak" style="text-align: left;">*Jumlah Anak yang Masih Hidup</p>
+
+                                <p class="font-italic anak" style="text-align: left;margin-bottom: -10px !important;font-weight: 500;">Umur Anak Terakhir</p>
+                                <div class="col-lg-6 col-xl-6 anak">
+                                    <div class="form-floating mb-2">
+                                        <input type="number" class="form-control" name="tahun_anak_terakhir" placeholder="number" value="0">
+                                        <label for="number">Tahun</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-xl-6 anak">
+                                    <div class="form-floating mb-2">
+                                        <input type="number" class="form-control" name="bulan_anak_terakhir" placeholder="number" value="0">
+                                        <label for="number">Bulan</label>
+                                    </div>
+                                </div>
+                                
+
+                                <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 30px !important;font-weight: 500;">Informasi Akun</p>
+
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
                                         <input type="phone" class="form-control" name="phone" placeholder="Phone">
                                         <label for="phone">No HP (Whatsapp)</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating mb-2">
+                                    <div class="form-floating">
                                         <input type="email" class="form-control" name="email" placeholder="Email" autocomplete="off" >
                                         <label for="email">Email Anda</label>
                                     </div>
@@ -389,7 +414,25 @@
                     instance.innerHTML = "";
                     instance.innerHTML += data.instance;
                 }
-            });
+        });
+
+        function pasangan() {
+            var pasangan = document.getElementById("is_pasangan");
+            if (pasangan.checked) {
+                $(".pasangan").hide();
+            } else {
+                $(".pasangan").show();
+            }
+        }
+
+        function anak() {
+            var anak = document.getElementById("is_anak");
+            if (anak.checked) {
+                $(".anak").hide();
+            } else {
+                $(".anak").show();
+            }
+        }
 
     </script>
 		
