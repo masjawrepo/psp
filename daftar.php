@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="nik" placeholder="NIK">
+                                        <input type="number" class="form-control" name="nik" placeholder="NIK">
                                         <label for="name">NIK (Nomor KTP)</label>
                                     </div>
                                 </div>

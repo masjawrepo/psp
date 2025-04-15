@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2025 at 01:40 PM
+-- Generation Time: Apr 15, 2025 at 02:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -132,7 +132,7 @@ CREATE TABLE `user` (
   `uuid` varchar(36) NOT NULL,
   `uuid_bidan` varchar(36) NOT NULL,
   `fullname` varchar(255) NOT NULL,
-  `nik` int(36) NOT NULL,
+  `nik` varchar(255) NOT NULL,
   `dob` datetime NOT NULL,
   `phone` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -144,15 +144,6 @@ CREATE TABLE `user` (
   `updated_by` varchar(36) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `uuid`, `uuid_bidan`, `fullname`, `nik`, `dob`, `phone`, `email`, `password`, `role_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
-(5, '6615c23d-30ee-4ea5-9753-ee910c3614b8', '8ef273e2-95d2-4bc9-9f92-0c9db0b654c4', 'Arista Sani Oktavianti', 2147483647, '2002-10-20 00:00:00', '081573265264', 'aristasunny@gmail.com', '$2y$10$wurFKemZVwChbjiXav5WpufH2uMatoDsezZ2f9PUdyzEpRj2ps9Sq', NULL, NULL, NULL, NULL, NULL, 1),
-(6, '4c4c11d7-4444-4977-bfd6-e45d44b11bea', '8ef273e2-95d2-4bc9-9f92-0c9db0b654c4', 'Annisa Sepyia Maharani', 2147483647, '1998-10-17 00:00:00', '082219140548', 'ini@email.com', '$2y$10$AcCZhKj3nL8tN1IMWj4A3egjXuUlgtugNZ.8CXqf.MO4UWeb5IMYO', NULL, NULL, NULL, NULL, NULL, 1),
-(7, '49c5d8f7-ecf5-4ed0-969c-b0897cab7597', '8ef273e2-95d2-4bc9-9f92-0c9db0b654c4', 'Annisa Sepyia Maharani', 2147483647, '1998-10-17 00:00:00', '082219140548', 'ini@email.com', '$2y$10$jrg4uBHCghjh/x6xCJXixOQxHXw76TlgVSgcGDeoi1XItot4DYH9C', NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -184,15 +175,6 @@ CREATE TABLE `user_detail` (
   `is_pasangan` int(3) DEFAULT NULL,
   `is_anak` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user_detail`
---
-
-INSERT INTO `user_detail` (`id`, `uuid_user`, `nama_pasangan`, `pendidikan`, `pendidikan_pasangan`, `alamat`, `pekerjaan`, `pekerjaan_pasangan`, `asuransi`, `anak_pria_hidup`, `anak_wanita_hidup`, `tahun_anak_terakhir`, `bulan_anak_terakhir`, `status_kb`, `kb_terakhir`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`, `is_pasangan`, `is_anak`) VALUES
-(1, '8b5a3ad9-a7c4-4346-93cc-e1e70bdc44c7', 'qweqwe', 5, 5, 'qweqweqweqwe', 6, 6, 2, 2, 2, 1, 2, 1, 4, NULL, NULL, NULL, NULL, 1, NULL, NULL),
-(2, '6615c23d-30ee-4ea5-9753-ee910c3614b8', 'Nama', 5, 5, 'Kp. Cikareo, Sukadamai, Cicantayan.', 6, 6, 2, 1, 1, 1, 1, 1, 11, NULL, NULL, NULL, NULL, 1, 1, 1),
-(3, '49c5d8f7-ecf5-4ed0-969c-b0897cab7597', '-', 5, 99, 'Jl. Sukamulya', 6, 99, 1, 0, 0, 0, 0, 1, 11, NULL, NULL, NULL, NULL, 1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -266,13 +248,13 @@ ALTER TABLE `role_admin`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user_detail`
 --
 ALTER TABLE `user_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
