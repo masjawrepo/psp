@@ -104,7 +104,7 @@
 
 
         <!-- Contact Start -->
-        <div class="container-fluid contact py-5">
+        <div class="container-fluid py-5">
             <div class="container py-5">
 				
                 <div id="scanner" class="row g-5 align-items-center text-center justify-content-center">

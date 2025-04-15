@@ -104,7 +104,7 @@
 
 
         <!-- Contact Start -->
-        <div class="container-fluid contact py-5">
+        <div class="container-fluid py-5">
             <div class="container py-5">
 					
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
