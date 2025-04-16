@@ -326,4 +326,34 @@ require_once('../include/conn.php');
 		echo json_encode($data);
    }
 
+
+   function get_detail_pasien_acceptor()
+   {
+    	global $con;
+    	$uuid = '"'.$_REQUEST['uuid'].'"';
+    	$uuid = str_replace("\r\n","",$uuid);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->query('SELECT *
+									FROM `user` as a
+									JOIN `user_detail` as b 
+									ON a.uuid = b.uuid_user
+									JOIN `acceptor` as c 
+									ON a.uuid = c.uuid_user
+									where a.uuid = '.$uuid.';');            
+		while($row=mysqli_fetch_object($query))
+		{
+			$data =$row;
+		}
+		//$response=array(
+		//               'status' => 1,
+		//               'message' =>'Success',
+		//               'data' => $data
+		//            );
+		//$query->close();
+		$query->close();
+		header('Content-Type: application/json');
+		echo json_encode($data);
+   }
 ?>

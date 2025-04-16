@@ -315,7 +315,7 @@
                         }, 500);
                     }
 
-                    makeQR(uuid, data.instance);
+                    makeQR(uuid, data.instance+".png");
               }
             });
         
