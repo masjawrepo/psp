@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2025 at 02:00 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Apr 16, 2025 at 02:39 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,6 +30,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `acceptor` (
   `id` int(11) NOT NULL,
   `uuid_user` varchar(36) NOT NULL,
+  `partus_saat_ini` varchar(255) DEFAULT NULL,
+  `haid_terakhir` varchar(255) DEFAULT NULL,
+  `status_kehamilan` varchar(255) DEFAULT NULL,
+  `gravida` varchar(255) DEFAULT NULL,
+  `partus` varchar(255) DEFAULT NULL,
+  `abortus` varchar(255) DEFAULT NULL,
+  `status_menyusui` varchar(255) DEFAULT NULL,
+  `riwayat_penyakit` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `created_by` varchar(36) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -41,8 +49,8 @@ CREATE TABLE `acceptor` (
 -- Dumping data for table `acceptor`
 --
 
-INSERT INTO `acceptor` (`id`, `uuid_user`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
-(1, '8b5a3ad9-a7c4-4346-93cc-e1e70bdc44c7', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `acceptor` (`id`, `uuid_user`, `partus_saat_ini`, `haid_terakhir`, `status_kehamilan`, `gravida`, `partus`, `abortus`, `status_menyusui`, `riwayat_penyakit`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+(2, '823d12c1-122d-48b2-9383-029212115457', '1', '2025-04-16', '2', '3', '4', '5', '1', 'Tidak', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,6 +153,14 @@ CREATE TABLE `user` (
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `uuid`, `uuid_bidan`, `fullname`, `nik`, `dob`, `phone`, `email`, `password`, `role_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+(10, '823d12c1-122d-48b2-9383-029212115457', '8ef273e2-95d2-4bc9-9f92-0c9db0b654c4', 'Sarah Azahra', '3273231710980001', '1998-10-17 00:00:00', '082219140548', 'sarah@test.com', '$2y$10$QoA5wzUk7kGp8kRYhP7S9ezwfsGL3BppcbmEDOrMwrmgEuoC8bW8y', NULL, NULL, NULL, NULL, NULL, 1),
+(11, '577af025-078b-43a6-b03f-1da1bfae0a60', '8ef273e2-95d2-4bc9-9f92-0c9db0b654c4', 'Annisa Rahma', '3273231710980002', '1998-10-17 00:00:00', '085183389579', 'annisa@test.com', '$2y$10$3nKZ7WSgWQTHBz0V0/gC3uXMdn974q3tg0qVPxVUdxTSdVA8uscUq', NULL, NULL, NULL, NULL, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -175,6 +191,14 @@ CREATE TABLE `user_detail` (
   `is_pasangan` int(3) DEFAULT NULL,
   `is_anak` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_detail`
+--
+
+INSERT INTO `user_detail` (`id`, `uuid_user`, `nama_pasangan`, `pendidikan`, `pendidikan_pasangan`, `alamat`, `pekerjaan`, `pekerjaan_pasangan`, `asuransi`, `anak_pria_hidup`, `anak_wanita_hidup`, `tahun_anak_terakhir`, `bulan_anak_terakhir`, `status_kb`, `kb_terakhir`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`, `is_pasangan`, `is_anak`) VALUES
+(6, '823d12c1-122d-48b2-9383-029212115457', '-', 5, 99, 'Jl. Sukaluyu', 6, 99, 1, 0, 0, 0, 0, 1, 11, NULL, NULL, NULL, NULL, 1, 0, 0),
+(7, '577af025-078b-43a6-b03f-1da1bfae0a60', 'Rayhan', 5, 5, 'Jl. Silih Asih', 6, 5, 2, 1, 1, 0, 5, 4, 1, NULL, NULL, NULL, NULL, 1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -224,7 +248,7 @@ ALTER TABLE `user_detail`
 -- AUTO_INCREMENT for table `acceptor`
 --
 ALTER TABLE `acceptor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -248,13 +272,13 @@ ALTER TABLE `role_admin`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_detail`
 --
 ALTER TABLE `user_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
