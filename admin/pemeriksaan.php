@@ -135,12 +135,12 @@
                     <div class="row g-2 align-items-center justify-content-center">
 
                         <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2">
 
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed" type="button"
+                                            <button class="accordion-button collapsed p-0" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                                 aria-expanded="flase" aria-controls="flush-collapseOne">
                                                 <div class="p-2" >
@@ -250,7 +250,7 @@
                                 <div class="accordion accordion-flush" id="accordionFlush2">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed" type="button"
+                                            <button class="accordion-button collapsed p-0" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                                 aria-expanded="flase" aria-controls="flush-collapseTwo">
                                                 <div class="p-2" >
@@ -316,6 +316,18 @@
                             </div>
                         </div>
 
+                        <div class="row align-items-center text-center justify-content-center">
+                            <div class="row text-center alert alert-success alert-dismissible fade show" role="alert" style="z-index: 92;max-width: 91%;opacity: 0.95;display: none;" id="success">
+                              <i class="bi bi-check me-1" style="font-size:3em;"></i>
+                              <h4 class="alert-heading" style="font-size:95%;">Data Berhasil di Input !</h4>
+                              <p  style="font-size:85%;">Pemeriksaan telah selesai, silahkan kembali ke halaman awal.</p>
+                              <a type="button" class="btn" aria-label="Back" href="check.php"><i class="bi bi-arrow-left-circle-fill me-1" style="font-size:2em;color: #0f5132;"></i></a>
+                              <!--
+                              <a type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+                              -->
+                            </div>
+                        </div>
+
                         <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
                             <form autocomplete="off" action="" method="post" >
 
@@ -327,7 +339,7 @@
                                 <div class="row g-3 pt-4 px-4">
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                            <select class="form-select" id="keadaan_umum" name="keadaan_umum"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
                                                 <option value="1">Baik</option>
@@ -338,55 +350,62 @@
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <input type="number" class="form-control" name="berat_badan" placeholder="berat_badan">
                                             <label for="name">Berat Badan (Kg)</label>
                                         </div>
                                     </div>
                                     <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Tekanan Darah</p>
                                     <div class="col-lg-6 col-xl-6">
                                         <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <input type="number" class="form-control" name="sbp" placeholder="sbp">
                                             <label for="name">SBP (Systolic Blood Pressure)</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-xl-6">
                                         <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="nik" placeholder="NIK">
+                                            <input type="number" class="form-control" name="dbp" placeholder="dbp">
                                             <label for="name">DBP (Distolic Blood Pressure)</label>
                                         </div>
                                     </div>
+                                    
                                     <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Sebelum Dilakukan Pemasangan IUD atau MOM Dilakukan Pemeriksaan Dalam :</p>
-                                    <div class="col-lg-6 col-xl-6">
+
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="mb-0">Non IUD atau MOM</p>
+                                        <input type="checkbox" id="is_iud_mom" name="is_iud_mom" onclick="iud_mom()">
+                                    </div>
+
+                                    <div class="col-lg-6 col-xl-6 iud_mom">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                            <select class="form-select" id="tanda_radang" name="tanda_radang"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
                                                 <option value="1">Ya</option>
                                                 <option value="2">Tidak</option>
                                             </select>
-                                            <label for="floatingSelect">Tanda-Tanda Radang</label>
+                                            <label for="tanda_radang">Tanda-Tanda Radang</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-xl-6">
+                                    <div class="col-lg-6 col-xl-6 iud_mom">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                            <select class="form-select" id="tumor" name="tumor"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
                                                 <option value="1">Ya</option>
                                                 <option value="2">Tidak</option>
                                             </select>
-                                            <label for="floatingSelect">Tumor / Keganasan Ginekologi :</label>
+                                            <label for="tumor">Tumor / Keganasan Ginekologi :</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-xl-12">
+                                    <div class="col-lg-12 col-xl-12 iud_mom">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                            <select class="form-select" id="posisi_rahim" name="posisi_rahim"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
-                                                <option value="1">.....</option>
+                                                <option value="1">Baik</option>
                                                 <option value="2">Tidak</option>
                                             </select>
-                                            <label for="floatingSelect">Posisi Rahim</label>
+                                            <label for="posisi_rahim">Posisi Rahim</label>
                                         </div>
                                     </div>
                                 </div>
@@ -400,55 +419,57 @@
                                 <div class="row g-3 pt-4 px-4">
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="SelectKontrasepsi" name="pendidikan"
+                                            <select class="form-select" id="kontrasepsi_pilihan" name="kontrasepsi_pilihan"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
                                                 <option value="1">Implan</option>
                                                 <option value="2">IUD</option>
-                                                <option value="3">......</option>
+                                                <option value="3">Suntik KB 1 Bulan</option>
+                                                <option value="4">Suntik KB 3 Bulan</option>
+                                                <option value="5">Pil KB</option>
                                             </select>
-                                            <label for="floatingSelect">Alat / Obat / Cara Kontrasepsi yang Dipilih:</label>
+                                            <label for="kontrasepsi_pilihan">Alat / Obat / Cara Kontrasepsi yang Dipilih:</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
-                                            <label for="name">Tanggal Dilayani</label>
+                                            <input type="date" class="form-control" name="tanggal_dilayani" placeholder="tanggal_dilayani">
+                                            <label for="tanggal_dilayani">Tanggal Dilayani</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12 noniud_implan">
                                         <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
-                                            <label for="name">Tanggal Kunjungan Ulang</label>
+                                            <input type="date" class="form-control" name="tanggal_kunjungan_ulang" placeholder="tanggal_kunjungan_ulang">
+                                            <label for="tanggal_kunjungan_ulang">Tanggal Kunjungan Ulang</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12 iud_implan">
                                         <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="dob" placeholder="DOB">
-                                            <label for="name">Tanggal Dicabut (Khusus Implan / IUD)</label>
+                                            <input type="date" class="form-control" name="tanggal_dicabut_iud_implan" placeholder="tanggal_dicabut_iud_implan">
+                                            <label for="tanggal_dicabut_iud_implan">Tanggal Dicabut (Khusus Implan / IUD)</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <input type="text" class="form-control" id="uuid_bidan" placeholder="">
-                                            <label for="message">Tindakan</label>
+                                            <input type="text" class="form-control" name="tindakan" placeholder="">
+                                            <label for="tindakan">Tindakan</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="pendidikan"
+                                            <select class="form-select" id="hasil_pemeriksaan" name="hasil_pemeriksaan"
                                                 aria-label="Floating label select example">
                                                 <option selected disabled>-Pilih-</option>
                                                 <option value="1">Sukses</option>
                                                 <option value="2">Tidak</option>
                                             </select>
-                                            <label for="floatingSelect">Hasil Pemeriksaan</label>
+                                            <label for="hasil_pemeriksaan">Hasil Pemeriksaan</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <input type="text" class="form-control" id="uuid_bidan" placeholder="">
-                                            <label for="message">Catatan</label>
+                                            <input type="text" class="form-control" id="catatan" name="catatan" placeholder="">
+                                            <label for="catatan">Catatan</label>
                                         </div>
                                     </div>
                                 </div>
@@ -503,6 +524,16 @@
 
     <script>
 
+    function iud_mom() {
+        var is_iud_mom = document.getElementById("is_iud_mom");
+        if (is_iud_mom.checked) {
+            $(".iud_mom").hide();
+        } else {
+            $(".iud_mom").show();
+        }
+    }
+
+
     $( document ).ready(function() {
 
         moment.locale('id');  
@@ -513,8 +544,7 @@
         //alert(uuid);
         getPasien(uuid);
           
-
-        $('#SelectKontrasepsi').change(function(){
+        $('#kontrasepsi_pilihan').change(function(){
             if( $(this).val()=="1" || $(this).val()=="2"){
                 $(".iud_implan").show();
                 $(".noniud_implan").hide();
@@ -523,8 +553,7 @@
                 $(".noniud_implan").show();
             }
         });
-        $('#SelectKontrasepsi').trigger("change");
-
+        $('#kontrasepsi_pilihan').trigger("change");
 
         function getPasien(uuidsearch){
 
@@ -533,7 +562,7 @@
             const array_asuransi = new Array("BPJS Kesehatan", "Lainnya", "Tidak");
             const array_status_kb = new Array("Baru Pertama Kali", "Pernah Pakai Alat KB (Berhenti Sesudah Bersalin/Keguguran)", "Pernah Pakai Alat KB", "Sedang KB");
             const array_kb_terakhir = new Array("Suntikan 1 Bulanan", "Suntikan 3 Bulanan", "Pil", "Kondom", "Implan 1 Batang", "Implan 2 Batang", "IUD", "IUD Lain-Lain", "Tubektomi", "Vasektomi", "Belum Pernah");
-            
+            const array_menyusui = new Array("Ya","Tidak");
 
             
             
@@ -735,7 +764,8 @@
                     if(data.hasOwnProperty("status_menyusui")){
                         $(".status_menyusui").show();
                         status_menyusui.innerHTML = "";
-                        status_menyusui.innerHTML += data.status_menyusui;
+                        status_menyusui.innerHTML += array_menyusui[data.status_menyusui - 1];
+                        
                     }
                     if(data.hasOwnProperty("riwayat_penyakit")){
                         $(".riwayat_penyakit").show();
@@ -748,6 +778,12 @@
                 }
             });
         
+        }
+
+
+
+        if (window.location.hash == "#success") {
+            $("#success").show();
         }
 
     });

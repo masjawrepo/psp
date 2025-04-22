@@ -197,6 +197,8 @@
 				}
 				*/
 
+				uuidsearch = uuidsearch.replace("https://pillsyncplus.com/daftar.php?uuid=", "");
+
 
 				$.ajax({
 					type: 'GET',
@@ -206,12 +208,12 @@
 						if (data.uuid == uuidsearch){
 							window.location.replace("daftar.php?uuid=" + uuidsearch);
 						} else {
-							alert("Informasi Bidan Tidak Valid, SIlahkan Scan Kembali !");
+							alert("Informasi Bidan Tidak Valid, Silahkan Scan Kembali !");
 							window.location.href = "cek-bidan.php";
 						}
 				  },
 				    error: function(XMLHttpRequest, textStatus, errorThrown) { 
-						alert("Informasi Bidan Tidak Valid, SIlahkan Scan Kembali !");
+							alert("Informasi Bidan Tidak Valid, Silahkan Scan Kembali !");
 						window.location.href = "cek-bidan.php";
 				    }
 				});

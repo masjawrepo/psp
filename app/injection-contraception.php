@@ -75,6 +75,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div>
 					-->
 				</div>
+				<p class="card-text">Mengandung 2 hormon: progestin dan estrogen. Seperti hormon progesteron dan estrogen alami pada tubuh perempuan</p>
 			</div>
 
 		<!-- separator -->
@@ -85,7 +86,10 @@ if (!isset($_SESSION['loggedin'])) {
 		<div class="tab-two">
 			<ul class="nav nav-fill nav-separate" id="myTab" role="tablist">
 				<li class="nav-item m-1">
-					<a class="nav-link active" id="keuntungan-tab" data-toggle="tab" href="#keuntungan" role="tab" aria-controls="keuntungan" aria-selected="true">Keuntungan</a>
+					<a class="nav-link active" id="jenis-tab" data-toggle="tab" href="#jenis" role="tab" aria-controls="jenis" aria-selected="true">Jenis</a>
+				</li>
+				<li class="nav-item m-1">
+					<a class="nav-link" id="keuntungan-tab" data-toggle="tab" href="#keuntungan" role="tab" aria-controls="keuntungan" aria-selected="true">Keuntungan</a>
 				</li>
 				<li class="nav-item m-1">
 					<a class="nav-link" id="keterbatasan-tab" data-toggle="tab" href="#keterbatasan" role="tab" aria-controls="keterbatasan" aria-selected="false">Keterbatasan</a>
@@ -103,12 +107,32 @@ if (!isset($_SESSION['loggedin'])) {
 			<!-- end separator -->
 
 			<div class="tab-content">
-				<div class="tab-pane fade show active" id="keuntungan" role="tabpanel" aria-labelledby="keuntungan-tab">
+				<div class="tab-pane fade show active" id="jenis" role="tabpanel" aria-labelledby="jenis-tab">
+					<div class="container">
+						<div class="card bg-lightblue border-0">
+							<div class="card-body">
+								<h5 class="card-title">Jenis</h5>
+								<p class="card-text">Kontrasepsi Suntik Kombinasi yang mengandung 2 hormon yaitu: Medroxyprogesterone Acetate (MPA) / Estradiol Cypionate yang disediakan pemerintah:</p>
+                                <ul>
+                                    <li>1.	Suntikan 1 bulan sekali mengandung medroxylprogesterone acetate 50 mg/ml, dan estradiol cypionate 10 mg/ml.</li>
+                                    <li>2.	Suntikan 2 bulan sekali mengandung medroxylprogesterone acetate 60 mg/ml, dan estradiol cypionate 7,5 mg/ml.</li>
+                                    <li>3.	Suntikan 3 bulan sekali mengandung medroxylprogesterone acetate 120 mg/ml, dan estradiol cypionate 10 mg/ml.</li>
+                                </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="keuntungan" role="tabpanel" aria-labelledby="keuntungan-tab">
 					<div class="container">
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keuntungan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Tidak perlu pemakaian setiap hari.</li>
+                                    <li>2.	Dapat dihentikan kapan saja.</li>
+                                    <li>3.	Tidak berpengaruh pada hubungan suami istri.</li>
+                                    <li>4.	Baik untuk menjarangkan kehamilan.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -118,7 +142,11 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Keterbatasan</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Harus kembali ke tenaga Kesehatan untuk disuntik tepat waktu.</li>
+                                    <li>2.	Efektivitas KSK tergantung pada kembalinya yang tepat waktu: Risiko kehamilan meningkat saat klien terlambat suntik ulang atau melewatkan suatu suntikan.</li>
+                                    <li>3.	Kemungkinan keterlambatan pemulihan kesuburan setelah penghentian pemakaian.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -128,7 +156,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Efektivitas</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+								<p class="card-text">Efektivitas KSK tergantung pada kembalinya yang tepat waktu: Risiko kehamilan meningkat saat klien terlambat suntik ulang atau melewatkan suatu suntikan.</p>
 							</div>
 						</div>
 					</div>
@@ -138,7 +166,12 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="card bg-lightblue border-0">
 							<div class="card-body">
 								<h5 class="card-title">Cara Kerja</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, veniam.</p>
+                                <ul>
+                                    <li>1.	Mencegah pelepasan telur dari ovarium (menekan ovulasi).</li>
+                                    <li>2.	Membuat lendir serviks menjadi kental penetrasi sperma terganggu.</li>
+                                    <li>3.	Perubahan pada endometrium (atrofi) sehingga implantasi terganggu.</li>
+                                    <li>4.	Menghambat transportasi gamet oleh tuba.</li>
+                                </ul>
 							</div>
 						</div>
 					</div>

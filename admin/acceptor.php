@@ -169,7 +169,7 @@
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed" type="button"
+                                            <button class="accordion-button collapsed p-0" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                                 aria-expanded="flase" aria-controls="flush-collapseOne">
                                                 <div class="p-2" >
@@ -402,17 +402,6 @@
         //alert(uuid);
         getPasien(uuid);
           
-
-        $('#SelectKontrasepsi').change(function(){
-            if( $(this).val()=="1" || $(this).val()=="2"){
-                $(".iud_implan").show();
-                $(".noniud_implan").hide();
-            } else {
-                $(".iud_implan").hide();
-                $(".noniud_implan").show();
-            }
-        });
-        $('#SelectKontrasepsi').trigger("change");
 
 
         function getPasien(uuidsearch){
