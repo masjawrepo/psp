@@ -154,7 +154,7 @@
                                     <div class="row g-3 justify-content-center pt-1 px-4 mb-4">
                                         <div class="col-lg-9 col-xl-9">
                                             <div class="form-floating mb-0">
-                                                <input type="number" class="form-control" id="nik" placeholder="nik">
+                                                <input type="number" class="form-control" id="nik" name="nik" placeholder="nik">
                                                 <label for="nik">NIK Pasien</label>
                                             </div>
                                         </div>
@@ -222,6 +222,12 @@
                                             </div>
                                         </div>
 
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-3 col-md-4 label ">Pemeriksaan Terakhir</div>
+                                            <div class="col-lg-9 col-md-8" id="last_checkup">
+                                            </div>
+                                        </div>
+
                                         <div class="col-lg-9 col-md-8" id="buttons">
                                         </div>
 
@@ -276,6 +282,22 @@
         $(".3").hide();
         $(".4").hide();
     });
+
+    if (window.location.hash.includes('#check')) {
+      //alert(getHashValue('check'));
+      $("input[name='nik']").val(getHashValue('check'));
+      cekPasien();
+
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }, delayInMilliseconds);
+    };
+
+    function getHashValue(key) {
+      var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
+      return matches ? matches[1] : null;
+    }
 
     function cekPasien(){
         var nik = document.getElementById('nik').value;
@@ -335,6 +357,16 @@
                             buttons.innerHTML += '<a type="button" class="btn btn-outline-primary mt-3" href="pemeriksaan.php?uuid=' + data.uuid + '"><i class="fa fa-book me-2"></i>Periksa Pasien</a>';
 
                         }
+
+                        if (data.last_checkup == "Last Checkup NA"){
+                            last_checkup.innerHTML = "";
+                            last_checkup.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Belum Melakukan Pemeriksaan</span></div>';
+
+                        } else if(data.last_checkup != "Last Checkup NA"){
+                            last_checkup.innerHTML = "";
+                            last_checkup.innerHTML += '<div class="col-lg-9 col-md-8" style="display: contents !important; justify-content: center;"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>' + data.last_checkup  + '</span> <a style="font-size: smaller;" href="detail_pemeriksaan.php?uuid=' + data.uuid + '">Lihat Detail</a></div>';
+                        }
+                        
                         //acceptor_check.innerHTML = "";
                     }
                 }

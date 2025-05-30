@@ -135,7 +135,7 @@
                     <div class="row g-2 align-items-center justify-content-center">
 
                         <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+                            <div class="border rounded bg-light p-4 pt-0 pb-0 p-4 col-sm-12 col-xl-12 mt-2 mb-5">
 
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <div class="accordion-item">
@@ -245,7 +245,7 @@
                         </div>
 
                         <div class="col-lg-11 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="border rounded bg-light p-4 col-sm-12 col-xl-12 mt-2 mb-5">
+                            <div class="border rounded bg-light p-4 pt-0 pb-0 col-sm-12 col-xl-12 mt-2 mb-5">
 
                                 <div class="accordion accordion-flush" id="accordionFlush2">
                                     <div class="accordion-item">
@@ -316,148 +316,87 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
-                            <form autocomplete="off" action="webapi/pemeriksaanwebapi.php?function=add_pemeriksaan" method="post" >
-                                <input type="text" class="form-control d-none" name="uuid_user">
-                                <div class="col-sm-12 col-xl-12 mt-5 mb-1">
-                                    <div class="rounded bg-light d-flex align-items-center p-2" >
-                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Pemeriksaan</h4>
-                                    </div>
-                                </div>
-                                <div class="row g-3 pt-4 px-4">
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="keadaan_umum"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">Baik</option>
-                                                <option value="2">Tidak</option>
-                                            </select>
-                                            <label for="floatingSelect">Keadaan Umum</label>
+                        <div class="col-lg-12 wow fadeInLeft" data-wow-delay="0.1s">
+
+                            <h3 class="mb-0 mt-1 text-center" style="color: #666666 !important;">Detail Pemeriksaan Terakhir</h3>
+                            <h5 class="mb-0 mb-3 text-center tgl_dilayani" style="color: #666666 !important;" id="tgl_dilayani">Tidak Ada</h5>
+                            <div class="row g-4 d-flex align-items-center justify-content-center pb-2">
+                                <div class="col-sm-11 col-xl-11 bg-white p-4">
+                                    <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Riwayat Pemeriksaan</h5>
+                                    <div class="row g-4">
+                                        <div class="col-sm-6 col-xl-6 p-3 pb-0 mt-0 keadaan_umum">
+                                            <p class="t-text">Keadaan Umum :</p>
+                                            <p class="d-text mb-0" id="keadaan_umum"></p>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="berat_badan" placeholder="berat_badan">
-                                            <label for="name">Berat Badan (Kg)</label>
+                                        <div class="col-sm-6 col-xl-6 p-3 pb-0 mt-0 berat_badan">
+                                            <p class="t-text">Berat Badan (Kg) :</p>
+                                            <p class="d-text mb-0" id="berat_badan"></p>
                                         </div>
-                                    </div>
-                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Tekanan Darah</p>
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="sbp" placeholder="SBP">
-                                            <label for="name">SBP (Systolic Blood Pressure)</label>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0">
+                                            <p class="t-text">Tekanan Darah</p>
+                                            <div class="row g-4  pt-4">
+                                                <div class="col-sm-6 col-xl-6 p-3 pt-0 pb-0 mt-0 sbp">
+                                                    <p class="t-text">SBP (Systolic Blood Pressure) :</p>
+                                                    <p class="d-text mb-0" id="sbp"></p>
+                                                </div>
+                                                <div class="col-sm-6 col-xl-6 p-3 pt-0 pb-0 mt-0 dbp">
+                                                    <p class="t-text">DBP (Distolic Blood Pressure) :</p>
+                                                    <p class="d-text mb-0" id="dbp"></p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="form-floating mb-0">
-                                            <input type="number" class="form-control" name="dbp" placeholder="DBP">
-                                            <label for="name">DBP (Distolic Blood Pressure)</label>
-                                        </div>
-                                    </div>
-                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Sebelum Dilakukan Pemasangan IUD atau MOM Dilakukan Pemeriksaan Dalam :</p>
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="tanda_radang"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">Ya</option>
-                                                <option value="2">Tidak</option>
-                                            </select>
-                                            <label for="floatingSelect">Tanda-Tanda Radang</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="tumor"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">Ya</option>
-                                                <option value="2">Tidak</option>
-                                            </select>
-                                            <label for="floatingSelect">Tumor / Keganasan Ginekologi :</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="posisi_rahim"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">.....</option>
-                                                <option value="2">Tidak</option>
-                                            </select>
-                                            <label for="floatingSelect">Posisi Rahim</label>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0">
+                                            <p class="t-text">Pemeriksaan Dalam (Untuk Pemasangan IUD atau MOM)</p>
+                                            <div class="row g-4  pt-4">
+                                                <div class="col-sm-6 col-xl-6 p-3 pt-0 pb-0 mt-0 tanda_radang">
+                                                    <p class="t-text">Tanda-Tanda Radang :</p>
+                                                    <p class="d-text mb-0" id="tanda_radang"></p>
+                                                </div>
+                                                <div class="col-sm-6 col-xl-6 p-3 pt-0 pb-0 mt-0 tumor">
+                                                    <p class="t-text">Tumor / Keganasan Ginekologi :</p>
+                                                    <p class="d-text mb-0" id="tumor"></p>
+                                                </div>
+                                                <div class="col-sm-12 col-xl-12 p-3 pt-0 pb-0 mt-2 posisi_rahim">
+                                                    <p class="t-text">Posisi Rahim:</p>
+                                                    <p class="d-text mb-0" id="posisi_rahim"></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <div class="col-sm-11 col-xl-11 bg-white p-4">
+                                    <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Riwayat Tindakan</h5>
+                                    <div class="row g-4" id="status_pasangan">
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 pilihan_kontrasepsi">
+                                            <p class="t-text">Alat / Obat / Cara Kontrasepsi yang Dipilih :</p>
+                                            <p class="d-text mb-0" id="pilihan_kontrasepsi"></p>
+                                        </div>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 tgl_kunjungan_ulang">
+                                            <p class="t-text">Tanggal Kunjungan Ulang:</p>
+                                            <p class="d-text mb-0" id="tgl_kunjungan_ulang"></p>
+                                        </div>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 tgl_dicabut_kontrasepsi">
+                                            <p class="t-text">Tanggal Dicabut (Khusus Implan / IUD) :</p>
+                                            <p class="d-text mb-0" id="tgl_dicabut_kontrasepsi"></p>
+                                        </div>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 tindakan">
+                                            <p class="t-text">Tindakan :</p>
+                                            <p class="d-text mb-0" id="tindakan"></p>
+                                        </div>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 hasil_pemeriksaan">
+                                            <p class="t-text">Hasil Pemeriksaan :</p>
+                                            <p class="d-text mb-0" id="hasil_pemeriksaan"></p>
+                                        </div>
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 catatan">
+                                            <p class="t-text">Catatan :</p>
+                                            <p class="d-text mb-0" id="catatan"></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <div class="col-sm-12 col-xl-12 mt-5 mb-1">
-                                    <div class="rounded bg-light d-flex align-items-center p-2" >
-                                        <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Tindakan</h4>
-                                    </div>
-                                </div>
-                                <div class="row g-3 pt-4 px-4">
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="SelectKontrasepsi" name="pilihan_kontrasepsi"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">Implan</option>
-                                                <option value="2">IUD</option>
-                                                <option value="3">......</option>
-                                            </select>
-                                            <label for="floatingSelect">Alat / Obat / Cara Kontrasepsi yang Dipilih:</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="tgl_dilayani" placeholder="Tanggal Dilayani">
-                                            <label for="tgl_dilayani">Tanggal Dilayani</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12 noniud_implan">
-                                        <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="tgl_kunjungan_ulang" placeholder="Tanggal Kunjungan Ulang">
-                                            <label for="tgl_kunjungan_ulang">Tanggal Kunjungan Ulang</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12 iud_implan">
-                                        <div class="form-floating mb-0">
-                                            <input type="date" class="form-control" name="tgl_dicabut_kontrasepsi" placeholder="Tanggal Dicabut (Khusus Implan / IUD)">
-                                            <label for="tgl_dicabut_kontrasepsi">Tanggal Dicabut (Khusus Implan / IUD)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <input type="text" class="form-control" name="tindakan" placeholder="">
-                                            <label for="message">Tindakan</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <select class="form-select" id="floatingSelect" name="hasil_pemeriksaan"
-                                                aria-label="Floating label select example">
-                                                <option selected disabled>-Pilih-</option>
-                                                <option value="1">Sukses</option>
-                                                <option value="2">Tidak</option>
-                                            </select>
-                                            <label for="floatingSelect">Hasil Pemeriksaan</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-12">
-                                        <div class="form-floating mb-0">
-                                            <input type="text" class="form-control" name="catatan" placeholder="">
-                                            <label for="message">Catatan</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center mt-5">
-                                    <div class="col-sm-6 col-xl-6">
-                                        <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+
                         </div>
 
                     </div>
@@ -537,6 +476,14 @@
             const array_status_menyusui = new Array("Ya", "Tidak");
 
 
+            const array_keadaan_umum = new Array("Baik", "Tidak");
+            const array_tanda_radang = new Array("Ya", "Tidak");
+            const array_tumor = new Array("Ya", "Tidak");
+            const array_posisi_rahim = new Array(".....", "Tidak");
+            const array_pilihan_kontrasepsi = new Array("Implan", "IUD", ".....");
+            const array_hasil_pemeriksaan = new Array("Sukses", "Tidak");
+
+
             $(".name").hide();
             var name = document.getElementById('name');
             $(".nik").hide();
@@ -593,11 +540,43 @@
             var riwayat_penyakit = document.getElementById('riwayat_penyakit');
 
 
+            //$(".tgl_dilayani").hide();
+            var tgl_dilayani = document.getElementById('tgl_dilayani');
+            $(".keadaan_umum").hide();
+            var keadaan_umum = document.getElementById('keadaan_umum');
+            $(".berat_badan").hide();
+            var berat_badan = document.getElementById('berat_badan');
+            $(".sbp").hide();
+            var sbp = document.getElementById('sbp');
+            $(".dbp").hide();
+            var dbp = document.getElementById('dbp');
+            $(".tanda_radang").hide();
+            var tanda_radang = document.getElementById('tanda_radang');
+            $(".tumor").hide();
+            var tumor = document.getElementById('tumor');
+            $(".posisi_rahim").hide();
+            var posisi_rahim = document.getElementById('posisi_rahim');
+
+
+            $(".pilihan_kontrasepsi").hide();
+            var pilihan_kontrasepsi = document.getElementById('pilihan_kontrasepsi');
+            $(".tgl_kunjungan_ulang").hide();
+            var tgl_kunjungan_ulang = document.getElementById('tgl_kunjungan_ulang');
+            $(".tgl_dicabut_kontrasepsi").hide();
+            var tgl_dicabut_kontrasepsi = document.getElementById('tgl_dicabut_kontrasepsi');
+            $(".tindakan").hide();
+            var tindakan = document.getElementById('tindakan');
+            $(".hasil_pemeriksaan").hide();
+            var hasil_pemeriksaan = document.getElementById('hasil_pemeriksaan');
+            $(".catatan").hide();
+            var catatan = document.getElementById('catatan');
+
+
 
             $.ajax({
                 type: 'GET',
                 dataType:"json",
-                url: 'webapi/adminwebapi.php?function=get_detail_pasien_acceptor&uuid=' + uuidsearch,
+                url: 'webapi/adminwebapi.php?function=get_detail_last_check&uuid=' + uuidsearch,
                 success: function (data, status, xhr) {
                     $("input[name='uuid_user']").val(uuidsearch);
                     if(data.hasOwnProperty("fullname")){
@@ -741,6 +720,83 @@
                         riwayat_penyakit.innerHTML = "";
                         riwayat_penyakit.innerHTML += data.riwayat_penyakit;
                     }
+
+
+                    
+                    if(data.hasOwnProperty("tgl_dilayani")){
+                        $(".tgl_dilayani").show();
+                        tgl_dilayani.innerHTML = "";
+                        tgl_dilayani.innerHTML += data.tgl_dilayani;
+                    }
+                    if(data.hasOwnProperty("keadaan_umum")){
+                        $(".keadaan_umum").show();
+                        keadaan_umum.innerHTML = "";
+                        keadaan_umum.innerHTML += array_keadaan_umum[data.keadaan_umum - 1];
+                    }
+                    if(data.hasOwnProperty("berat_badan")){
+                        $(".berat_badan").show();
+                        berat_badan.innerHTML = "";
+                        berat_badan.innerHTML += data.berat_badan;
+                    }
+                    if(data.hasOwnProperty("sbp")){
+                        $(".sbp").show();
+                        sbp.innerHTML = "";
+                        sbp.innerHTML += data.sbp;
+                    }
+                    if(data.hasOwnProperty("dbp")){
+                        $(".dbp").show();
+                        dbp.innerHTML = "";
+                        dbp.innerHTML += data.dbp;
+                    }
+                    if(data.hasOwnProperty("tanda_radang")){
+                        $(".tanda_radang").show();
+                        tanda_radang.innerHTML = "";
+                        tanda_radang.innerHTML += array_tanda_radang[data.tanda_radang - 1];
+                    }
+                    if(data.hasOwnProperty("tumor")){
+                        $(".tumor").show();
+                        tumor.innerHTML = "";
+                        tumor.innerHTML += array_tumor[data.tumor - 1];
+                    }
+                    if(data.hasOwnProperty("posisi_rahim")){
+                        $(".posisi_rahim").show();
+                        posisi_rahim.innerHTML = "";
+                        posisi_rahim.innerHTML += array_posisi_rahim[data.posisi_rahim - 1];
+                    }
+
+
+                    if(data.hasOwnProperty("pilihan_kontrasepsi")){
+                        $(".pilihan_kontrasepsi").show();
+                        pilihan_kontrasepsi.innerHTML = "";
+                        pilihan_kontrasepsi.innerHTML += array_pilihan_kontrasepsi[data.pilihan_kontrasepsi - 1];
+                    }
+                    if(data.hasOwnProperty("tgl_kunjungan_ulang") && data.tgl_kunjungan_ulang != null){
+                        $(".tgl_kunjungan_ulang").show();
+                        tgl_kunjungan_ulang.innerHTML = "";
+                        tgl_kunjungan_ulang.innerHTML += data.tgl_kunjungan_ulang;
+                    }
+                    if(data.hasOwnProperty("tgl_dicabut_kontrasepsi") && data.tgl_dicabut_kontrasepsi != null){
+                        $(".tgl_dicabut_kontrasepsi").show();
+                        tgl_dicabut_kontrasepsi.innerHTML = "";
+                        tgl_dicabut_kontrasepsi.innerHTML += data.tgl_dicabut_kontrasepsi;
+                    }
+                    if(data.hasOwnProperty("tindakan")){
+                        $(".tindakan").show();
+                        tindakan.innerHTML = "";
+                        tindakan.innerHTML += data.tindakan;
+                    }
+                    if(data.hasOwnProperty("hasil_pemeriksaan")){
+                        $(".hasil_pemeriksaan").show();
+                        hasil_pemeriksaan.innerHTML = "";
+                        hasil_pemeriksaan.innerHTML += array_hasil_pemeriksaan[data.hasil_pemeriksaan - 1];
+                    }
+                    if(data.hasOwnProperty("catatan")){
+                        $(".catatan").show();
+                        catatan.innerHTML = "";
+                        catatan.innerHTML += data.catatan;
+                    }
+
+
 
 
 

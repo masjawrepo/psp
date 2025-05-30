@@ -278,7 +278,7 @@
 
                         <div class="col-lg-10 wow fadeInLeft" data-wow-delay="0.1s">
                             <form autocomplete="off" action="webapi/acceptorwebapi.php?function=add_acceptor" method="post" >
-                                <input type="text" class="form-control d-none" name="uuid">
+                                <input type="text" class="form-control d-none" name="uuid_user">
                                 <div class="col-sm-12 col-xl-12 mt-1 mb-1">
                                     <div class="rounded bg-light d-flex align-items-center p-2" >
                                         <h4 class="mb-1 mt-1" style="margin-left: .5rem !important;">Anamnese</h4>
@@ -299,7 +299,11 @@
                                     </div>
                                     <div class="col-lg-12 col-xl-12">
                                         <div class="form-floating mb-0">
-                                            <input type="text" class="form-control" name="status_kehamilan" id="status_kehamilan" placeholder="">
+                                            <select class="form-select" id="status_kehamilan" name="status_kehamilan" aria-label="Floating label select example">
+                                                <option selected disabled>-Pilih-</option>
+                                                <option value="1">Ya</option>
+                                                <option value="2">Tidak</option>
+                                            </select>
                                             <label for="status_kehamilan">Hamil / Diduga Hamil</label>
                                         </div>
                                     </div>
@@ -473,7 +477,7 @@
                 dataType:"json",
                 url: 'webapi/adminwebapi.php?function=get_detail_pasien&uuid=' + uuidsearch,
                 success: function (data, status, xhr) {
-                    $("input[name='uuid']").val(uuidsearch);
+                    $("input[name='uuid_user']").val(uuidsearch);
                     if(data.hasOwnProperty("fullname")){
                         $(".name").show();
                         name.innerHTML = "";

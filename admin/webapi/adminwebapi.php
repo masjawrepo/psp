@@ -285,11 +285,32 @@ require_once('../include/conn.php');
 
 			if(!isset($dataacceptor)){
 				$resultacceptor = array("data_acceptor" => "Acceptor NA");
-				$result = array_merge($resultavailable, $resultacceptor);
+				$result_1 = array_merge($resultavailable, $resultacceptor);
 			} else {
 				$resultacceptor = array("data_acceptor" => "Acceptor Available");
-				$result = array_merge($resultavailable, $resultacceptor);
+				$result_1 = array_merge($resultavailable, $resultacceptor);
 			}
+
+
+			$query_last_checkup = $con->query('SELECT b.tgl_dilayani 
+									FROM `user` as a
+									JOIN `pemeriksaan` as b 
+									ON a.uuid = b.uuid_user
+									where a.nik = '.$nik.' ORDER BY b.created_at DESC LIMIT 1;');         
+			while($row_last_checkup=mysqli_fetch_assoc($query_last_checkup))
+			{
+				$last_checkup = $row_last_checkup['tgl_dilayani'];
+			}
+			$query_last_checkup->close();
+
+			if(!isset($last_checkup)){
+				$result_last_checkup = array("last_checkup" => "Last Checkup NA");
+				$result = array_merge($result_1, $result_last_checkup);
+			} else {
+				$result_last_checkup = array("last_checkup" => $last_checkup);
+				$result = array_merge($result_1, $result_last_checkup);
+			}
+
 
 		}
 
@@ -356,4 +377,38 @@ require_once('../include/conn.php');
 		header('Content-Type: application/json');
 		echo json_encode($data);
    }
+
+
+   function get_detail_last_check(){
+   	global $con;
+    	$uuid = '"'.$_REQUEST['uuid'].'"';
+    	$uuid = str_replace("\r\n","",$uuid);
+		//$member = $_POST['phone_number'];
+		//$member = 22;
+		
+		$query = $con->query('SELECT *
+									FROM `user` as a
+									JOIN `user_detail` as b 
+									ON a.uuid = b.uuid_user
+									JOIN `acceptor` as c 
+									ON a.uuid = c.uuid_user
+									JOIN `pemeriksaan` as d
+									On a.uuid = d.uuid_user
+									where a.uuid = '.$uuid.';');            
+		while($row=mysqli_fetch_object($query))
+		{
+			$data =$row;
+		}
+		//$response=array(
+		//               'status' => 1,
+		//               'message' =>'Success',
+		//               'data' => $data
+		//            );
+		//$query->close();
+		$query->close();
+		header('Content-Type: application/json');
+		echo json_encode($data);
+   }
+
+
 ?>
