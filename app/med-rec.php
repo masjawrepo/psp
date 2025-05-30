@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../akses-pengguna.php');
+	exit;
+}
+	global $site; 
+?>
+
+<!DOCTYPE html>
 <html lang="zxx">
 <head>
 	<meta charset="UTF-8">
@@ -22,6 +33,9 @@
 	<div class="navbar navbar-home">
 		<div class="left">
 			<a href="#menu" class="link menu-link"><i class="icon ion-ios-menu"></i></a>
+		</div>
+		<div class="title">
+			Rekam Medis
 		</div>
 		<div class="right">
 			<a href="index.php" class="link"><img src="../img/favicon.png" alt=""></a>
@@ -169,28 +183,111 @@
 	<!-- end sidebar -->
 
 	<!-- pages wrapper -->
-	<div class="pages-wrapper">
+	<div class="pages-wrapper bg-lightblue">
 
 		<!-- separator -->
 		<div class="separator-large"></div>
 		<!-- end separator -->
-		
-		<!-- maintenance -->
-		<div class="maintenance">
+
+
+		<div class="counter">
 			<div class="container">
-				<img src="images/maintenance.png" alt="">
-				<h5 class="mb-2">Fitur Sedang Dalam Pengembangan</h5>
-				<p class="text-small">Nantikan fitur terbaru dari kami !</p>
-				<div class="button-default ">
-					<div class="row justify-content-center">
-						<div class="col-6">
-							<a href="index.php" class="button">Home</a>
+				<div class="row">
+					<div class="col-12">
+						<div class="card card-outline shadow-sm content bg-white">
+							<div class="container mt-3">
+								<div class="about-title">
+									<h4>Data Identitas Pasien</h4>
+								</div>
+
+								<div class="content p-2">
+									<div class="text">
+										<span class="text-small">Nama</span>
+										<h6><?=$_SESSION['fullname']?></h6>
+									</div>
+								</div>
+
+								<div class="content p-2">
+									<div class="text">
+										<span class="text-small">Tanggal Lahir</span>
+										<h6>[DOB]</h6>
+									</div>
+								</div>
+								<div class="content p-2">
+									<div class="text">
+										<span class="text-small">Alamat</span>
+										<h6>[Alamat]</h6>
+									</div>
+								</div>
+								<div class="content p-2">
+									<div class="text">
+										<span class="text-small">Nomor Kontak</span>
+										<h6>[Kontak]</h6>
+									</div>
+								</div>
+								<div class="content p-2">
+									<div class="text">
+										<span class="text-small">Status Pernikahan</span>
+										<h6>[status]</h6>
+									</div>
+								</div>
+
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="card card-outline shadow-sm content bg-white" style="height:100%">
+							<div class="about-title">
+								<h4>Status Kontrasepsi</h4>
+							</div>
+							<h6>[Data Status Kontrasepsi]</h6>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="card card-outline shadow-sm content bg-white" style="height:100%">
+							<div class="about-title">
+								<h4>Riwayat Pemeriksaan</h4>
+							</div>
+							<h6>[Data Riwayat Pemeriksaan]</h6>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="card card-outline shadow-sm content bg-white" style="height:100%">
+							<div class="about-title">
+								<h4>Tindakan Pemeriksaan</h4>
+							</div>
+							<h6>[Data Tindakan Pemeriksaan]</h6>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="card card-outline shadow-sm content bg-white" style="height:100%">
+							<div class="about-title">
+								<h4>Catatan Pemeriksaan</h4>
+							</div>
+							<h6>[Data Catatan Pemeriksaan]</h6>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="card card-outline shadow-sm content bg-white" style="height:100%">
+							<div class="about-title">
+								<h4>Catatan Kepatuhan</h4>
+							</div>
+							<h6>[Data Catatan Kepatuhan]</h6>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end maintenance -->
+
 
 	</div>
 	<!-- end pages wrapper -->

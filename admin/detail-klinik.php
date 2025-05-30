@@ -474,8 +474,7 @@
 		//console.log(product);
 		//alert(uuid);
 		getDetailKlinik(uuid);
-
-
+        var linkqr = "https://pillsyncplus.com/daftar.php?uuid="+uuid;
 		
 		function getDetailKlinik(uuidsearch){
 			
@@ -504,14 +503,14 @@
 							
 					const makeQR = (uuidsearch, filename) => {
 						var qrcode = new QRCode("qrcode", {
-							text: uuid,
+							text: linkqr,
 							width: 320,
 							height: 320,
 							colorDark: "#000000",
 							colorLight: "#ffffff",
 							correctLevel: QRCode.CorrectLevel.H
 						});
-						qrcode.makeCode(uuid);
+						qrcode.makeCode(linkqr);
 				
 						setTimeout(() => {
 							let qelem = document.querySelector('#qrcode img')
@@ -523,7 +522,7 @@
 						}, 500);
 					}
 
-                    makeQR(uuid, data.instance+".png");
+                    makeQR(linkqr, data.instance+".png");
 			  }
 			});
 		

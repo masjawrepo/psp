@@ -270,7 +270,7 @@ if (!isset($_SESSION['loggedin'])) {
 
 								<div class="col-sm-12 p-2">
 									<div class="card bg-light card-outline">
-										<div class="card-body">
+										<div class="card-body" onclick="window.location='med-rec.php';">
 											<h5 class="card-title card-title-large text-red">My Medical Record</h5>
 											<h6 class="card-subtitle text-red">History</h6>
 
