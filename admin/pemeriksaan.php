@@ -355,8 +355,13 @@
                                             <label for="name">DBP (Distolic Blood Pressure)</label>
                                         </div>
                                     </div>
-                                    <p class="font-italic " style="text-align: left;margin-bottom: -10px !important;margin-top: 20px !important;font-weight: 500;">Sebelum Dilakukan Pemasangan IUD atau MOM Dilakukan Pemeriksaan Dalam :</p>
-                                    <div class="col-lg-6 col-xl-6">
+                                    
+                                    <div class="d-flex align-items-center justify-content-between mt-3 mb-0 pb-0">
+                                        <p class="mb-0">Akan Dipasang IUD atau MOM ?</p>
+                                        <input type="checkbox" id="is_IUDorMOM" name="is_IUDorMOM" onclick="IUDorMOM()">
+                                    </div>
+                                    <p class="font-italic pt-0 mt-0 IUDorMOM" style="text-align: left;margin-bottom: -10px !important;font-weight: 500;">Hasil Pemeriksaan Dalam (Untuk Pemasangan IUD atau MOM):</p>
+                                    <div class="col-lg-6 col-xl-6 IUDorMOM">
                                         <div class="form-floating mb-0">
                                             <select class="form-select" id="floatingSelect" name="tanda_radang"
                                                 aria-label="Floating label select example">
@@ -367,7 +372,7 @@
                                             <label for="floatingSelect">Tanda-Tanda Radang</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-xl-6">
+                                    <div class="col-lg-6 col-xl-6 IUDorMOM">
                                         <div class="form-floating mb-0">
                                             <select class="form-select" id="floatingSelect" name="tumor"
                                                 aria-label="Floating label select example">
@@ -378,7 +383,7 @@
                                             <label for="floatingSelect">Tumor / Keganasan Ginekologi :</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-xl-12">
+                                    <div class="col-lg-12 col-xl-12 IUDorMOM">
                                         <div class="form-floating mb-0">
                                             <select class="form-select" id="floatingSelect" name="posisi_rahim"
                                                 aria-label="Floating label select example">
@@ -503,6 +508,16 @@
 
     <script>
 
+
+    function IUDorMOM() {
+        var isIUDorMOM = document.getElementById("is_IUDorMOM");
+        if (isIUDorMOM.checked) {
+            $(".IUDorMOM").show();
+        } else {
+            $(".IUDorMOM").hide();
+        }
+    }
+
     $( document ).ready(function() {
 
         moment.locale('id');  
@@ -512,7 +527,8 @@
         //console.log(product);
         //alert(uuid);
         getPasien(uuid);
-          
+        
+        $(".IUDorMOM").hide();
 
         $('#SelectKontrasepsi').change(function(){
             if( $(this).val()=="1" || $(this).val()=="2"){

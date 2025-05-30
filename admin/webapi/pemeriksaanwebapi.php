@@ -29,9 +29,17 @@ require_once('../include/conn.php');
 		$berat_badan = $_POST['berat_badan'];
 		$sbp = $_POST['sbp'];
 		$dbp = $_POST['dbp'];
-		$tanda_radang = $_POST['tanda_radang'];
-		$tumor = $_POST['tumor'];
-		$posisi_rahim = $_POST['posisi_rahim'];
+
+		if (!isset($_POST['is_IUDorMOM'])) {
+			$tanda_radang = NULL;
+			$tumor = NULL;
+			$posisi_rahim = NULL;
+		} else {
+			$tanda_radang = $_POST['tanda_radang'];
+			$tumor = $_POST['tumor'];
+			$posisi_rahim = $_POST['posisi_rahim'];
+		}
+
 		$pilihan_kontrasepsi = $_POST['pilihan_kontrasepsi'];
 		$tgl_dilayani = $_POST['tgl_dilayani'];
 		//Implan(1) or IUD(2)

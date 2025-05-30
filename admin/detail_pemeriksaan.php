@@ -319,9 +319,9 @@
                         <div class="col-lg-12 wow fadeInLeft" data-wow-delay="0.1s">
 
                             <h3 class="mb-0 mt-1 text-center" style="color: #666666 !important;">Detail Pemeriksaan Terakhir</h3>
-                            <h5 class="mb-0 mb-3 text-center tgl_dilayani" style="color: #666666 !important;" id="tgl_dilayani">Tidak Ada</h5>
+                            <h6 class="mb-0 mb-3 text-center tgl_dilayani" style="color: #666666 !important;" id="tgl_dilayani">Tidak Ada</h6>
                             <div class="row g-4 d-flex align-items-center justify-content-center pb-2">
-                                <div class="col-sm-11 col-xl-11 bg-white p-4">
+                                <div class="col-sm-11 col-xl-11 bg-white p-4 pb-2">
                                     <h5 class="mb-0 mt-1 mb-3" style="color: #666666 !important;">Riwayat Pemeriksaan</h5>
                                     <div class="row g-4">
                                         <div class="col-sm-6 col-xl-6 p-3 pb-0 mt-0 keadaan_umum">
@@ -345,7 +345,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0">
+                                        <div class="col-sm-12 col-xl-12 p-3 pb-0 mt-0 is_IUDorMOM">
                                             <p class="t-text">Pemeriksaan Dalam (Untuk Pemasangan IUD atau MOM)</p>
                                             <div class="row g-4  pt-4">
                                                 <div class="col-sm-6 col-xl-6 p-3 pt-0 pb-0 mt-0 tanda_radang">
@@ -726,7 +726,7 @@
                     if(data.hasOwnProperty("tgl_dilayani")){
                         $(".tgl_dilayani").show();
                         tgl_dilayani.innerHTML = "";
-                        tgl_dilayani.innerHTML += data.tgl_dilayani;
+                        tgl_dilayani.innerHTML += "Tanggal : " + data.tgl_dilayani;
                     }
                     if(data.hasOwnProperty("keadaan_umum")){
                         $(".keadaan_umum").show();
@@ -748,20 +748,25 @@
                         dbp.innerHTML = "";
                         dbp.innerHTML += data.dbp;
                     }
-                    if(data.hasOwnProperty("tanda_radang")){
-                        $(".tanda_radang").show();
-                        tanda_radang.innerHTML = "";
-                        tanda_radang.innerHTML += array_tanda_radang[data.tanda_radang - 1];
-                    }
-                    if(data.hasOwnProperty("tumor")){
-                        $(".tumor").show();
-                        tumor.innerHTML = "";
-                        tumor.innerHTML += array_tumor[data.tumor - 1];
-                    }
-                    if(data.hasOwnProperty("posisi_rahim")){
-                        $(".posisi_rahim").show();
-                        posisi_rahim.innerHTML = "";
-                        posisi_rahim.innerHTML += array_posisi_rahim[data.posisi_rahim - 1];
+
+                    if (data.tanda_radang != null && data.tumor != null && data.posisi_rahim != null){
+                        if(data.hasOwnProperty("tanda_radang")){
+                            $(".tanda_radang").show();
+                            tanda_radang.innerHTML = "";
+                            tanda_radang.innerHTML += array_tanda_radang[data.tanda_radang - 1];
+                        }
+                        if(data.hasOwnProperty("tumor")){
+                            $(".tumor").show();
+                            tumor.innerHTML = "";
+                            tumor.innerHTML += array_tumor[data.tumor - 1];
+                        }
+                        if(data.hasOwnProperty("posisi_rahim")){
+                            $(".posisi_rahim").show();
+                            posisi_rahim.innerHTML = "";
+                            posisi_rahim.innerHTML += array_posisi_rahim[data.posisi_rahim - 1];
+                        } 
+                    } else {
+                        $(".is_IUDorMOM").hide();
                     }
 
 
